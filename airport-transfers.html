@@ -109,17 +109,18 @@
 
     .hero {
       position: relative;
-      min-height: 52vh;
+      min-height: 320px;
       display: flex;
-      align-items: center;
+      align-items: end;
       background:
-        linear-gradient(rgba(0,0,0,0.56), rgba(0,0,0,0.56)),
+        linear-gradient(rgba(0,0,0,0.42), rgba(0,0,0,0.62)),
         url('airport-transfers.png') center/cover no-repeat;
+      border-bottom: 1px solid var(--border);
     }
 
     .hero-content {
-      max-width: 760px;
-      padding: 88px 0;
+      max-width: 860px;
+      padding: 64px 0 54px;
     }
 
     .eyebrow {
@@ -135,23 +136,23 @@
 
     h1 {
       margin: 0;
-      font-size: clamp(2.2rem, 4.5vw, 4rem);
+      font-size: clamp(2rem, 4.2vw, 3.4rem);
       line-height: 1.08;
       letter-spacing: -0.04em;
     }
 
     .hero p {
       color: #eee5d5;
-      font-size: 1.06rem;
+      font-size: 1.02rem;
       max-width: 680px;
-      margin: 18px 0 0;
+      margin: 16px 0 0;
     }
 
     .hero-actions {
       display: flex;
       flex-wrap: wrap;
       gap: 14px;
-      margin-top: 28px;
+      margin-top: 24px;
     }
 
     .btn {
@@ -235,6 +236,16 @@
       border-radius: 28px;
       padding: 28px;
       box-shadow: 0 12px 40px rgba(0,0,0,0.2);
+    }
+
+    .widget-inner {
+      max-width: 920px;
+      margin: 0 auto;
+    }
+
+    .bokunWidget {
+      max-width: 920px;
+      margin: 0 auto;
     }
 
     .widget-head {
@@ -328,20 +339,16 @@
     </div>
   </header>
 
-  <section class="section" style="background:#151312; padding:64px 0 42px;">
-    <div class="container">
+  <section class="hero">
+    <div class="container hero-content">
       <div class="eyebrow">Airport transfer category</div>
-      <div class="grid-2" style="align-items:end; gap:32px;">
-        <div>
-          <h1 style="margin:0; font-size:clamp(2rem, 4vw, 3.4rem); line-height:1.08; letter-spacing:-0.04em;">Airport Transfers in Japan</h1>
-          <p style="margin:18px 0 0; color:#ddd; max-width:640px;">
-            Browse private airport transfer services for Narita, Haneda, Kansai, and other major airports with easy booking and reliable support.
-          </p>
-        </div>
-        <div class="panel-box" style="background:rgba(255,255,255,0.04);">
-          <h3 style="margin-bottom:8px;">Easy booking</h3>
-          <p style="margin:0;">Choose your airport, compare routes, and continue directly to booking from the product list below.</p>
-        </div>
+      <h1>Airport Transfers in Japan</h1>
+      <p>
+        Browse private airport transfer services for Narita, Haneda, Kansai, and other major airports with easy booking and reliable support.
+      </p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="#booking-list">Browse Airport Transfers</a>
+        <a class="btn btn-secondary" href="index.html">Back to Homepage</a>
       </div>
     </div>
   </section>
@@ -372,6 +379,7 @@
   <section class="section" id="booking-list" style="background:#f3efe9; color:#111;">
     <div class="container">
       <div class="widget-wrap">
+        <div class="widget-inner">
         <div class="widget-head">
           <h3>Available Airport Transfer Services</h3>
           <p>Choose your pickup area, compare routes, and continue to booking.</p>
@@ -380,6 +388,7 @@
         <script type="text/javascript" src="https://widgets.bokun.io/assets/javascripts/apps/build/BokunWidgetsLoader.js?bookingChannelUUID=11dad9b8-4629-4114-ab40-b6ce758d47ae" async></script>
         <div class="bokunWidget" data-src="https://widgets.bokun.io/online-sales/11dad9b8-4629-4114-ab40-b6ce758d47ae/product-list/87868"></div>
         <noscript>Please enable javascript in your browser to book</noscript>
+        </div>
       </div>
     </div>
   </section>
