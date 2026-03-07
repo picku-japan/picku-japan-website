@@ -3,418 +3,325 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Pick-U Japan | Private Transfers in Japan</title>
-  <meta name="description" content="Private airport transfers, city rides, and charters in Japan with comfortable vehicles and professional drivers." />
+  <title>Pick‑U Japan | Private Transfers in Japan</title>
+  <meta name="description" content="Private airport transfers, city transfers and charters in Japan with professional drivers." />
+
   <style>
-    :root {
-      --bg: #111111;
-      --panel: #181818;
-      --panel-2: #202020;
-      --text: #f7f4ee;
-      --muted: #c7c2b8;
-      --gold: #d4a017;
-      --gold-soft: rgba(212, 160, 23, 0.16);
-      --border: rgba(255,255,255,0.1);
-      --max: 1180px;
-      --radius: 24px;
+    :root{
+      --bg:#111;
+      --panel:#1b1b1b;
+      --gold:#f5c400;
+      --text:#f3f3f3;
+      --muted:#cfcfcf;
+      --border:rgba(255,255,255,.08);
+      --max:1180px;
     }
 
-    * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
-    body {
-      margin: 0;
-      font-family: Arial, Helvetica, sans-serif;
-      background: var(--bg);
-      color: var(--text);
-      line-height: 1.6;
+    *{box-sizing:border-box}
+
+    body{
+      margin:0;
+      font-family:Arial, Helvetica, sans-serif;
+      background:var(--bg);
+      color:var(--text);
+      line-height:1.6;
     }
 
-    a { color: inherit; text-decoration: none; }
-    img { max-width: 100%; display: block; }
+    a{text-decoration:none;color:inherit}
 
-    .container {
-      width: min(var(--max), calc(100% - 32px));
-      margin: 0 auto;
+    .container{
+      width:min(var(--max), calc(100% - 32px));
+      margin:auto;
     }
 
-    .topbar {
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      background: rgba(10,10,10,0.92);
-      backdrop-filter: blur(8px);
-      border-bottom: 1px solid var(--border);
+    header{
+      background:#0c0c0c;
+      border-bottom:1px solid var(--border);
+      position:sticky;
+      top:0;
+      z-index:10;
     }
 
-    .nav {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      min-height: 74px;
-      gap: 24px;
+    .nav{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      padding:16px 0;
     }
 
-    .logo {
-      font-size: 1.2rem;
-      font-weight: 700;
-      letter-spacing: 0.04em;
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:10px;
+      font-weight:bold;
+      font-size:18px;
     }
 
-    .logo span { color: var(--gold); }
-
-    .nav-links {
-      display: flex;
-      gap: 22px;
-      color: var(--muted);
-      font-size: 0.95rem;
+    .brand img{
+      height:32px;
     }
 
-    .hero {
-      position: relative;
-      min-height: 78vh;
-      display: flex;
-      align-items: center;
-      background:
-        linear-gradient(rgba(0,0,0,0.58), rgba(0,0,0,0.58)),
-        url('https://images.unsplash.com/photo-1513407030348-c983a97b98d8?auto=format&fit=crop&w=1800&q=80') center/cover no-repeat;
+    nav a{
+      margin-left:20px;
+      color:var(--muted);
+      font-size:14px;
     }
 
-    .hero-content {
-      max-width: 720px;
-      padding: 88px 0;
+    .hero{
+      background:linear-gradient(rgba(0,0,0,.6),rgba(0,0,0,.6)),
+      url("https://images.unsplash.com/photo-1513407030348-c983a97b98d8?auto=format&fit=crop&w=1800&q=80") center/cover;
+      padding:120px 0;
     }
 
-    .eyebrow {
-      display: inline-block;
-      padding: 8px 14px;
-      border: 1px solid rgba(212,160,23,0.35);
-      background: var(--gold-soft);
-      color: #f3d98e;
-      border-radius: 999px;
-      font-size: 0.86rem;
-      margin-bottom: 18px;
+    .hero h1{
+      font-size:48px;
+      margin:0 0 10px 0;
     }
 
-    h1 {
-      margin: 0;
-      font-size: clamp(2.4rem, 6vw, 4.7rem);
-      line-height: 1.08;
-      letter-spacing: -0.03em;
+    .hero p{
+      color:#ddd;
+      max-width:620px;
     }
 
-    .hero p {
-      color: #eee5d5;
-      font-size: 1.08rem;
-      max-width: 640px;
-      margin: 20px 0 0;
+    .btn{
+      display:inline-block;
+      background:var(--gold);
+      color:#000;
+      padding:12px 22px;
+      margin-top:20px;
+      border-radius:8px;
+      font-weight:bold;
     }
 
-    .hero-actions {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 14px;
-      margin-top: 30px;
+    .section{
+      padding:70px 0;
     }
 
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      border-radius: 16px;
-      padding: 14px 22px;
-      font-weight: 700;
-      transition: 0.2s ease;
-      border: 1px solid transparent;
+    .section h2{
+      text-align:center;
+      margin-bottom:10px;
+      font-size:32px;
     }
 
-    .btn-primary {
-      background: var(--gold);
-      color: #111;
+    .section p{
+      text-align:center;
+      color:var(--muted);
+      margin-bottom:40px;
     }
 
-    .btn-primary:hover { transform: translateY(-1px); }
-
-    .btn-secondary {
-      border-color: rgba(255,255,255,0.2);
-      background: rgba(255,255,255,0.04);
-      color: var(--text);
+    .grid{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:24px;
     }
 
-    .section {
-      padding: 84px 0;
+    .card{
+      background:var(--panel);
+      border:1px solid var(--border);
+      border-radius:16px;
+      overflow:hidden;
     }
 
-    .section-header {
-      max-width: 760px;
-      margin: 0 auto 42px;
-      text-align: center;
+    .card img{
+      width:100%;
+      height:220px;
+      object-fit:cover;
     }
 
-    .section-header h2 {
-      margin: 10px 0 0;
-      font-size: clamp(2rem, 4vw, 3rem);
-      line-height: 1.15;
+    .card-body{
+      padding:20px;
     }
 
-    .section-header p {
-      margin: 16px 0 0;
-      color: var(--muted);
+    .card-body h3{
+      margin-top:0;
     }
 
-    .cards {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 24px;
+    .routes{
+      background:#161616;
     }
 
-    .card {
-      overflow: hidden;
-      border-radius: var(--radius);
-      background: var(--panel);
-      border: 1px solid var(--border);
-      box-shadow: 0 20px 50px rgba(0,0,0,0.24);
+    .routes ul{
+      list-style:none;
+      padding:0;
+      max-width:700px;
+      margin:auto;
     }
 
-    .card-image {
-      position: relative;
-      height: 280px;
-      overflow: hidden;
+    .routes li{
+      padding:10px 0;
+      border-bottom:1px solid var(--border);
+      color:#ddd;
     }
 
-    .card-image img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      transition: transform 0.4s ease;
+    footer{
+      background:#0b0b0b;
+      padding:50px 0;
+      border-top:1px solid var(--border);
+      font-size:14px;
+      color:#ccc;
     }
 
-    .card:hover .card-image img { transform: scale(1.04); }
-
-    .card-image::after {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(to top, rgba(0,0,0,0.78), rgba(0,0,0,0.1));
+    .footer-grid{
+      display:grid;
+      grid-template-columns:2fr 1fr 1fr;
+      gap:30px;
     }
 
-    .card-title-overlay {
-      position: absolute;
-      left: 24px;
-      right: 24px;
-      bottom: 22px;
-      z-index: 1;
-      font-size: 1.7rem;
-      font-weight: 700;
+    .lang{
+      margin-top:12px;
+      font-size:13px;
+      color:#bbb;
     }
 
-    .card-body {
-      padding: 24px;
-    }
-
-    .card-body p {
-      margin: 0 0 20px;
-      color: var(--muted);
-    }
-
-    .mini-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 24px;
-    }
-
-    .mini-card {
-      background: var(--panel);
-      border: 1px solid var(--border);
-      border-radius: 22px;
-      padding: 24px;
-    }
-
-    .mini-card h3 {
-      margin: 0 0 10px;
-      font-size: 1.2rem;
-    }
-
-    .mini-card p {
-      margin: 0;
-      color: var(--muted);
-    }
-
-    .footer {
-      border-top: 1px solid var(--border);
-      padding: 34px 0 48px;
-      color: var(--muted);
-      background: #0b0b0b;
-    }
-
-    .footer-grid {
-      display: flex;
-      justify-content: space-between;
-      gap: 20px;
-      flex-wrap: wrap;
-    }
-
-    @media (max-width: 980px) {
-      .cards,
-      .mini-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .nav {
-        flex-direction: column;
-        align-items: flex-start;
-        padding: 14px 0;
-      }
-
-      .nav-links {
-        flex-wrap: wrap;
-        gap: 12px 18px;
-      }
-
-      .hero {
-        min-height: auto;
-      }
+    @media(max-width:900px){
+      .grid{grid-template-columns:1fr}
+      .footer-grid{grid-template-columns:1fr}
+      .hero h1{font-size:34px}
     }
   </style>
 </head>
+
 <body>
-  <header class="topbar">
-    <div class="container nav">
-      <a class="logo" href="#home">Pick-<span>U</span> Japan</a>
-      <nav class="nav-links">
-        <a href="#services">Services</a>
-        <a href="#popular">Popular Routes</a>
-        <a href="#vehicles">Vehicles</a>
-        <a href="#contact">Contact</a>
-      </nav>
+
+<header>
+  <div class="container nav">
+
+    <div class="brand">
+      <img src="logo.png" alt="Pick‑U Japan logo">
+      Pick‑U Japan
     </div>
-  </header>
 
-  <section class="hero" id="home">
-    <div class="container hero-content">
-      <div class="eyebrow">Private transfer service in Japan</div>
-      <h1>Private Airport Transfers, City Rides & Charters in Japan</h1>
-      <p>
-        Reliable door-to-door transportation with professional drivers, comfortable
-        vehicles, and easy online booking for airports, cities, and sightseeing routes.
-      </p>
-      <div class="hero-actions">
-        <a class="btn btn-primary" href="#services">Explore Services</a>
-        <a class="btn btn-secondary" href="#popular">View Popular Routes</a>
-      </div>
-    </div>
-  </section>
+    <nav>
+      <a href="#services">Services</a>
+      <a href="#routes">Popular Routes</a>
+      <a href="#contact">Contact</a>
+    </nav>
 
-  <section class="section" id="services">
-    <div class="container">
-      <div class="section-header">
-        <div class="eyebrow">Three homepage entry points</div>
-        <h2>Start with the service you need</h2>
-        <p>
-          Replace the crowded homepage product list with three clean category cards.
-          Each card can link to its own page or directly to your Bókun category or product page.
-        </p>
-      </div>
+  </div>
+</header>
 
-      <div class="cards">
-        <article class="card">
-          <div class="card-image">
-            <img src="https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&w=1200&q=80" alt="Airport Transfers" />
-            <div class="card-title-overlay">Airport Transfers</div>
-          </div>
-          <div class="card-body">
-            <p>
-              Reliable airport pickup and drop-off service between Narita, Haneda, Kansai,
-              hotels, and major cities.
-            </p>
-            <a class="btn btn-secondary" href="#">View Airport Transfers</a>
-          </div>
-        </article>
+<section class="hero">
+  <div class="container">
+    <h1>Private Airport Transfers & Charters in Japan</h1>
+    <p>
+      Comfortable door‑to‑door transfers between airports, hotels and cities. 
+      Professional drivers, reliable service and easy booking.
+    </p>
 
-        <article class="card">
-          <div class="card-image">
-            <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1200&q=80" alt="Private Transfers" />
-            <div class="card-title-overlay">Private Transfers</div>
-          </div>
-          <div class="card-body">
-            <p>
-              Comfortable one-way transfers between cities, hotels, cruise ports, ski resorts,
-              and popular destinations.
-            </p>
-            <a class="btn btn-secondary" href="#">View Private Transfers</a>
-          </div>
-        </article>
+    <a class="btn" href="#services">Explore Services</a>
+  </div>
+</section>
 
-        <article class="card">
-          <div class="card-image">
-            <img src="https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?auto=format&fit=crop&w=1200&q=80" alt="Private Charters and Day Tours" />
-            <div class="card-title-overlay">Private Charters & Day Tours</div>
-          </div>
-          <div class="card-body">
-            <p>
-              Flexible private car service for sightseeing, Mt. Fuji trips, family travel,
-              and custom itineraries across Japan.
-            </p>
-            <a class="btn btn-secondary" href="#">View Charters & Tours</a>
-          </div>
-        </article>
-      </div>
-    </div>
-  </section>
+<section class="section" id="services">
 
-  <section class="section" id="popular" style="background:#141414;">
-    <div class="container">
-      <div class="section-header">
-        <div class="eyebrow">Suggested structure</div>
-        <h2>What each homepage card should connect to</h2>
-        <p>
-          Keep the homepage simple. Let each service card lead to a page with more specific routes or booking options.
-        </p>
-      </div>
+  <div class="container">
 
-      <div class="mini-grid">
-        <div class="mini-card">
+    <h2>Our Services</h2>
+
+    <p>Choose the service that fits your travel plan.</p>
+
+    <div class="grid">
+
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&w=1200&q=80">
+        <div class="card-body">
           <h3>Airport Transfers</h3>
-          <p>Narita Airport, Haneda Airport, Kansai Airport, New Chitose Airport</p>
+          <p>Narita, Haneda, Kansai and major airport pickup and drop‑off service.</p>
         </div>
-        <div class="mini-card">
+      </div>
+
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1200&q=80">
+        <div class="card-body">
           <h3>Private Transfers</h3>
-          <p>Tokyo City, Yokohama, Hakone, Kyoto, Osaka, ski resort transfers</p>
+          <p>One‑way private transfers between cities, hotels and destinations.</p>
         </div>
-        <div class="mini-card">
+      </div>
+
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?auto=format&fit=crop&w=1200&q=80">
+        <div class="card-body">
           <h3>Private Charters & Day Tours</h3>
-          <p>6/8/10-hour charter, Mt. Fuji day trip, Hakone tour, Nikko tour</p>
-        </div>
-        <div class="mini-card">
-          <h3>Next step later</h3>
-          <p>Add Bókun widgets or booking buttons inside each route page instead of showing everything on the homepage.</p>
+          <p>Flexible charter service for Mt Fuji, Hakone and custom sightseeing.</p>
         </div>
       </div>
-    </div>
-  </section>
 
-  <section class="section" id="vehicles">
-    <div class="container">
-      <div class="section-header">
-        <div class="eyebrow">Brand trust</div>
-        <h2>Comfortable vehicles for families and groups</h2>
-        <p>
-          Later we can add your Alphard and Hiace section here, with passenger and luggage capacity.
-        </p>
-      </div>
     </div>
-  </section>
 
-  <footer class="footer" id="contact">
-    <div class="container footer-grid">
-      <div>
-        <strong style="color:#fff;">Pick-U Japan</strong><br />
-        Private transfers in Japan
-      </div>
-      <div>
-        Email: info@pick-u-japan.com<br />
-        Website draft version 1
-      </div>
-    </div>
-  </footer>
+  </div>
+
+</section>
+
+<section class="section routes" id="routes">
+
+<div class="container">
+
+<h2>Popular Transfer Routes</h2>
+
+<p>Some of the most frequently booked services.</p>
+
+<ul>
+<li>Narita Airport → Tokyo City</li>
+<li>Haneda Airport → Tokyo</li>
+<li>Tokyo → Yokohama</li>
+<li>Tokyo → Hakone</li>
+<li>Kansai Airport → Kyoto</li>
+<li>Kansai Airport → Osaka</li>
+</ul>
+
+</div>
+
+</section>
+
+<section class="section" id="contact">
+
+<div class="container">
+
+<h2>Contact</h2>
+
+<p>Questions or custom requests are welcome.</p>
+
+<div class="footer-grid">
+
+<div>
+<strong>Pick‑U Japan</strong><br>
+Operated by Arinashi Co. Ltd.<br>
+
+<div class="lang">
+Languages supported: English / 繁體中文 / 日本語
+</div>
+
+</div>
+
+<div>
+<strong>Contact</strong><br>
+WhatsApp: +81‑80‑9461‑5400<br>
+Email: info@arinasi.com<br>
+LINE: @pick‑u
+</div>
+
+<div>
+<strong>Company</strong><br>
+株式会社アリナシ<br>
+Arinashi Co. Ltd.<br>
+Registration No: T4010401148689
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<footer>
+<div class="container">
+
+〒106‑0046
+3‑1‑6 Motoazabu, Minato‑ku,
+Tokyo, Japan
+
+</div>
+</footer>
+
 </body>
 </html>
