@@ -36,6 +36,12 @@
       margin: 0 auto;
     }
 
+    /* wider container specifically for Bokun product list */
+    .widget-container {
+      width: min(1500px, calc(100% - 48px));
+      margin: 0 auto;
+    }
+
     .topbar {
       position: sticky;
       top: 0;
@@ -262,6 +268,45 @@
       color: #555;
     }
 
+    .airport-filter {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 10px 16px;
+      border-radius: 999px;
+      border: 1px solid rgba(0,0,0,0.12);
+      color: #333;
+      background: #fff;
+      font-size: 0.95rem;
+      transition: 0.2s ease;
+    }
+
+    .airport-filter:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 6px 16px rgba(0,0,0,0.08);
+    }
+
+    .airport-filter.active {
+      background: #181818;
+      color: #fff;
+      border-color: #181818;
+    }
+
+    .bokunWidget > div,
+    .bokunWidget article,
+    .bokunWidget a[data-testid="activity-card"],
+    .bokunWidget [class*="card"] {
+      transition: transform 0.18s ease, box-shadow 0.18s ease !important;
+    }
+
+    .bokunWidget > div:hover,
+    .bokunWidget article:hover,
+    .bokunWidget a[data-testid="activity-card"]:hover,
+    .bokunWidget [class*="card"]:hover {
+      transform: translateY(-4px) !important;
+      box-shadow: 0 14px 30px rgba(0,0,0,0.16) !important;
+    }
+
     .faq-item {
       padding: 18px 0;
       border-bottom: 1px solid var(--border);
@@ -377,12 +422,20 @@
   </section>
 
   <section class="section" id="booking-list" style="background:#f3efe9; color:#111;">
-    <div class="container">
+    <div class="widget-container">
       <div class="widget-wrap">
         <div class="widget-inner">
         <div class="widget-head">
           <h3>Available Airport Transfer Services</h3>
           <p>Choose your pickup area, compare routes, and continue to booking.</p>
+        </div>
+
+        <div style="display:flex; flex-wrap:wrap; gap:10px; margin:18px 0 22px;">
+          <a href="#" class="airport-filter active">All</a>
+          <a href="#" class="airport-filter">Narita</a>
+          <a href="#" class="airport-filter">Haneda</a>
+          <a href="#" class="airport-filter">Kansai</a>
+          <a href="#" class="airport-filter">Fukuoka</a>
         </div>
 
         <script type="text/javascript" src="https://widgets.bokun.io/assets/javascripts/apps/build/BokunWidgetsLoader.js?bookingChannelUUID=11dad9b8-4629-4114-ab40-b6ce758d47ae" async></script>
