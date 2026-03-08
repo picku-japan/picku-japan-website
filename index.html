@@ -233,6 +233,45 @@
       }
     }
   </style>
+  .why-choose-top-img {
+  width: 100%;
+  height: 360px;
+  object-fit: cover;
+  object-position: center top;
+  border-radius: 28px;
+}
+
+.why-choose-bottom-img {
+  width: 100%;
+  height: 360px;
+  object-fit: cover;
+  object-position: center bottom;
+  border-radius: 28px;
+}
+
+@media (max-width: 980px) {
+  .cards {
+    grid-template-columns: 1fr;
+  }
+
+  .hero {
+    min-height: auto;
+  }
+
+  .card-image {
+    height: 330px;
+  }
+
+  .hero-content {
+    max-width: 100%;
+    padding: 72px 0;
+  }
+
+  .why-choose-top-img,
+  .why-choose-bottom-img {
+    height: 280px;
+  }
+}
 <link rel="stylesheet" href="global.css">
 </head>
 <body>
