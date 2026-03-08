@@ -234,44 +234,44 @@
     }
   </style>
   .why-choose-top-img {
-  width: 100%;
-  height: 360px;
-  object-fit: cover;
-  object-position: center top;
-  border-radius: 28px;
-}
-
-.why-choose-bottom-img {
-  width: 100%;
-  height: 360px;
-  object-fit: cover;
-  object-position: center bottom;
-  border-radius: 28px;
-}
-
-@media (max-width: 980px) {
-  .cards {
-    grid-template-columns: 1fr;
+    width: 100%;
+    height: 360px;
+    object-fit: cover;
+    object-position: center top;
+    border-radius: 28px;
   }
 
-  .hero {
-    min-height: auto;
-  }
-
-  .card-image {
-    height: 330px;
-  }
-
-  .hero-content {
-    max-width: 100%;
-    padding: 72px 0;
-  }
-
-  .why-choose-top-img,
   .why-choose-bottom-img {
-    height: 280px;
+    width: 100%;
+    height: 360px;
+    object-fit: cover;
+    object-position: center bottom;
+    border-radius: 28px;
   }
-}
+
+  @media (max-width: 980px) {
+    .cards {
+      grid-template-columns: 1fr;
+    }
+
+    .hero {
+      min-height: auto;
+    }
+
+    .card-image {
+      height: 330px;
+    }
+
+    .hero-content {
+      max-width: 100%;
+      padding: 72px 0;
+    }
+
+    .why-choose-top-img,
+    .why-choose-bottom-img {
+      height: 280px;
+    }
+  }
 <link rel="stylesheet" href="global.css">
 </head>
 <body>
@@ -386,8 +386,8 @@
     <div class="container">
       <div class="grid-2" style="align-items:center; gap:40px;">
         <div style="display:grid; gap:18px;">
-          <img src="about-top.jpg" alt="Meet and greet airport pickup" style="width:100%; height:300px; object-fit:cover; border-radius:28px;">
-          <img src="about-bottom.jpg" alt="Private transfer vehicle welcome" style="width:100%; height:300px; object-fit:cover; border-radius:28px;">
+          <img src="about-top.jpg" alt="Meet and greet airport pickup" class="why-choose-top-img">
+          <img src="about-bottom.jpg" alt="Private transfer vehicle welcome" class="why-choose-bottom-img">
         </div>
         <div>
           <div class="eyebrow" style="color:#8b6a18; border-color:rgba(139,106,24,.28); background:rgba(212,160,23,.10);">Why Choose Pick-U</div>
