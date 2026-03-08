@@ -1,0 +1,912 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vehicles | Pick-U Japan</title>
+  <meta name="description" content="Explore Pick-U Japan vehicle options for private airport transfers, city rides, and charter services. Compare Alphard, Hiace, Coaster, and bus options for different group sizes and luggage needs." />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://picku-japan.github.io/picku-japan-website/vehicles.html" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Vehicles | Pick-U Japan" />
+  <meta property="og:description" content="Compare private transfer vehicles in Japan, including Alphard, Hiace, Coaster, and bus options for different group sizes." />
+  <meta property="og:image" content="vehicles-hero.jpg" />
+  <meta property="og:url" content="https://picku-japan.github.io/picku-japan-website/vehicles.html" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Vehicles | Pick-U Japan" />
+  <meta name="twitter:description" content="Compare private transfer vehicles in Japan for airport transfers, private transfers, and charter trips." />
+  <meta name="twitter:image" content="vehicles-hero.jpg" />
+
+  <link rel="icon" href="logo.png" type="image/png" />
+  <link rel="stylesheet" href="global.css" />
+
+  <style>
+    .hero {
+      position: relative;
+      min-height: 360px;
+      display: flex;
+      align-items: end;
+      background:
+        linear-gradient(rgba(0,0,0,0.42), rgba(0,0,0,0.62)),
+        url('vehicles-hero.jpg') center/cover no-repeat;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .hero-content {
+      max-width: 860px;
+      padding: 72px 0 56px;
+    }
+
+    .eyebrow {
+      display: inline-block;
+      padding: 8px 14px;
+      border: 1px solid rgba(212,160,23,0.45);
+      background: var(--gold-soft);
+      color: #f3d98e;
+      border-radius: 999px;
+      font-size: 0.86rem;
+      margin-bottom: 18px;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(2rem, 4.2vw, 3.4rem);
+      line-height: 1.08;
+      letter-spacing: -0.04em;
+    }
+
+    .hero p {
+      color: #eee5d5;
+      font-size: 1.04rem;
+      max-width: 760px;
+      margin: 16px 0 0;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 24px;
+    }
+
+    .jump-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 22px;
+    }
+
+    .jump-links a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 10px 14px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,0.18);
+      background: rgba(255,255,255,0.06);
+      color: var(--text);
+      font-size: 0.92rem;
+    }
+
+    .section-header.narrow {
+      max-width: 900px;
+    }
+
+    .compare-table-wrap {
+      overflow-x: auto;
+      border: 1px solid var(--border);
+      border-radius: 24px;
+      background: var(--panel);
+    }
+
+    .compare-table {
+      width: 100%;
+      border-collapse: collapse;
+      min-width: 860px;
+    }
+
+    .compare-table th,
+    .compare-table td {
+      padding: 18px 18px;
+      text-align: left;
+      vertical-align: top;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .compare-table th {
+      color: #fff;
+      font-size: 0.95rem;
+      background: rgba(255,255,255,0.02);
+    }
+
+    .compare-table td {
+      color: var(--muted);
+      font-size: 0.96rem;
+    }
+
+    .compare-table tr:last-child td {
+      border-bottom: none;
+    }
+
+    .vehicle-section {
+      padding: 84px 0;
+      border-top: 1px solid rgba(255,255,255,0.06);
+    }
+
+    .vehicle-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 1fr;
+      gap: 36px;
+      align-items: start;
+    }
+
+    .vehicle-main-image img {
+      width: 100%;
+      height: 460px;
+      object-fit: cover;
+      border-radius: 28px;
+      border: 1px solid var(--border);
+      background: #151515;
+    }
+
+    .vehicle-meta-card {
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: 28px;
+      padding: 28px;
+    }
+
+    .vehicle-meta-card h2 {
+      margin: 0 0 12px;
+      font-size: clamp(1.8rem, 3vw, 2.6rem);
+      line-height: 1.08;
+      letter-spacing: -0.03em;
+    }
+
+    .vehicle-subtitle {
+      color: #f0d99a;
+      font-size: 0.95rem;
+      margin-bottom: 16px;
+    }
+
+    .vehicle-meta-card p {
+      color: var(--muted);
+      margin: 0 0 18px;
+    }
+
+    .vehicle-facts {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 14px;
+      margin: 20px 0 22px;
+    }
+
+    .fact-box {
+      background: rgba(255,255,255,0.03);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 14px;
+    }
+
+    .fact-label {
+      font-size: 0.82rem;
+      color: #cdbb95;
+      margin-bottom: 6px;
+    }
+
+    .fact-value {
+      color: #fff;
+      font-weight: 700;
+      line-height: 1.35;
+    }
+
+    .vehicle-highlights {
+      margin: 0;
+      padding-left: 18px;
+      color: var(--muted);
+    }
+
+    .vehicle-highlights li {
+      margin-bottom: 8px;
+    }
+
+    .vehicle-gallery {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+      margin-top: 24px;
+    }
+
+    .vehicle-gallery-item {
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: 22px;
+      overflow: hidden;
+    }
+
+    .vehicle-gallery-item img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+      background: #151515;
+    }
+
+    .vehicle-gallery-caption {
+      padding: 14px 16px 16px;
+    }
+
+    .vehicle-gallery-caption strong {
+      display: block;
+      margin-bottom: 6px;
+      color: #fff;
+      font-size: 0.98rem;
+    }
+
+    .vehicle-gallery-caption p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.92rem;
+      line-height: 1.5;
+    }
+
+    .vehicle-anchor-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 18px;
+    }
+
+    .vehicle-anchor-links a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 10px 14px;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      background: rgba(255,255,255,0.03);
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
+    .notice-box {
+      margin-top: 20px;
+      padding: 16px 18px;
+      border-radius: 18px;
+      background: rgba(212,160,23,0.08);
+      border: 1px solid rgba(212,160,23,0.18);
+      color: #eadfcb;
+      font-size: 0.94rem;
+    }
+
+    .faq-item {
+      padding: 18px 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .faq-item strong {
+      display: block;
+      margin-bottom: 8px;
+    }
+
+    .faq-item p {
+      margin: 0;
+      color: var(--muted);
+    }
+
+    @media (max-width: 980px) {
+      .vehicle-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .vehicle-main-image img {
+        height: 320px;
+      }
+
+      .vehicle-gallery {
+        grid-template-columns: 1fr;
+      }
+
+      .vehicle-gallery-item img {
+        height: 240px;
+      }
+
+      .vehicle-facts {
+        grid-template-columns: 1fr;
+      }
+
+      .hero {
+        min-height: auto;
+      }
+
+      .hero-content {
+        padding: 72px 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div id="site-header"></div>
+
+  <section class="hero">
+    <div class="container hero-content">
+      <div class="eyebrow">Vehicle guide</div>
+      <h1>Vehicles for Every Group Size in Japan</h1>
+      <p>
+        Explore the private transfer vehicles used by Pick-U Japan for airport transfers, city rides, and charter services. Compare passenger capacity, luggage space, and the best vehicle type for your trip.
+      </p>
+
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="#quick-compare">Compare Vehicles</a>
+        <a class="btn btn-secondary" href="index.html">Back to Homepage</a>
+      </div>
+
+      <div class="jump-links">
+        <a href="#alphard">Alphard / Vellfire</a>
+        <a href="#hiace-9">Hiace 9-Seater</a>
+        <a href="#hiace-14">Hiace 14-Seater</a>
+        <a href="#coaster-28">Coaster</a>
+        <a href="#bus-19">15–19 Seater Bus</a>
+        <a href="#bus-45">45–48 Seater Bus</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="quick-compare" style="background:#181513;">
+    <div class="container">
+      <div class="section-header narrow">
+        <h2>Quick Vehicle Comparison</h2>
+        <p>
+          Use this overview to quickly compare group size, luggage capacity, and the type of trip each vehicle is best suited for.
+        </p>
+      </div>
+
+      <div class="compare-table-wrap">
+        <table class="compare-table">
+          <thead>
+            <tr>
+              <th>Vehicle</th>
+              <th>Best for</th>
+              <th>Passengers</th>
+              <th>Luggage guide</th>
+              <th>Recommended use</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Alphard / Vellfire</strong></td>
+              <td>Couples, families, premium transfers</td>
+              <td>1–5</td>
+              <td>About 2–4 large suitcases</td>
+              <td>Airport transfer, hotel transfer, private city rides</td>
+            </tr>
+            <tr>
+              <td><strong>Hiace Grand Cabin</strong></td>
+              <td>Families, small groups, more luggage</td>
+              <td>6–9</td>
+              <td>About 6–9 medium or large suitcases</td>
+              <td>Airport transfer, intercity transfer, group transfer</td>
+            </tr>
+            <tr>
+              <td><strong>Hiace 14-Seater</strong></td>
+              <td>Larger groups</td>
+              <td>10–13</td>
+              <td>Depends on seat use and suitcase size</td>
+              <td>Group transfer, event transfer, family travel</td>
+            </tr>
+            <tr>
+              <td><strong>Coaster</strong></td>
+              <td>Tour groups, sightseeing charters</td>
+              <td>18–28</td>
+              <td>Custom arrangement</td>
+              <td>Day tours, company groups, sightseeing charter</td>
+            </tr>
+            <tr>
+              <td><strong>15–19 Seater Bus</strong></td>
+              <td>Mid-size group charter</td>
+              <td>15–19</td>
+              <td>Depends on route and layout</td>
+              <td>Intercity transfer, event transfer, charter trips</td>
+            </tr>
+            <tr>
+              <td><strong>45–48 Seater Bus</strong></td>
+              <td>Large groups</td>
+              <td>40+</td>
+              <td>Please confirm in advance</td>
+              <td>Large tours, school groups, staff transport</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="notice-box">
+        Exact luggage capacity depends on suitcase size, stroller use, sports equipment, and route requirements. If you are unsure which vehicle is best, contact us before booking.
+      </div>
+    </div>
+  </section>
+
+  <section class="vehicle-section" id="alphard" style="background:#111111;">
+    <div class="container">
+      <div class="vehicle-grid">
+        <div class="vehicle-main-image">
+          <img src="vehicle-alphard-main.jpg" alt="Toyota Alphard or Vellfire for private transfers in Japan">
+        </div>
+
+        <div class="vehicle-meta-card">
+          <div class="vehicle-subtitle">Premium small-group vehicle</div>
+          <h2>Alphard / Vellfire</h2>
+          <p>
+            The Alphard or Vellfire is ideal for couples, small families, and travelers who want a more premium private transfer experience in Japan. It is especially popular for airport pickups, hotel transfers, and comfortable city rides.
+          </p>
+
+          <div class="vehicle-facts">
+            <div class="fact-box">
+              <div class="fact-label">Best for</div>
+              <div class="fact-value">1–5 passengers</div>
+            </div>
+            <div class="fact-box">
+              <div class="fact-label">Luggage guide</div>
+              <div class="fact-value">About 2–4 large suitcases</div>
+            </div>
+            <div class="fact-box">
+              <div class="fact-label">Popular use</div>
+              <div class="fact-value">Airport transfer, city transfer, VIP travel</div>
+            </div>
+            <div class="fact-box">
+              <div class="fact-label">Comfort level</div>
+              <div class="fact-value">Premium and spacious</div>
+            </div>
+          </div>
+
+          <ul class="vehicle-highlights">
+            <li>Ideal for travelers who want more comfort than a standard taxi</li>
+            <li>Popular for Narita, Haneda, and city hotel pickups</li>
+            <li>Suitable for family travel with standard luggage</li>
+            <li>A comfortable choice for day trips and business use</li>
+          </ul>
+
+          <div class="vehicle-anchor-links">
+            <a href="airport-transfers.html">Good for Airport Transfers</a>
+            <a href="private-transfers.html">Good for Private Transfers</a>
+            <a href="charters.html">Good for Charters</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="vehicle-gallery">
+        <div class="vehicle-gallery-item">
+          <img src="vehicle-alphard-interior.jpg" alt="Alphard interior seating">
+          <div class="vehicle-gallery-caption">
+            <strong>Interior Seating</strong>
+            <p>Comfortable seating layout for couples, families, and premium transfer service.</p>
+          </div>
+        </div>
+
+        <div class="vehicle-gallery-item">
+          <img src="vehicle-alphard-luggage.jpg" alt="Alphard luggage space">
+          <div class="vehicle-gallery-caption">
+            <strong>Luggage Space</strong>
+            <p>Recommended for travelers with standard suitcases. Exact capacity depends on bag size.</p>
+          </div>
+        </div>
+
+        <div class="vehicle-gallery-item">
+          <img src="vehicle-alphard-access.jpg" alt="Alphard passenger access">
+          <div class="vehicle-gallery-caption">
+            <strong>Easy Access</strong>
+            <p>Comfortable entry and exit for airport pickup, hotel drop-off, and city rides.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="vehicle-section" id="hiace-9" style="background:#171412;">
+    <div class="container">
+      <div class="vehicle-grid">
+        <div class="vehicle-main-image">
+          <img src="vehicle-hiace-9-main.jpg" alt="Hiace Grand Cabin 9-seater for private transfer in Japan">
+        </div>
+
+        <div class="vehicle-meta-card">
+          <div class="vehicle-subtitle">Popular family and small-group vehicle</div>
+          <h2>Hiace Grand Cabin (9-Seater)</h2>
+          <p>
+            The Hiace Grand Cabin is one of the most practical vehicles for family travel, airport transfers with more luggage, and small groups visiting destinations across Japan. It offers a balance of passenger space and luggage capacity.
+          </p>
+
+          <div class="vehicle-facts">
+            <div class="fact-box">
+              <div class="fact-label">Best for</div>
+              <div class="fact-value">6–9 passengers</div>
+            </div>
+            <div class="fact-box">
+              <div class="fact-label">Luggage guide</div>
+              <div class="fact-value">About 6–9 suitcases</div>
+            </div>
+            <div class="fact-box">
+              <div class="fact-label">Popular use</div>
+              <div class="fact-value">Airport transfer, private transfer, family travel</div>
+            </div>
+            <div class="fact-box">
+              <div class="fact-label">Comfort level</div>
+              <div class="fact-value">Spacious and practical</div>
+            </div>
+          </div>
+
+          <ul class="vehicle-highlights">
+            <li>Excellent for airport arrivals with multiple passengers and luggage</li>
+            <li>Popular for Tokyo, Yokohama, Hakone, and Mt. Fuji area transfers</li>
+            <li>Ideal for families and small groups traveling together</li>
+            <li>A strong choice for door-to-door intercity transportation</li>
+          </ul>
+
+          <div class="vehicle-anchor-links">
+            <a href="airport-transfers.html">Airport Transfers</a>
+            <a href="private-transfers.html">Private Transfers</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="vehicle-gallery">
+        <div class="vehicle-gallery-item">
+          <img src="vehicle-hiace-9-interior.jpg" alt="Hiace 9-seater interior">
+          <div class="vehicle-gallery-caption">
+            <strong>Interior Layout</strong>
+            <p>Spacious layout for groups traveling with family members or additional luggage.</p>
+          </div>
+        </div>
+
+        <div class="vehicle-gallery-item">
+          <img src="vehicle-hiace-9-luggage.jpg" alt="Hiace 9-seater luggage space">
+          <div class="vehicle-gallery-caption">
+            <strong>Luggage Arrangement</strong>
+            <p>Suitable for airport transfers where luggage space is an important part of the booking decision.</p>
+          </div>
+        </div>
+
+        <div class="vehicle-gallery-item">
+          <img src="vehicle-hiace-9-side.jpg" alt="Hiace side access">
+          <div class="vehicle-gallery-caption">
+            <strong>Side Entry Access</strong>
+            <p>Convenient access for group pickup, hotel transfer, and family travel.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="vehicle-section" id="hiace-14" style="background:#111111;">
+    <div class="container">
+      <div class="vehicle-grid">
+        <div class="vehicle-main-image">
+          <img src="vehicle-hiace-14-main.jpg" alt="Hiace 14-seater private transfer vehicle">
+        </div>
+
+        <div class="vehicle-meta-card">
+          <div class="vehicle-subtitle">Larger group transfer option</div>
+          <h2>Hiace 14-Seater</h2>
+          <p>
+            The 14-seater Hiace is designed for larger groups that want to travel together in one vehicle. It is a useful option for airport transfers, event transportation, and private group movements between hotels and destinations.
+          </p>
+
+          <div class="vehicle-facts">
+            <div class="fact-box">
+              <div class="fact-label">Best for</div>
+              <div class="fact-value">10–13 passengers</div>
+            </div>
+            <div class="fact-box">
+              <div class="fact-label">Luggage guide</div>
+              <div class="fact-value">Depends on seat use and bag size</div>
+            </div>
+            <div class="fact-box">
+              <div class="fact-label">Popular use</div>
+              <div class="fact-value">Group airport transfer, event transfer</div>
+            </div>
+            <div class="fact-box">
+              <div class="fact-label">Comfort level</div>
+              <div class="fact-value">Group-friendly and practical</div>
+            </div>
+          </div>
+
+          <ul class="vehicle-highlights">
+            <li>Useful when a standard van is too small for the group</li>
+            <li>Recommended for larger family groups and group pickup coordination</li>
+            <li>Can be used for airport transfer or point-to-point private transfer</li>
+            <li>Please confirm luggage expectations in advance</li>
+          </ul>
+
+          <div class="notice-box">
+            For 14-seater bookings, luggage capacity may vary depending on passenger count and suitcase size. Contact us if you want us to recommend the best option.
+          </div>
+        </div>
+      </div>
+
+      <div class="vehicle-gallery">
+        <div class="vehicle-gallery-item">
+          <img src="vehicle-hiace-14-interior.jpg" alt="Hiace 14-seater interior">
+          <div class="vehicle-gallery-caption">
+            <strong>Group Seating</strong>
+            <p>Suitable for larger groups traveling together in one vehicle.</p>
+          </div>
+        </div>
+
+        <div class="vehicle-gallery-item">
+          <img src="vehicle-hiace-14-luggage.jpg" alt="Hiace 14-seater luggage area">
+          <div class="vehicle-gallery-caption">
+            <strong>Luggage Planning</strong>
+            <p>Exact capacity depends on how many passengers and large suitcases are included.</p>
+          </div>
+        </div>
+
+        <div class="vehicle-gallery-item">
+          <img src="vehicle-hiace-14-door.jpg" alt="Hiace 14-seater door access">
+          <div class="vehicle-gallery-caption">
+            <strong>Pickup Access</strong>
+            <p>Convenient for coordinated airport arrival and group hotel transfers.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="vehicle-section" id="coaster-28" style="background:#171412;">
+    <div class="container">
+      <div class="vehicle-grid">
+        <div class="vehicle-main-image">
+          <img src="vehicle-coaster-main.jpg" alt="Toyota Coaster for private charter in Japan">
+        </div>
+
+        <div class="vehicle-meta-card">
+          <div class="vehicle-subtitle">Charter and sightseeing group vehicle</div>
+          <h2>Coaster</h2>
+          <p>
+            The Coaster is a strong option for private sightseeing charters, day tours, and group transportation in Japan. It is suitable for groups that want to stay together while visiting multiple destinations in one itinerary.
+          </p>
+
+          <div class="vehicle-facts">
+            <div class="fact-box">
+              <div class="fact-label">Best for</div>
+              <div class="fact-value">18–28 passengers</div>
+            </div>
+            <div class="fact-box">
+              <div class="fact-label">Luggage guide</div>
+              <div class="fact-value">Please confirm in advance</div>
+            </div>
+            <div class="fact-box">
+              <div class="fact-label">Popular use</div>
+              <div class="fact-value">Day tours, charters, sightseeing groups</div>
+            </div>
+            <div class="fact-box">
+              <div class="fact-label">Comfort level</div>
+              <div class="fact-value">Efficient for larger groups</div>
+            </div>
+          </div>
+
+          <ul class="vehicle-highlights">
+            <li>Ideal for private day tours and sightseeing charters</li>
+            <li>Useful for school groups, company groups, and family groups</li>
+            <li>Supports flexible travel across multiple attractions in one day</li>
+            <li>A practical option for popular destinations and custom itineraries</li>
+          </ul>
+
+          <div class="vehicle-anchor-links">
+            <a href="charters.html">Best for Charters</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="vehicle-gallery">
+        <div class="vehicle-gallery-item">
+          <img src="vehicle-coaster-interior.jpg" alt="Coaster interior">
+          <div class="vehicle-gallery-caption">
+            <strong>Interior Seating</strong>
+            <p>Designed for private group tours and larger sightseeing itineraries.</p>
+          </div>
+        </div>
+
+        <div class="vehicle-gallery-item">
+          <img src="vehicle-coaster-luggage.jpg" alt="Coaster luggage">
+          <div class="vehicle-gallery-caption">
+            <strong>Luggage Setup</strong>
+            <p>Please confirm route details and luggage needs before booking this vehicle type.</p>
+          </div>
+        </div>
+
+        <div class="vehicle-gallery-item">
+          <img src="vehicle-coaster-entry.jpg" alt="Coaster entry">
+          <div class="vehicle-gallery-caption">
+            <strong>Group Entry</strong>
+            <p>A practical boarding option for day tours, group events, and sightseeing service.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="vehicle-section" id="bus-19" style="background:#111111;">
+    <div class="container">
+      <div class="vehicle-grid">
+        <div class="vehicle-main-image">
+          <img src="vehicle-bus-19-main.jpg" alt="15 to 19 seater bus for private transfer">
+        </div>
+
+        <div class="vehicle-meta-card">
+          <div class="vehicle-subtitle">Mid-size group transportation</div>
+          <h2>15–19 Seater Bus</h2>
+          <p>
+            This bus type is a practical choice for mid-size groups that need comfortable transportation for events, private transfers, and custom day trips. It can work well for group hotel pickups, regional movement, and sightseeing.
+          </p>
+
+          <div class="vehicle-facts">
+            <div class="fact-box">
+              <div class="fact-label">Best for</div>
+              <div class="fact-value">15–19 passengers</div>
+            </div>
+            <div class="fact-box">
+              <div class="fact-label">Luggage guide</div>
+              <div class="fact-value">Please confirm in advance</div>
+            </div>
+            <div class="fact-box">
+              <div class="fact-label">Popular use</div>
+              <div class="fact-value">Group transfer, event transfer, day charter</div>
+            </div>
+            <div class="fact-box">
+              <div class="fact-label">Comfort level</div>
+              <div class="fact-value">Efficient for mid-size groups</div>
+            </div>
+          </div>
+
+          <ul class="vehicle-highlights">
+            <li>Suitable for private groups that need more capacity than a van</li>
+            <li>Can be used for intercity travel, event transport, and sightseeing</li>
+            <li>Useful when a charter needs flexibility with group movement</li>
+            <li>Recommended for groups that want to travel together in one vehicle</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="vehicle-gallery">
+        <div class="vehicle-gallery-item">
+          <img src="vehicle-bus-19-interior.jpg" alt="15 to 19 seater bus interior">
+          <div class="vehicle-gallery-caption">
+            <strong>Interior Layout</strong>
+            <p>Comfortable group seating for charter use and transfer service.</p>
+          </div>
+        </div>
+
+        <div class="vehicle-gallery-item">
+          <img src="vehicle-bus-19-luggage.jpg" alt="15 to 19 seater bus luggage">
+          <div class="vehicle-gallery-caption">
+            <strong>Luggage Considerations</strong>
+            <p>Luggage capacity varies depending on the route and the exact vehicle arrangement.</p>
+          </div>
+        </div>
+
+        <div class="vehicle-gallery-item">
+          <img src="vehicle-bus-19-entry.jpg" alt="15 to 19 seater bus entry">
+          <div class="vehicle-gallery-caption">
+            <strong>Group Boarding</strong>
+            <p>Convenient for hotel pickup, event movement, and regional transfers.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="vehicle-section" id="bus-45" style="background:#171412;">
+    <div class="container">
+      <div class="vehicle-grid">
+        <div class="vehicle-main-image">
+          <img src="vehicle-bus-45-main.jpg" alt="45 to 48 seater charter bus in Japan">
+        </div>
+
+        <div class="vehicle-meta-card">
+          <div class="vehicle-subtitle">Large group charter vehicle</div>
+          <h2>45–48 Seater Bus</h2>
+          <p>
+            The 45–48 seater bus is designed for large groups that need efficient transportation in Japan. It is suitable for school groups, large tours, company events, and other high-capacity group movements.
+          </p>
+
+          <div class="vehicle-facts">
+            <div class="fact-box">
+              <div class="fact-label">Best for</div>
+              <div class="fact-value">40+ passengers</div>
+            </div>
+            <div class="fact-box">
+              <div class="fact-label">Luggage guide</div>
+              <div class="fact-value">Please confirm in advance</div>
+            </div>
+            <div class="fact-box">
+              <div class="fact-label">Popular use</div>
+              <div class="fact-value">Large tours, events, staff transport</div>
+            </div>
+            <div class="fact-box">
+              <div class="fact-label">Comfort level</div>
+              <div class="fact-value">Large-capacity group transport</div>
+            </div>
+          </div>
+
+          <ul class="vehicle-highlights">
+            <li>Ideal for large group movement across Japan</li>
+            <li>Useful for corporate events, tours, and organized travel groups</li>
+            <li>Can support long-distance or regional charter arrangements</li>
+            <li>Best booked with route and luggage details confirmed in advance</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="vehicle-gallery">
+        <div class="vehicle-gallery-item">
+          <img src="vehicle-bus-45-interior.jpg" alt="45 seater bus interior">
+          <div class="vehicle-gallery-caption">
+            <strong>Large Group Seating</strong>
+            <p>High-capacity interior designed for organized tours and large group transportation.</p>
+          </div>
+        </div>
+
+        <div class="vehicle-gallery-item">
+          <img src="vehicle-bus-45-luggage.jpg" alt="45 seater bus luggage">
+          <div class="vehicle-gallery-caption">
+            <strong>Luggage Handling</strong>
+            <p>Please confirm luggage volume and group size in advance for the best arrangement.</p>
+          </div>
+        </div>
+
+        <div class="vehicle-gallery-item">
+          <img src="vehicle-bus-45-entry.jpg" alt="45 seater bus entry">
+          <div class="vehicle-gallery-caption">
+            <strong>Tour Boarding</strong>
+            <p>Suitable for group pickup, event movement, and large itinerary planning.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" style="background:#23201d;">
+    <div class="container">
+      <div class="section-header narrow">
+        <h2>Frequently Asked Questions</h2>
+        <p>
+          Quick answers to help you choose the right vehicle before booking your transfer or charter.
+        </p>
+      </div>
+
+      <div class="panel-box">
+        <div class="faq-item">
+          <strong>How do I know which vehicle is right for my group?</strong>
+          <p>
+            The best vehicle depends on passenger count, luggage size, route type, and whether your trip is an airport transfer, private transfer, or full-day charter.
+          </p>
+        </div>
+
+        <div class="faq-item">
+          <strong>Can luggage capacity change depending on the group?</strong>
+          <p>
+            Yes. Luggage capacity may vary depending on stroller use, sports equipment, oversized bags, and how many seats are in use.
+          </p>
+        </div>
+
+        <div class="faq-item">
+          <strong>Can I request help choosing a vehicle before booking?</strong>
+          <p>
+            Yes. If you are unsure, contact us with your passenger count, suitcase count, and route, and we can recommend the most suitable option.
+          </p>
+        </div>
+
+        <div class="faq-item">
+          <strong>Are these vehicles available for both transfers and charters?</strong>
+          <p>
+            Some vehicle types are more common for airport transfers, while others are better suited for sightseeing charters and larger group travel.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div id="site-footer"></div>
+  <script src="includes.js"></script>
+</body>
+</html>
