@@ -3,8 +3,16 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Pick-U Japan | Private Transfers in Japan</title>
-  <meta name="description" content="Private airport transfers, city rides, and charters in Japan with comfortable vehicles and professional drivers." />
+  <title>Pick-U | Private Transfers in Japan</title>
+  <meta name="description" content="Private airport transfers, city rides, and charters in Japan with professional drivers, flight tracking, comfortable vehicles, and easy online booking." />
+  <meta property="og:title" content="Pick-U | Private Transfers in Japan" />
+  <meta property="og:description" content="Private airport transfers, city rides, and charters in Japan with professional drivers, flight tracking, comfortable vehicles, and easy online booking." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="airport-transfers.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Pick-U | Private Transfers in Japan" />
+  <meta name="twitter:description" content="Private airport transfers, city rides, and charters in Japan with professional drivers, flight tracking, comfortable vehicles, and easy online booking." />
+
   <style>
     :root {
       --bg: #111111;
@@ -410,6 +418,16 @@
       gap:24px;
     }
 
+    .contact-links a {
+      display: block;
+      margin-bottom: 6px;
+      color: var(--muted);
+    }
+
+    .contact-links a:hover {
+      color: #fff;
+    }
+
     @media (max-width: 1100px) {
       .reviews-page {
         grid-template-columns: repeat(2, 1fr);
@@ -461,13 +479,14 @@
     <div class="container nav">
       <a class="brand" href="#home">
         <img class="brand-logo" src="logo.png" alt="">
-        <span class="brand-wordmark">Pick-<span>U</span> Japan</span>
+        <span class="brand-wordmark">Pick-<span>U</span></span>
       </a>
       <div class="nav-right">
         <nav class="nav-links">
           <a href="#services">Services</a>
           <a href="#popular">Popular Routes</a>
           <a href="#vehicles">Vehicles</a>
+          <a href="#why-choose">Why Choose Us</a>
           <a href="#faq">FAQ</a>
           <a href="#contact">Contact</a>
         </nav>
@@ -585,7 +604,7 @@
     </div>
   </section>
 
-  <section class="section" id="about" style="background:#f3efe9; color:#141414;">
+  <section class="section" id="why-choose" style="background:#f3efe9; color:#141414;">
     <div class="container">
       <div class="grid-2" style="align-items:center; gap:40px;">
         <div style="display:grid; gap:18px;">
@@ -593,10 +612,10 @@
           <img src="about-bottom.jpg" alt="Private transfer vehicle welcome" style="width:100%; height:300px; object-fit:cover; border-radius:28px;">
         </div>
         <div>
-          <div class="eyebrow" style="color:#8b6a18; border-color:rgba(139,106,24,.28); background:rgba(212,160,23,.10);">About Pick-U Japan</div>
-          <h2 style="margin:0; font-size:clamp(2rem, 3.2vw, 3.2rem); line-height:1.12; letter-spacing:-0.03em; color:#111; text-align:left;">Safe, smooth, and easy private transfers in Japan</h2>
+          <div class="eyebrow" style="color:#8b6a18; border-color:rgba(139,106,24,.28); background:rgba(212,160,23,.10);">Why Choose Pick-U</div>
+          <h2 style="margin:0; font-size:clamp(2rem, 3.2vw, 3.2rem); line-height:1.12; letter-spacing:-0.03em; color:#111; text-align:left;">Why travelers choose Pick-U</h2>
           <p style="color:#4f4b45; margin-top:18px; font-size:1.02rem; text-align:left;">
-            Pick-U Japan provides private airport transfers, city rides, and charter services for travelers who want a more reliable and comfortable way to move around Japan.
+            Private airport transfers should feel simple, clear, and stress-free. We focus on the things travelers care about most: timing, communication, comfort, and reliable support.
           </p>
           <div class="grid-2" style="margin-top:28px; gap:18px;">
             <div class="panel-box" style="background:#fff; border-color:rgba(0,0,0,.08);">
@@ -605,15 +624,15 @@
             </div>
             <div class="panel-box" style="background:#fff; border-color:rgba(0,0,0,.08);">
               <h3 style="color:#111; margin-bottom:8px;">Easy Communication</h3>
-              <p style="color:#5d5953; margin:0;">Our team can support you before and during the trip, and drivers can contact you directly when needed.</p>
+              <p style="color:#5d5953; margin:0;">Clear support before and during the trip, with direct contact when needed for smooth coordination.</p>
             </div>
             <div class="panel-box" style="background:#fff; border-color:rgba(0,0,0,.08);">
               <h3 style="color:#111; margin-bottom:8px;">Comfortable Vehicles</h3>
               <p style="color:#5d5953; margin:0;">Choose from Alphard, Hiace, and larger vehicles depending on your group size and luggage needs.</p>
             </div>
             <div class="panel-box" style="background:#fff; border-color:rgba(0,0,0,.08);">
-              <h3 style="color:#111; margin-bottom:8px;">Support You Can Reach</h3>
-              <p style="color:#5d5953; margin:0;">Questions before pickup, during the ride, or for route changes can be handled with fast customer support.</p>
+              <h3 style="color:#111; margin-bottom:8px;">Arrival Support</h3>
+              <p style="color:#5d5953; margin:0;">Pickup guidance, route coordination, and timely support help make arrival in Japan easier.</p>
             </div>
           </div>
         </div>
@@ -663,7 +682,7 @@
     <div class="container">
       <div class="section-header">
         <h2 style="color:#111; font-family: Georgia, 'Times New Roman', serif; font-size: clamp(2rem, 3.1vw, 3rem);">What Our Customers Say</h2>
-        <p style="color:#666; max-width:760px;">Selected reviews from travelers who booked airport transfers and private transportation with Pick-U Japan.</p>
+        <p style="color:#666; max-width:760px;">Selected reviews from travelers who booked airport transfers and private transportation with Pick-U.</p>
       </div>
       <div class="reviews-viewport">
         <div id="reviews-track"></div>
@@ -702,16 +721,16 @@
   <footer class="footer" id="contact">
     <div class="container footer-grid">
       <div>
-        <strong style="color:#fff;">Pick-U Japan</strong><br>
+        <strong style="color:#fff;">Pick-U</strong><br>
         Operated by Arinashi Co. Ltd.<br>
         Registration No: T4010401148689<br><br>
         〒106-0046, 3-1-6 Motoazabu, Minato-ku, Tokyo, Japan
       </div>
-      <div>
+      <div class="contact-links">
         <strong style="color:#fff;">Contact</strong><br>
-        WhatsApp: +81-80-9461-5400<br>
-        Email: info@arinasi.com<br>
-        LINE: @pick-u
+        <a href="mailto:info@arinasi.com">Email</a>
+        <a href="https://line.me/R/ti/p/@pick-u">LINE</a>
+        <a href="https://wa.me/818094615400">WhatsApp chat</a>
       </div>
       <div>
         <strong style="color:#fff;">Languages</strong><br>
@@ -721,6 +740,67 @@
       </div>
     </div>
   </footer>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Pick-U",
+    "legalName": "Arinashi Co. Ltd.",
+    "email": "info@arinasi.com",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "3-1-6 Motoazabu, Minato-ku",
+      "addressLocality": "Tokyo",
+      "postalCode": "106-0046",
+      "addressCountry": "JP"
+    },
+    "sameAs": [
+      "https://www.pick-u-japan.com/"
+    ]
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "How do I meet the driver at the airport?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Your driver will meet you at the designated arrival area with pickup instructions provided in advance."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What if my flight is delayed?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Flight arrival times can be monitored and pickup timing adjusted accordingly."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I request a custom route or stop?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. For charters and selected transfer services, custom requests can be arranged in advance."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How do I know which vehicle to choose?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Vehicle choice depends on passenger count, luggage size, and route. We can recommend the best fit."
+        }
+      }
+    ]
+  }
+  </script>
 
   <script>
     const reviews = [
