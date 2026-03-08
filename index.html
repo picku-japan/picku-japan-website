@@ -89,6 +89,12 @@
       box-shadow: 0 20px 50px rgba(0,0,0,0.24);
     }
 
+    .card {
+      display: block;
+      text-decoration: none;
+      color: inherit;
+    }
+
     .card-image {
       position: relative;
       height: 250px;
@@ -319,20 +325,24 @@
       </div>
 
       <div class="cards">
-        <article class="card">
+        <a href="private-transfers.html" class="card">
           <div class="card-image">
-            <img src="airport-transfers.png" alt="Airport Transfers" />
-            <div class="card-title-overlay">Airport Transfers</div>
+            <img src="private-transfers-card.jpg" alt="Private Transfers">
+            <div class="card-title-overlay">Private Transfers</div>
           </div>
+
           <div class="card-body">
             <p>
-              Reliable airport pickup and drop-off service between Narita, Haneda, Kansai,
-              hotels, and major cities.
+              Comfortable one-way transfers between cities, hotels, cruise ports,
+              ski resorts, and popular destinations.
             </p>
-            <a class="btn btn-secondary" href="airport-transfers.html">View Airport Transfers</a>
-          </div>
-        </article>
 
+            <span class="btn btn-secondary">
+              View Private Transfers
+            </span>
+          </div>
+        </a>
+  
         <article class="card">
           <div class="card-image">
             <img src="private-transfers-card.jpg" alt="Private Transfers" />
