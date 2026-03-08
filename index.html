@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+  <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
@@ -84,6 +84,38 @@
     .panel-box:hover {
       transform: translateY(-4px);
       box-shadow: 0 14px 30px rgba(0,0,0,0.16);
+    }
+
+    .route-card {
+      text-decoration: none;
+      color: inherit;
+      display: block;
+    }
+
+    .route-card .panel-box {
+      transition: transform 0.18s ease, box-shadow 0.18s ease;
+    }
+
+    .route-card:hover .panel-box {
+      transform: translateY(-4px);
+      box-shadow: 0 16px 36px rgba(0,0,0,0.25);
+    }
+
+    .route-list {
+      list-style: none;
+      padding: 0;
+      margin: 12px 0 18px;
+    }
+
+    .route-list li {
+      color: var(--muted);
+      margin-bottom: 6px;
+    }
+
+    .route-link {
+      font-weight: 700;
+      margin-top: 8px;
+      color: var(--gold);
     }
     
     .cards {
@@ -399,44 +431,88 @@
   </section>
 
   <section class="section" id="popular" style="background:#221d19;">
-    <div class="container">
-      <div class="section-header">
-        <h2>Popular Transfer Routes</h2>
-        <p>Some of the routes most often booked by travelers in Japan.</p>
-      </div>
-      <div class="grid-3">
-        <a href="https://widgets.bokun.io/online-sales/11dad9b8-4629-4114-ab40-b6ce758d47ae/experience/1046669"
-           class="panel-box"
-           target="_blank">
+  <div class="container">
 
-          <h3>Narita Airport</h3>
+    <div class="section-header">
+      <h2>Popular Airport Transfer Routes</h2>
+      <p>Book private airport transfers from Japan’s major international airports.</p>
+    </div>
 
-          <p>
-            Narita Airport → Tokyo City<br>
-            Narita Airport → Yokohama<br>
-            Narita Airport → Hakone
-          </p>
+    <div class="grid-3">
 
-</a>
+      <!-- Narita -->
+      <a href="https://widgets.bokun.io/online-sales/11dad9b8-4629-4114-ab40-b6ce758d47ae/experience/1046669"
+         class="route-card"
+         target="_blank">
+
         <div class="panel-box">
-          <h3>Haneda Airport</h3>
-          <ul>
+
+          <h3>Narita Airport Transfers</h3>
+
+          <ul class="route-list">
+            <li>Narita Airport → Tokyo City</li>
+            <li>Narita Airport → Yokohama</li>
+            <li>Narita Airport → Hakone</li>
+          </ul>
+
+          <div class="route-link">
+            View Narita Airport Transfer →
+          </div>
+
+        </div>
+
+      </a>
+
+      <!-- Haneda -->
+      <a href="https://widgets.bokun.io/online-sales/11dad9b8-4629-4114-ab40-b6ce758d47ae/experience/1065606"
+         class="route-card"
+         target="_blank">
+
+        <div class="panel-box">
+
+          <h3>Haneda Airport Transfers</h3>
+
+          <ul class="route-list">
             <li>Haneda Airport → Tokyo</li>
             <li>Haneda Airport → Yokohama</li>
             <li>Haneda Airport → Hakone</li>
           </ul>
+
+          <div class="route-link">
+            View Haneda Airport Transfer →
+          </div>
+
         </div>
+
+      </a>
+
+      <!-- Kansai -->
+      <a href="https://widgets.bokun.io/online-sales/11dad9b8-4629-4114-ab40-b6ce758d47ae/experience/1067188"
+         class="route-card"
+         target="_blank">
+
         <div class="panel-box">
-          <h3>Kansai Airport</h3>
-          <ul>
+
+          <h3>Kansai Airport Transfers</h3>
+
+          <ul class="route-list">
             <li>Kansai Airport → Kyoto</li>
             <li>Kansai Airport → Osaka</li>
             <li>Kansai Airport → Nara</li>
           </ul>
+
+          <div class="route-link">
+            View Kansai Airport Transfer →
+          </div>
+
         </div>
-      </div>
+
+      </a>
+
     </div>
-  </section>
+
+  </div>
+</section>
 
   <section class="section" id="why-choose" style="background:#f3efe9; color:#141414;">
     <div class="container">
