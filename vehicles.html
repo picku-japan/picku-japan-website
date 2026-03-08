@@ -100,14 +100,20 @@
     }
 
     .jump-nav {
-      width: min(1240px, calc(100% - 48px));
-      margin: 0 auto;
       display: flex;
       gap: 10px;
       overflow-x: auto;
       padding: 14px 0;
     }
 
+    .jump-nav::-webkit-scrollbar {
+      display: none;
+    }
+
+    .jump-nav {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
     .jump-nav a {
       white-space: nowrap;
       padding: 10px 14px;
@@ -501,6 +507,7 @@
   </section>
 
   <div class="jump-nav-wrap">
+  <div class="container">
     <div class="jump-nav">
       <a href="#alphard">Alphard / Vellfire</a>
       <a href="#hiace-9">Hiace 9-Seater</a>
@@ -510,6 +517,7 @@
       <a href="#faq">FAQ</a>
     </div>
   </div>
+</div>
 
   <section class="section section-dark" id="compare">
     <div class="container">
