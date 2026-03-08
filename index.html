@@ -75,6 +75,17 @@
       margin-top: 30px;
     }
 
+    .panel-box {
+      text-decoration: none;
+      color: inherit;
+      display: block;
+    }
+
+    .panel-box:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 14px 30px rgba(0,0,0,0.16);
+    }
+    
     .cards {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
@@ -394,14 +405,19 @@
         <p>Some of the routes most often booked by travelers in Japan.</p>
       </div>
       <div class="grid-3">
-        <div class="panel-box">
+        <a href="https://widgets.bokun.io/online-sales/11dad9b8-4629-4114-ab40-b6ce758d47ae/experience/1046669"
+           class="panel-box"
+           target="_blank">
+
           <h3>Narita Airport</h3>
-          <ul>
-            <li>Narita Airport → Tokyo City</li>
-            <li>Narita Airport → Yokohama</li>
-            <li>Narita Airport → Hakone</li>
-          </ul>
-        </div>
+
+          <p>
+            Narita Airport → Tokyo City<br>
+            Narita Airport → Yokohama<br>
+            Narita Airport → Hakone
+          </p>
+
+</a>
         <div class="panel-box">
           <h3>Haneda Airport</h3>
           <ul>
