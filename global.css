@@ -1,0 +1,260 @@
+:root {
+  --bg: #111111;
+  --panel: #181818;
+  --text: #f7f4ee;
+  --muted: #c7c2b8;
+  --gold: #d4a017;
+  --gold-soft: rgba(212, 160, 23, 0.16);
+  --border: rgba(255,255,255,0.1);
+  --max: 1040px;
+  --radius: 24px;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  padding-top: 74px;
+  font-family: Arial, Helvetica, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+.container {
+  width: min(var(--max), calc(100% - 48px));
+  margin: 0 auto;
+}
+
+/* shared fixed header */
+.topbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background: rgba(10,10,10,0.92);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--border);
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 74px;
+  gap: 24px;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 1.2rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  white-space: nowrap;
+}
+
+.brand-logo {
+  height: 34px;
+  width: auto;
+  object-fit: contain;
+}
+
+.brand-wordmark span {
+  color: var(--gold);
+}
+
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  flex-wrap: wrap;
+}
+
+.nav-links {
+  display: flex;
+  gap: 22px;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+.nav-links a:hover {
+  color: #fff;
+}
+
+.lang-switch {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.lang-switch a {
+  padding: 6px 10px;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  font-size: 0.82rem;
+  color: var(--muted);
+  background: rgba(255,255,255,0.03);
+}
+
+.lang-switch a.active {
+  color: #111;
+  background: var(--gold);
+  border-color: var(--gold);
+  font-weight: 700;
+}
+
+/* shared buttons */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 18px;
+  padding: 14px 22px;
+  font-weight: 700;
+  transition: 0.2s ease;
+  border: 1px solid transparent;
+  font-size: 1rem;
+}
+
+.btn-primary {
+  background: var(--gold);
+  color: #111;
+}
+
+.btn-primary:hover {
+  transform: translateY(-1px);
+}
+
+.btn-secondary {
+  border-color: rgba(255,255,255,0.2);
+  background: rgba(255,255,255,0.06);
+  color: var(--text);
+  backdrop-filter: blur(4px);
+}
+
+/* shared footer */
+.footer {
+  border-top: 1px solid var(--border);
+  padding: 34px 0 48px;
+  color: var(--muted);
+  background: #0b0b0b;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1fr;
+  gap: 24px;
+}
+
+.contact-links a {
+  display: block;
+  margin-top: 8px;
+  color: var(--muted);
+  transition: 0.2s;
+}
+
+.contact-links a:hover {
+  color: #fff;
+  transform: translateX(4px);
+}
+
+/* shared content helpers */
+.section {
+  padding: 84px 0;
+}
+
+.section-header {
+  max-width: 860px;
+  margin: 0 auto 42px;
+  text-align: center;
+}
+
+.section-header h2 {
+  margin: 0;
+  font-size: clamp(1.85rem, 3vw, 2.7rem);
+  line-height: 1.08;
+  letter-spacing: -0.04em;
+}
+
+.section-header p {
+  margin: 16px auto 0;
+  color: var(--muted);
+  max-width: 920px;
+  font-size: 1.03rem;
+}
+
+.grid-2 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+}
+
+.grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.panel-box {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 24px;
+  padding: 24px;
+}
+
+.panel-box h3 {
+  margin: 0 0 10px;
+  font-size: 1.2rem;
+}
+
+.panel-box p,
+.panel-box li {
+  color: var(--muted);
+}
+
+/* responsive shared */
+@media (max-width: 980px) {
+  .grid-2,
+  .grid-3,
+  .footer-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .nav {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 14px 0;
+  }
+
+  .nav-right {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .nav-links {
+    flex-wrap: wrap;
+    gap: 12px 18px;
+  }
+
+  .brand-logo {
+    height: 28px;
+  }
+
+  body {
+    padding-top: 92px;
+  }
+}
