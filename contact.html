@@ -305,75 +305,75 @@
           </p>
 
           <!-- Replace action with your real form endpoint -->
-          <form action="#" method="post">
-            <div class="form-grid">
-              <div class="field">
-                <label for="full-name">Full Name</label>
-                <input type="text" id="full-name" name="full_name" placeholder="Your name" required>
-              </div>
+          <form id="contact-form">
+  <div class="form-grid">
+    <div class="field">
+      <label for="full-name">Full Name</label>
+      <input type="text" id="full-name" name="full_name" placeholder="Your name" required>
+    </div>
 
-              <div class="field">
-                <label for="email">Email Address</label>
-                <input type="email" id="email" name="email" placeholder="you@example.com" required>
-              </div>
+    <div class="field">
+      <label for="email">Email Address</label>
+      <input type="email" id="email" name="email" placeholder="you@example.com" required>
+    </div>
 
-              <div class="field">
-                <label for="inquiry-type">Inquiry Type</label>
-                <select id="inquiry-type" name="inquiry_type" required>
-                  <option value="">Select one</option>
-                  <option>Airport Transfer</option>
-                  <option>Private Transfer</option>
-                  <option>Charter / Day Tour</option>
-                  <option>Vehicle Question</option>
-                  <option>Other</option>
-                </select>
-              </div>
+    <div class="field">
+      <label for="inquiry-type">Inquiry Type</label>
+      <select id="inquiry-type" name="inquiry_type" required>
+        <option value="">Select one</option>
+        <option>Airport Transfer</option>
+        <option>Private Transfer</option>
+        <option>Charter / Day Tour</option>
+        <option>Vehicle Question</option>
+        <option>Other</option>
+      </select>
+    </div>
 
-              <div class="field">
-                <label for="trip-date">Preferred Trip Date</label>
-                <input type="date" id="trip-date" name="trip_date">
-              </div>
+    <div class="field">
+      <label for="trip-date">Preferred Trip Date</label>
+      <input type="date" id="trip-date" name="trip_date">
+    </div>
 
-              <div class="field">
-                <label for="pickup-area">Pickup Area / City</label>
-                <input type="text" id="pickup-area" name="pickup_area" placeholder="Narita Airport, Tokyo, Kyoto, etc.">
-              </div>
+    <div class="field">
+      <label for="pickup-area">Pickup Area / City</label>
+      <input type="text" id="pickup-area" name="pickup_area" placeholder="Narita Airport, Tokyo, Kyoto, etc.">
+    </div>
 
-              <div class="field">
-                <label for="dropoff-area">Drop-off Area / City</label>
-                <input type="text" id="dropoff-area" name="dropoff_area" placeholder="Tokyo hotel, Hakone, Osaka, etc.">
-              </div>
+    <div class="field">
+      <label for="dropoff-area">Drop-off Area / City</label>
+      <input type="text" id="dropoff-area" name="dropoff_area" placeholder="Tokyo hotel, Hakone, Osaka, etc.">
+    </div>
 
-              <div class="field">
-                <label for="passengers">Passengers</label>
-                <input type="number" id="passengers" name="passengers" min="1" placeholder="Number of passengers">
-              </div>
+    <div class="field">
+      <label for="passengers">Passengers</label>
+      <input type="number" id="passengers" name="passengers" min="1" placeholder="Number of passengers">
+    </div>
 
-              <div class="field">
-                <label for="luggage">Luggage</label>
-                <input type="text" id="luggage" name="luggage" placeholder="Example: 4 large suitcases + 2 carry-ons">
-              </div>
+    <div class="field">
+      <label for="luggage">Luggage</label>
+      <input type="text" id="luggage" name="luggage" placeholder="Example: 4 large suitcases + 2 carry-ons">
+    </div>
 
-              <div class="field full">
-                <label for="message">Message</label>
-                <textarea
-                  id="message"
-                  name="message"
-                  placeholder="Please share any extra details here. For example: preferred time, return trip, child seat request, ski or golf bags, or special travel needs."
-                ></textarea>
-                <div class="helper-text">
-                  The more basic trip details you include, the easier it is for us to understand your request.
-                </div>
-              </div>
-            </div>
+    <div class="field full">
+      <label for="message">Message</label>
+      <textarea
+        id="message"
+        name="message"
+        placeholder="Please share any extra details here. For example: preferred time, return trip, child seat request, ski or golf bags, or special travel needs."
+      ></textarea>
+      <div class="helper-text">
+        The more basic trip details you include, the easier it is for us to understand your request.
+      </div>
+    </div>
+  </div>
 
-            <div class="submit-row">
-              <button class="btn btn-primary" type="submit">Send Inquiry</button>
-              <div class="submit-note">
-                You can also contact us directly by email if needed.
-              </div>
-            </div>
-          </form>
+  <div class="submit-row">
+    <button class="btn btn-primary" type="submit" id="submit-btn">Send Inquiry</button>
+    <div class="submit-note" id="form-status">
+      You can also contact us directly by email if needed.
+    </div>
+  </div>
+</form>
         </div>
 
         <div class="info-stack">
@@ -414,5 +414,48 @@
 
   <div id="site-footer"></div>
   <script src="includes.js"></script>
+  <script>
+  const SCRIPT_URL = "YOUR_GOOGLE_APPS_SCRIPT_URL";
+
+  const form = document.getElementById("contact-form");
+  const submitBtn = document.getElementById("submit-btn");
+  const formStatus = document.getElementById("form-status");
+
+  form.addEventListener("submit", async function (e) {
+    e.preventDefault();
+
+    submitBtn.disabled = true;
+    submitBtn.textContent = "Sending...";
+    formStatus.textContent = "Submitting your inquiry...";
+
+    const formData = new FormData(form);
+    const data = Object.fromEntries(formData.entries());
+
+    try {
+      const response = await fetch(SCRIPT_URL, {
+        method: "POST",
+        mode: "cors",
+        headers: {
+          "Content-Type": "text/plain;charset=utf-8"
+        },
+        body: JSON.stringify(data)
+      });
+
+      const result = await response.json();
+
+      if (result.success) {
+        form.reset();
+        formStatus.textContent = "Thank you. Your inquiry has been sent successfully.";
+      } else {
+        formStatus.textContent = "Something went wrong. Please try again.";
+      }
+    } catch (error) {
+      formStatus.textContent = "Unable to send right now. Please try again later.";
+    }
+
+    submitBtn.disabled = false;
+    submitBtn.textContent = "Send Inquiry";
+  });
+</script>
 </body>
 </html>
