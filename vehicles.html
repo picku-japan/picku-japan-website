@@ -38,56 +38,45 @@
     }
 
     .vehicles-hero {
-      position: relative;
-      min-height: 460px;
-      display: flex;
-      align-items: end;
-      background:
-        linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.85)),
-        url('vehicles-hero.jpg') center/cover no-repeat;
-      border-bottom: 1px solid var(--border);
+        position: relative;
+        min-height: 300px;
+        display: flex;
+        align-items: end;
+        background:
+            linear-gradient(rgba(0,0,0,0.28), rgba(0,0,0,0.58)),
+            url('vehicles-hero.jpg') center center/cover no-repeat;
+        border-bottom: 1px solid var(--border);
     }
-
     .vehicles-hero .container {
-      width: min(1240px, calc(100% - 48px));
+        width: min(1240px, calc(100% - 48px));
     }
-
+    
     .vehicles-hero-content {
-      max-width: 900px;
-      padding: 110px 0 72px;
-    }
-
-    .eyebrow {
-      display: inline-block;
-      padding: 8px 14px;
-      border: 1px solid rgba(212,160,23,0.45);
-      background: var(--gold-soft);
-      color: #f3d98e;
-      border-radius: 999px;
-      font-size: 0.86rem;
-      margin-bottom: 18px;
+        max-width: 680px;
+        padding: 86px 0 44px;
     }
 
     .vehicles-hero h1 {
-      margin: 0;
-      font-size: clamp(2.2rem, 4.2vw, 4rem);
-      line-height: 1.06;
-      letter-spacing: -0.04em;
-      max-width: 860px;
+        margin: 0;
+        font-size: clamp(2rem, 4vw, 3.15rem);
+        line-height: 1.08;
+        letter-spacing: -0.04em;
+        max-width: 680px;
     }
 
     .vehicles-hero p {
-      color: #eee5d5;
-      font-size: 1.05rem;
-      max-width: 760px;
-      margin: 18px 0 0;
+        color: #eee5d5;
+        font-size: 1rem;
+        line-height: 1.7;
+        max-width: 620px;
+        margin: 14px 0 0;
     }
 
     .hero-actions {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 14px;
-      margin-top: 28px;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 14px;
+        margin-top: 22px;
     }
 
     .jump-nav-wrap {
@@ -527,17 +516,17 @@
   <div id="site-header"></div>
 
   <section class="vehicles-hero">
-    <div class="container vehicles-hero-content">
-      <div class="eyebrow">Japan private transfer fleet</div>
-      <h1>Private Transfer Vehicles in Japan for Every Group Size</h1>
-      <p>
-        Explore Pick-U Japan’s private transfer fleet for airport transfers, hotel pickups, city rides, and charter travel. Compare Alphard, Hiace, Coaster, and bus options based on passenger capacity, luggage space, and travel style.
-      </p>
-      <div class="hero-actions">
-        <a class="btn btn-primary" href="#compare">Compare Vehicles</a>
-        <a class="btn btn-secondary" href="index.html">Back to Home</a>
+      <div class="container vehicles-hero-content">
+          <div class="eyebrow">Japan private transfer fleet</div>
+          <h1>Vehicles for Every Group</h1>
+          <p>
+              Compare seating, luggage space, and vehicle types for airport transfers, private rides, and charter travel across Japan.
+          </p>
+          <div class="hero-actions">
+              <a class="btn btn-primary" href="#compare">Compare Vehicles</a>
+              <a class="btn btn-secondary" href="index.html">Back to Home</a>
+          </div>
       </div>
-    </div>
   </section>
 
   <div class="jump-nav-wrap">
