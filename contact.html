@@ -7,7 +7,7 @@
   <title>Contact Us | Pick-U Japan</title>
   <meta
     name="description"
-    content="Contact Pick-U Japan for airport transfers, private transfers, charter trips, and vehicle inquiries. Send your route, travel date, group size, and luggage details for assistance."
+    content="Contact Pick-U Japan for airport transfers, private transfers, charter trips, multi-day tours, and vehicle inquiries in Japan."
   />
   <meta name="robots" content="index, follow" />
   <link rel="canonical" href="https://picku-japan.github.io/picku-japan-website/contact.html" />
@@ -16,7 +16,7 @@
   <meta property="og:title" content="Contact Us | Pick-U Japan" />
   <meta
     property="og:description"
-    content="Contact Pick-U Japan for airport transfers, private transfers, charter trips, and vehicle inquiries."
+    content="Send us your travel details for airport transfers, private transfers, charter trips, multi-day tours, and vehicle questions in Japan."
   />
   <meta property="og:image" content="contact-hero.jpg" />
   <meta property="og:url" content="https://picku-japan.github.io/picku-japan-website/contact.html" />
@@ -25,7 +25,7 @@
   <meta name="twitter:title" content="Contact Us | Pick-U Japan" />
   <meta
     name="twitter:description"
-    content="Send us your travel details and inquiry for transfers, charters, and vehicle questions in Japan."
+    content="Contact Pick-U Japan for transfers, charters, and vehicle inquiries."
   />
   <meta name="twitter:image" content="contact-hero.jpg" />
 
@@ -39,7 +39,7 @@
       display: flex;
       align-items: end;
       background:
-        linear-gradient(rgba(0,0,0,0.00), rgba(0,0,0,0.20)),
+        linear-gradient(rgba(0,0,0,0.34), rgba(0,0,0,0.62)),
         url('contact-hero.jpg') center/cover no-repeat;
       border-bottom: 1px solid var(--border);
     }
@@ -290,7 +290,7 @@
       <div class="eyebrow">Contact Pick-U Japan</div>
       <h1>Tell Us About Your Trip</h1>
       <p>
-        Send us your route, travel date, group size, and luggage details, and we will help you with airport transfers, private transfers, charter trips, and vehicle questions.
+        Share your route, date, group size, and luggage details, and we will review your request for transfers, charters, and vehicle questions in Japan.
       </p>
     </div>
   </section>
@@ -301,79 +301,87 @@
         <div class="form-card">
           <h2>Request Information</h2>
           <p class="intro">
-            Share a few key details so we can better understand your trip and reply more efficiently.
+            Please share a few key details so we can understand your request more clearly.
           </p>
 
-          <!-- Replace action with your real form endpoint -->
-          <form id="contact-form">
-  <div class="form-grid">
-    <div class="field">
-      <label for="full-name">Full Name</label>
-      <input type="text" id="full-name" name="full_name" placeholder="Your name" required>
-    </div>
+          <form
+            id="contact-form"
+            method="post"
+            action="https://script.google.com/macros/s/AKfycbztSqYMBjQhEOoyBlyK8vewgLwt63bHY1SeWNa2nwjCkl9Tg2y75dm6i3U854jpd4i5/exec"
+            target="hidden_iframe"
+            onsubmit="handleSubmit()"
+          >
+            <div class="form-grid">
+              <div class="field">
+                <label for="full-name">Full Name</label>
+                <input type="text" id="full-name" name="full_name" placeholder="Your name" required>
+              </div>
 
-    <div class="field">
-      <label for="email">Email Address</label>
-      <input type="email" id="email" name="email" placeholder="you@example.com" required>
-    </div>
+              <div class="field">
+                <label for="email">Email Address</label>
+                <input type="email" id="email" name="email" placeholder="you@example.com" required>
+              </div>
 
-    <div class="field">
-      <label for="inquiry-type">Inquiry Type</label>
-      <select id="inquiry-type" name="inquiry_type" required>
-        <option value="">Select one</option>
-        <option>Airport Transfer</option>
-        <option>Private Transfer</option>
-        <option>Charter / Day Tour</option>
-        <option>Vehicle Question</option>
-        <option>Other</option>
-      </select>
-    </div>
+              <div class="field">
+                <label for="inquiry-type">Inquiry Type</label>
+                <select id="inquiry-type" name="inquiry_type" required>
+                  <option value="">Select one</option>
+                  <option>Airport Transfer</option>
+                  <option>Private Transfer</option>
+                  <option>Charter / Day Tour</option>
+                  <option>Multi-Day Tour / Trip</option>
+                  <option>Vehicle Question</option>
+                  <option>Other</option>
+                </select>
+              </div>
 
-    <div class="field">
-      <label for="trip-date">Preferred Trip Date</label>
-      <input type="date" id="trip-date" name="trip_date">
-    </div>
+              <div class="field">
+                <label for="trip-date">Preferred Trip Date</label>
+                <input type="date" id="trip-date" name="trip_date">
+              </div>
 
-    <div class="field">
-      <label for="pickup-area">Pickup Area / City</label>
-      <input type="text" id="pickup-area" name="pickup_area" placeholder="Narita Airport, Tokyo, Kyoto, etc.">
-    </div>
+              <div class="field">
+                <label for="pickup-area">Pickup Area / City</label>
+                <input type="text" id="pickup-area" name="pickup_area" placeholder="Narita Airport, Tokyo, Kyoto, etc.">
+              </div>
 
-    <div class="field">
-      <label for="dropoff-area">Drop-off Area / City</label>
-      <input type="text" id="dropoff-area" name="dropoff_area" placeholder="Tokyo hotel, Hakone, Osaka, etc.">
-    </div>
+              <div class="field">
+                <label for="dropoff-area">Drop-off Area / City</label>
+                <input type="text" id="dropoff-area" name="dropoff_area" placeholder="Tokyo hotel, Hakone, Osaka, etc.">
+              </div>
 
-    <div class="field">
-      <label for="passengers">Passengers</label>
-      <input type="number" id="passengers" name="passengers" min="1" placeholder="Number of passengers">
-    </div>
+              <div class="field">
+                <label for="passengers">Passengers</label>
+                <input type="number" id="passengers" name="passengers" min="1" placeholder="Number of passengers">
+              </div>
 
-    <div class="field">
-      <label for="luggage">Luggage</label>
-      <input type="text" id="luggage" name="luggage" placeholder="Example: 4 large suitcases + 2 carry-ons">
-    </div>
+              <div class="field">
+                <label for="luggage">Luggage</label>
+                <input type="text" id="luggage" name="luggage" placeholder="Example: 4 large suitcases + 2 carry-ons">
+              </div>
 
-    <div class="field full">
-      <label for="message">Message</label>
-      <textarea
-        id="message"
-        name="message"
-        placeholder="Please share any extra details here. For example: preferred time, return trip, child seat request, ski or golf bags, or special travel needs."
-      ></textarea>
-      <div class="helper-text">
-        The more basic trip details you include, the easier it is for us to understand your request.
-      </div>
-    </div>
-  </div>
+              <div class="field full">
+                <label for="message">Message</label>
+                <textarea
+                  id="message"
+                  name="message"
+                  placeholder="Please share any extra details here. For example: preferred time, return trip, child seat request, ski or golf bags, or special travel needs."
+                ></textarea>
+                <div class="helper-text">
+                  More basic trip details will help us understand your request more efficiently.
+                </div>
+              </div>
+            </div>
 
-  <div class="submit-row">
-    <button class="btn btn-primary" type="submit" id="submit-btn">Send Inquiry</button>
-    <div class="submit-note" id="form-status">
-      You can also contact us directly by email if needed.
-    </div>
-  </div>
-</form>
+            <div class="submit-row">
+              <button class="btn btn-primary" type="submit" id="submit-btn">Send Inquiry</button>
+              <div class="submit-note" id="form-status">
+                You can also contact us directly by email if needed.
+              </div>
+            </div>
+          </form>
+
+          <iframe name="hidden_iframe" style="display:none;"></iframe>
         </div>
 
         <div class="info-stack">
@@ -404,7 +412,7 @@
               <a href="mailto:info@arinasi.com">info@arinasi.com</a>
             </div>
             <div class="note-box">
-              For large groups, special luggage, or custom routes, providing a few extra details will help us respond more accurately.
+              For large groups, special luggage, or custom routes, adding a few extra details will help us respond more accurately.
             </div>
           </div>
         </div>
@@ -413,49 +421,24 @@
   </section>
 
   <div id="site-footer"></div>
+
   <script src="includes.js"></script>
   <script>
-  const SCRIPT_URL = "YOUR_GOOGLE_APPS_SCRIPT_URL";
+    function handleSubmit() {
+      const submitBtn = document.getElementById("submit-btn");
+      const formStatus = document.getElementById("form-status");
 
-  const form = document.getElementById("contact-form");
-  const submitBtn = document.getElementById("submit-btn");
-  const formStatus = document.getElementById("form-status");
+      submitBtn.disabled = true;
+      submitBtn.textContent = "Sending...";
+      formStatus.textContent = "Submitting your inquiry...";
 
-  form.addEventListener("submit", async function (e) {
-    e.preventDefault();
-
-    submitBtn.disabled = true;
-    submitBtn.textContent = "Sending...";
-    formStatus.textContent = "Submitting your inquiry...";
-
-    const formData = new FormData(form);
-    const data = Object.fromEntries(formData.entries());
-
-    try {
-      const response = await fetch(SCRIPT_URL, {
-        method: "POST",
-        mode: "cors",
-        headers: {
-          "Content-Type": "text/plain;charset=utf-8"
-        },
-        body: JSON.stringify(data)
-      });
-
-      const result = await response.json();
-
-      if (result.success) {
-        form.reset();
+      setTimeout(() => {
+        document.getElementById("contact-form").reset();
         formStatus.textContent = "Thank you. Your inquiry has been sent successfully.";
-      } else {
-        formStatus.textContent = "Something went wrong. Please try again.";
-      }
-    } catch (error) {
-      formStatus.textContent = "Unable to send right now. Please try again later.";
+        submitBtn.disabled = false;
+        submitBtn.textContent = "Send Inquiry";
+      }, 1800);
     }
-
-    submitBtn.disabled = false;
-    submitBtn.textContent = "Send Inquiry";
-  });
-</script>
+  </script>
 </body>
 </html>
