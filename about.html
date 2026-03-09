@@ -39,7 +39,9 @@
       display: flex;
       align-items: end;
       background:
-        linear-gradient(rgba(8, 7, 7, 0.34), rgba(8, 7, 7, 0.70)),
+        linear-gradient(90deg, rgba(8,7,7,0.78) 0%, rgba(8,7,7,0.58) 34%, rgba(8,7,7,0.24) 62%, rgba(8,7,7,0.18) 100%),
+        linear-gradient(180deg, rgba(8,7,7,0.16) 0%, rgba(8,7,7,0.32) 42%, rgba(8,7,7,0.72) 100%),
+        radial-gradient(circle at 24% 42%, rgba(8,7,7,0.18) 0%, rgba(8,7,7,0.46) 48%, rgba(8,7,7,0.62) 100%),
         url('about-hero.jpg') center/cover no-repeat;
       border-bottom: 1px solid var(--border);
     }
@@ -51,6 +53,8 @@
     .about-hero-content {
       max-width: 760px;
       padding: 90px 0 48px;
+      position: relative;
+      z-index: 1;
     }
 
     .eyebrow {
@@ -153,20 +157,6 @@
       box-shadow: 0 18px 46px rgba(0,0,0,0.22);
     }
 
-    .value-icon {
-      width: 46px;
-      height: 46px;
-      border-radius: 50%;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      margin-bottom: 14px;
-      background: rgba(212,160,23,0.10);
-      border: 1px solid rgba(212,160,23,0.18);
-      color: #d4a017;
-      font-size: 1.1rem;
-    }
-
     .value-card h3 {
       margin: 0 0 12px;
       font-size: 1.12rem;
@@ -202,9 +192,7 @@
 
     .step-top {
       display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 12px;
+      justify-content: center;
       margin-bottom: 14px;
     }
 
@@ -219,18 +207,6 @@
       color: #8b6a18;
       font-weight: 700;
       font-size: 1rem;
-    }
-
-    .step-icon {
-      width: 44px;
-      height: 44px;
-      border-radius: 50%;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      background: rgba(17,17,17,0.05);
-      color: #222;
-      font-size: 1.05rem;
     }
 
     .step-card h3 {
@@ -453,7 +429,6 @@
 
       <div class="value-grid">
         <div class="value-card">
-          <div class="value-icon">✦</div>
           <h3>Clear coordination</h3>
           <p>
             Pickup details, route planning, and trip communication should feel simple and easy to follow.
@@ -461,7 +436,6 @@
         </div>
 
         <div class="value-card">
-          <div class="value-icon">✦</div>
           <h3>Comfortable private travel</h3>
           <p>
             We focus on private rides that are more relaxed, more direct, and easier for real travel needs.
@@ -469,7 +443,6 @@
         </div>
 
         <div class="value-card">
-          <div class="value-icon">✦</div>
           <h3>Practical vehicle choice</h3>
           <p>
             Different group sizes and luggage amounts need different vehicles, not one fixed option.
@@ -493,7 +466,6 @@
           <div class="step-card">
             <div class="step-top">
               <div class="step-number">01</div>
-              <div class="step-icon">↗</div>
             </div>
             <h3>Book your transfer</h3>
             <p>
@@ -505,7 +477,6 @@
           <div class="step-card">
             <div class="step-top">
               <div class="step-number">02</div>
-              <div class="step-icon">✓</div>
             </div>
             <h3>Receive confirmation</h3>
             <p>
@@ -517,7 +488,6 @@
           <div class="step-card">
             <div class="step-top">
               <div class="step-number">03</div>
-              <div class="step-icon">✉</div>
             </div>
             <h3>Trip reminder</h3>
             <p>
@@ -529,7 +499,6 @@
           <div class="step-card">
             <div class="step-top">
               <div class="step-number">04</div>
-              <div class="step-icon">☎</div>
             </div>
             <h3>Meet your driver</h3>
             <p>
