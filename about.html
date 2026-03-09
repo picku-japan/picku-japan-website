@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About Us | Pick-U Japan</title>
+  <meta name="description" content="Learn more about Pick-U Japan, a private transfer company offering reliable airport transfers, city rides, and charter services across Japan." />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://picku-japan.github.io/picku-japan-website/about.html" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="About Us | Pick-U Japan" />
+  <meta property="og:description" content="Private transfer service in Japan with professional drivers, comfortable vehicles, and smooth airport pickup support." />
+  <meta property="og:image" content="https://picku-japan.github.io/picku-japan-website/airport-transfers.png" />
+  <meta property="og:url" content="https://picku-japan.github.io/picku-japan-website/about.html" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="About Us | Pick-U Japan" />
+  <meta name="twitter:description" content="Reliable private airport transfers and charter service across Japan." />
+  <meta name="twitter:image" content="https://picku-japan.github.io/picku-japan-website/airport-transfers.png" />
+
+  <link rel="icon" href="logo.png" type="image/png" />
+  <link rel="stylesheet" href="global.css" />
+
+  <style>
+    .hero .container {
+      width: min(1240px, calc(100% - 48px));
+    }
+
+    .hero {
+      position: relative;
+      min-height: 62vh;
+      display: flex;
+      align-items: center;
+      background:
+        linear-gradient(rgba(0,0,0,0.58), rgba(0,0,0,0.58)),
+        url('about-hero.jpg') center/cover no-repeat;
+    }
+
+    .hero-content {
+      max-width: 900px;
+      padding: 88px 0 88px 120px;
+    }
+
+    .eyebrow {
+      display: inline-block;
+      padding: 8px 14px;
+      border: 1px solid rgba(212,160,23,0.45);
+      background: var(--gold-soft);
+      color: #f3d98e;
+      border-radius: 999px;
+      font-size: 0.86rem;
+      margin-bottom: 18px;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(2.2rem, 4.2vw, 3.9rem);
+      line-height: 1.08;
+      letter-spacing: -0.04em;
+      max-width: 900px;
+    }
+
+    .hero p {
+      color: #eee5d5;
+      font-size: 1.06rem;
+      max-width: 760px;
+      margin: 20px 0 0;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-top: 30px;
+    }
+
+    .about-image {
+      width: 100%;
+      height: 100%;
+      min-height: 440px;
+      object-fit: cover;
+      border-radius: 28px;
+      box-shadow: 0 20px 50px rgba(0,0,0,0.20);
+    }
+
+    .about-copy p {
+      color: #5c5750;
+      margin: 0 0 16px;
+      font-size: 1rem;
+      line-height: 1.75;
+    }
+
+    .stat-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+      margin-top: 36px;
+    }
+
+    .stat-card {
+      background: #fff;
+      border: 1px solid rgba(0,0,0,0.08);
+      border-radius: 24px;
+      padding: 24px;
+      text-align: center;
+      box-shadow: 0 10px 28px rgba(0,0,0,0.06);
+    }
+
+    .stat-card strong {
+      display: block;
+      font-size: 1.8rem;
+      color: #111;
+      margin-bottom: 8px;
+    }
+
+    .stat-card span {
+      color: #666;
+      font-size: 0.95rem;
+    }
+
+    .feature-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    .feature-card {
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: 28px;
+      padding: 28px;
+      transition: transform 0.18s ease, box-shadow 0.18s ease;
+    }
+
+    .feature-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 16px 36px rgba(0,0,0,0.22);
+    }
+
+    .feature-card h3 {
+      margin: 0 0 12px;
+      font-size: 1.18rem;
+    }
+
+    .feature-card p {
+      margin: 0;
+      color: var(--muted);
+      line-height: 1.7;
+    }
+
+    .process-wrap {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+      margin-top: 34px;
+    }
+
+    .process-card {
+      background: #fff;
+      border: 1px solid rgba(0,0,0,0.08);
+      border-radius: 24px;
+      padding: 24px;
+    }
+
+    .process-number {
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(212,160,23,0.12);
+      color: #8b6a18;
+      font-weight: 700;
+      margin-bottom: 14px;
+    }
+
+    .process-card h3 {
+      margin: 0 0 10px;
+      color: #111;
+      font-size: 1.05rem;
+    }
+
+    .process-card p {
+      margin: 0;
+      color: #5f5a53;
+      line-height: 1.7;
+    }
+
+    .coverage-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+      margin-top: 28px;
+    }
+
+    .coverage-box {
+      background: #fff;
+      border: 1px solid rgba(0,0,0,0.08);
+      border-radius: 24px;
+      padding: 26px;
+    }
+
+    .coverage-box h3 {
+      margin: 0 0 12px;
+      color: #111;
+    }
+
+    .coverage-box ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .coverage-box li {
+      color: #5f5a53;
+      margin-bottom: 8px;
+      line-height: 1.65;
+    }
+
+    .cta-box {
+      background:
+        linear-gradient(rgba(17,17,17,0.72), rgba(17,17,17,0.72)),
+        url('contact-bg.jpg') center/cover no-repeat;
+      border-radius: 32px;
+      padding: 56px 40px;
+      text-align: center;
+      box-shadow: 0 20px 48px rgba(0,0,0,0.22);
+    }
+
+    .cta-box h2 {
+      margin: 0;
+      font-size: clamp(2rem, 3vw, 3rem);
+      line-height: 1.15;
+    }
+
+    .cta-box p {
+      max-width: 760px;
+      margin: 18px auto 0;
+      color: #e9dfcf;
+      line-height: 1.75;
+    }
+
+    .cta-actions {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-top: 28px;
+    }
+
+    @media (max-width: 1100px) {
+      .stat-grid,
+      .process-wrap {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .feature-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 980px) {
+      .hero {
+        min-height: auto;
+      }
+
+      .hero-content {
+        max-width: 100%;
+        padding: 72px 0;
+      }
+
+      .about-image {
+        min-height: 320px;
+      }
+
+      .coverage-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 700px) {
+      .stat-grid,
+      .process-wrap {
+        grid-template-columns: 1fr;
+      }
+
+      .cta-box {
+        padding: 42px 22px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div id="site-header"></div>
+
+  <section class="hero">
+    <div class="container hero-content">
+      <div class="eyebrow">About Pick-U Japan</div>
+      <h1>Private transportation in Japan, designed to feel easy, clear, and reliable</h1>
+      <p>
+        Pick-U provides private airport transfers, city rides, and charter services across Japan.
+        We focus on smooth coordination, professional drivers, comfortable vehicles, and clear support
+        so travelers can move with confidence from arrival to destination.
+      </p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="airport-transfers.html">Explore Services</a>
+        <a class="btn btn-secondary" href="contact.html">Contact Us</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" style="background:#f3efe9; color:#141414;">
+    <div class="container">
+      <div class="grid-2" style="align-items:center; gap:42px;">
+        <div>
+          <img src="about-company.jpg" alt="Pick-U private transfer service in Japan" class="about-image">
+        </div>
+        <div class="about-copy">
+          <div class="eyebrow" style="color:#8b6a18; border-color:rgba(139,106,24,.28); background:rgba(212,160,23,.10);">
+            Our Story
+          </div>
+          <h2 style="margin:0 0 18px; color:#111; font-size:clamp(2rem, 3.2vw, 3.2rem); line-height:1.12; letter-spacing:-0.03em;">
+            A transfer service built around what travelers actually need
+          </h2>
+          <p>
+            Airport pickup should not feel confusing. Private transportation should not feel uncertain.
+            Pick-U was created to offer a smoother and more reassuring travel experience in Japan,
+            especially for airport arrivals, families, small groups, and travelers with luggage.
+          </p>
+          <p>
+            We understand that the most important parts of a transfer are often the simplest ones:
+            being picked up on time, knowing where to meet the driver, having enough space for passengers
+            and luggage, and receiving clear communication when plans change.
+          </p>
+          <p>
+            That is why we focus on practical service quality rather than unnecessary complexity.
+            Our goal is to make each ride feel organized, comfortable, and easy from booking to arrival.
+          </p>
+        </div>
+      </div>
+
+      <div class="stat-grid">
+        <div class="stat-card">
+          <strong>Private</strong>
+          <span>Dedicated vehicles for your group only</span>
+        </div>
+        <div class="stat-card">
+          <strong>Clear</strong>
+          <span>Simple communication before and during the trip</span>
+        </div>
+        <div class="stat-card">
+          <strong>Flexible</strong>
+          <span>From airport rides to custom charter requests</span>
+        </div>
+        <div class="stat-card">
+          <strong>Comfortable</strong>
+          <span>Vehicle options for different group sizes and luggage</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" style="background:#181513;">
+    <div class="container">
+      <div class="section-header">
+        <h2>What makes Pick-U different</h2>
+        <p>
+          We are not trying to be complicated. We focus on the parts of private transportation that matter most to customers.
+        </p>
+      </div>
+
+      <div class="feature-grid">
+        <div class="feature-card">
+          <h3>Reliable airport pickup support</h3>
+          <p>
+            We help make airport arrival smoother with clear pickup coordination, practical guidance,
+            and support designed to reduce stress after landing.
+          </p>
+        </div>
+
+        <div class="feature-card">
+          <h3>Vehicle options that fit real travel needs</h3>
+          <p>
+            From Alphard and Vellfire to Hiace and larger vehicles, we provide options based on group size,
+            luggage volume, and travel style rather than a one-size-fits-all approach.
+          </p>
+        </div>
+
+        <div class="feature-card">
+          <h3>Better for families, groups, and long transfers</h3>
+          <p>
+            Private transfers can be much easier when traveling with children, multiple suitcases,
+            elderly passengers, or when moving between airports, cities, hotels, and resorts.
+          </p>
+        </div>
+
+        <div class="feature-card">
+          <h3>Clear communication matters</h3>
+          <p>
+            Good service is not only about the ride itself. It is also about easy coordination,
+            quick confirmation, and making customers feel informed before the trip begins.
+          </p>
+        </div>
+
+        <div class="feature-card">
+          <h3>Suitable for airport, city, and charter use</h3>
+          <p>
+            Whether you need a simple airport transfer, a hotel-to-hotel ride, or a full-day private charter,
+            we aim to keep the service smooth and dependable.
+          </p>
+        </div>
+
+        <div class="feature-card">
+          <h3>A service style focused on comfort</h3>
+          <p>
+            Our brand is built around a calm, premium, and practical travel experience in Japan
+            rather than price-only transportation.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" style="background:#f8f5f0; color:#111;">
+    <div class="container">
+      <div class="section-header">
+        <h2>How it works</h2>
+        <p>
+          A smooth transfer experience usually comes down to a simple process done properly.
+        </p>
+      </div>
+
+      <div class="process-wrap">
+        <div class="process-card">
+          <div class="process-number">01</div>
+          <h3>Choose your service</h3>
+          <p>
+            Select airport transfer, private transfer, or charter service based on your route and travel plan.
+          </p>
+        </div>
+
+        <div class="process-card">
+          <div class="process-number">02</div>
+          <h3>Confirm trip details</h3>
+          <p>
+            Share the travel date, pickup time, route, passenger count, and luggage information.
+          </p>
+        </div>
+
+        <div class="process-card">
+          <div class="process-number">03</div>
+          <h3>Receive clear coordination</h3>
+          <p>
+            We provide the necessary pickup information and help coordinate the ride before the service date.
+          </p>
+        </div>
+
+        <div class="process-card">
+          <div class="process-number">04</div>
+          <h3>Travel with confidence</h3>
+          <p>
+            On the day of service, your private vehicle is arranged to help you move comfortably and efficiently.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" style="background:#221d19;">
+    <div class="container">
+      <div class="section-header">
+        <h2>Where we support travelers</h2>
+        <p>
+          Pick-U is suitable for many of the routes international travelers and domestic visitors use most often in Japan.
+        </p>
+      </div>
+
+      <div class="coverage-grid">
+        <div class="coverage-box">
+          <h3>Popular transfer types</h3>
+          <ul>
+            <li>Airport to hotel transfers</li>
+            <li>Hotel to airport transfers</li>
+            <li>Intercity private transfers</li>
+            <li>Cruise port and station transfers</li>
+            <li>Resort and ski area transportation</li>
+            <li>Custom private charter trips</li>
+          </ul>
+        </div>
+
+        <div class="coverage-box">
+          <h3>Ideal for</h3>
+          <ul>
+            <li>Families with children</li>
+            <li>Travelers with multiple suitcases</li>
+            <li>Small groups and larger groups</li>
+            <li>Guests needing direct hotel pickup</li>
+            <li>Travelers who prefer private, door-to-door service</li>
+            <li>Visitors who want a smoother arrival in Japan</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" style="background:#181513;">
+    <div class="container">
+      <div class="cta-box">
+        <div class="eyebrow">Travel with Pick-U</div>
+        <h2>Need a private transfer in Japan?</h2>
+        <p>
+          Explore airport transfers, private transfers, and charter services designed to make your journey
+          more comfortable, more direct, and easier to manage.
+        </p>
+        <div class="cta-actions">
+          <a class="btn btn-primary" href="airport-transfers.html">View Services</a>
+          <a class="btn btn-secondary" href="vehicles.html">View Vehicles</a>
+          <a class="btn btn-secondary" href="contact.html">Contact Us</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div id="site-footer"></div>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Pick-U",
+    "legalName": "Arinashi Co. Ltd.",
+    "email": "info@arinasi.com",
+    "url": "https://picku-japan.github.io/picku-japan-website/",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "3-1-6 Motoazabu, Minato-ku",
+      "addressLocality": "Tokyo",
+      "postalCode": "106-0046",
+      "addressCountry": "JP"
+    }
+  }
+  </script>
+
+  <script src="includes.js"></script>
+</body>
+</html>
