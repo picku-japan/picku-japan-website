@@ -1,4 +1,4 @@
-    <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
@@ -31,66 +31,17 @@
 
   <link rel="icon" href="logo.png" type="image/png" />
   <link rel="stylesheet" href="global.css" />
+  <link rel="stylesheet" href="hero.css" />
 
   <style>
     html {
       scroll-behavior: smooth;
     }
 
-    .vehicles-hero {
-        position: relative;
-        min-height: 300px;
-        display: flex;
-        align-items: end;
-        background:
-            linear-gradient(rgba(0,0,0,0.28), rgba(0,0,0,0.58)),
-            url('vehicles-hero.jpg') center center/cover no-repeat;
-        border-bottom: 1px solid var(--border);
-    }
-    .vehicles-hero .container {
-        width: min(1240px, calc(100% - 48px));
-    }
-    
-    .vehicles-hero-content {
-        max-width: 680px;
-        padding: 86px 0 44px;
-    }
-
-    .vehicles-eyebrow {
-        display: inline-block;
-        padding: 10px 16px;
-        border: 1px solid rgba(212,160,23,0.42);
-        background: rgba(212,160,23,0.10);
-        color: #f0d99a;
-        border-radius: 999px;
-        font-size: 0.9rem;
-        font-weight: 600;
-        line-height: 1;
-        margin-bottom: 18px;
-        box-shadow: inset 0 0 0 1px rgba(255,255,255,0.03);
-    }
-
-    .vehicles-hero h1 {
-        margin: 0;
-        font-size: clamp(2.15rem, 4vw, 3.35rem);
-        line-height: 1.08;
-        letter-spacing: -0.04em;
-        max-width: 680px;
-    }
-
-    .vehicles-hero p {
-        color: #eee5d5;
-        font-size: 1.02rem;
-        line-height: 1.7;
-        max-width: 620px;
-        margin: 16px 0 0;
-    }
-      
-    .hero-actions {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 14px;
-        margin-top: 22px;
+    .hero-vehicles {
+      background:
+        linear-gradient(rgba(0,0,0,0.28), rgba(0,0,0,0.58)),
+        url('vehicles-hero.jpg') center center/cover no-repeat;
     }
 
     .jump-nav-wrap {
@@ -107,23 +58,20 @@
       gap: 10px;
       overflow-x: auto;
       padding: 14px 0;
+      -ms-overflow-style: none;
+      scrollbar-width: none;
     }
 
     .jump-nav::-webkit-scrollbar {
       display: none;
     }
 
-    .jump-nav {
-      -ms-overflow-style: none;
-      scrollbar-width: none;
-    }
-      
     .jump-nav-primary {
       background: rgba(212,160,23,0.14) !important;
       border-color: rgba(212,160,23,0.32) !important;
       color: #fff7e2 !important;
-    } 
-      
+    }
+
     .jump-nav-text {
       display: inline-flex;
       align-items: center;
@@ -134,7 +82,7 @@
       white-space: nowrap;
       flex: 0 0 auto;
     }
-      
+
     .jump-nav a {
       white-space: nowrap;
       padding: 10px 14px;
@@ -154,22 +102,6 @@
       transform: translateY(-2px);
     }
 
-    .jump-nav-label {
-      display: inline-flex;
-      align-items: center;
-      white-space: nowrap;
-      padding: 10px 14px;
-      margin-right: 4px;
-      border-radius: 999px;
-      background: rgba(212,160,23,0.10);
-      border: 1px solid rgba(212,160,23,0.18);
-      color: #f0d99a;
-      font-size: 0.92rem;
-      font-weight: 700;
-      letter-spacing: 0.01em;
-      flex: 0 0 auto;
-    }
-
     .section-dark {
       background: #171311;
     }
@@ -185,15 +117,6 @@
 
     .section-header.narrow {
       max-width: 860px;
-    }
-
-    .seo-intro {
-      max-width: 920px;
-      margin: 0 auto 36px;
-      color: var(--muted);
-      font-size: 1rem;
-      line-height: 1.8;
-      text-align: center;
     }
 
     .compare-grid {
@@ -378,17 +301,6 @@
       font-size: 0.9rem;
     }
 
-    .vehicle-note {
-      margin-top: 22px;
-      padding: 16px 18px;
-      border-radius: 18px;
-      background: rgba(212,160,23,0.08);
-      border: 1px solid rgba(212,160,23,0.18);
-      color: #e9dfcf;
-      line-height: 1.7;
-      font-size: 0.94rem;
-    }
-
     .gallery-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
@@ -496,14 +408,6 @@
         grid-template-columns: 1fr;
       }
 
-      .vehicles-hero {
-        min-height: auto;
-      }
-
-      .vehicles-hero-content {
-        padding: 86px 0 66px;
-      }
-
       .jump-nav-wrap {
         top: 64px;
       }
@@ -514,9 +418,8 @@
         grid-template-columns: 1fr;
       }
 
-      .vehicles-hero .container,
       .jump-nav {
-        width: min(1240px, calc(100% - 28px));
+        width: min(var(--max), calc(100% - 28px));
       }
 
       .vehicle-copy,
@@ -529,34 +432,34 @@
 <body>
   <div id="site-header"></div>
 
-  <section class="vehicles-hero">
-      <div class="container vehicles-hero-content">
-          <div class="vehicles-eyebrow">Japan private transfer fleet</div>
-          <h1>Vehicles for Every Group</h1>
-          <p>
-              Compare seating, luggage space, and vehicle types for airport transfers, private rides, and charter travel across Japan.
-          </p>
-          <div class="hero-actions">
-              <a class="btn btn-primary" href="#compare">Compare Vehicles</a>
-              <a class="btn btn-secondary" href="index.html">Back to Home</a>
-          </div>
+  <section class="page-hero hero-vehicles">
+    <div class="container page-hero-content">
+      <div class="page-eyebrow">Japan private transfer fleet</div>
+      <h1>Vehicles for Every Group</h1>
+      <p>
+        Compare seating, luggage space, and vehicle types for airport transfers, private rides, and charter travel across Japan.
+      </p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="#compare">Compare Vehicles</a>
+        <a class="btn btn-secondary" href="index.html">Back to Home</a>
       </div>
+    </div>
   </section>
 
   <div class="jump-nav-wrap">
-  <div class="container">
-    <div class="jump-nav">
-      <span class="jump-nav-text">Pick your vehicle</span>
-      <a href="#compare" class="jump-nav-primary">Vehicle Compare</a>
-      <a href="#alphard">Alphard / Vellfire</a>
-      <a href="#hiace-9">Hiace 9-Seater</a>
-      <a href="#hiace-14">Hiace 14-Seater</a>
-      <a href="#coaster">Coaster</a>
-      <a href="#bus-45">45-Seat Bus</a>
-      <a href="#faq">FAQ</a>
+    <div class="container">
+      <div class="jump-nav">
+        <span class="jump-nav-text">Pick your vehicle</span>
+        <a href="#compare" class="jump-nav-primary">Vehicle Compare</a>
+        <a href="#alphard">Alphard / Vellfire</a>
+        <a href="#hiace-9">Hiace 9-Seater</a>
+        <a href="#hiace-14">Hiace 14-Seater</a>
+        <a href="#coaster">Coaster</a>
+        <a href="#bus-45">45-Seat Bus</a>
+        <a href="#faq">FAQ</a>
+      </div>
     </div>
   </div>
-</div>
 
   <section class="section section-dark" id="compare">
     <div class="container">
@@ -657,11 +560,10 @@
           <div class="vehicle-label">Premium small-group vehicle</div>
           <h2>Alphard / Vellfire</h2>
           <p class="lead">
-              Alphard or Vellfire features wide, comfortable seating and a more luxurious cabin feel. It offers a smooth, quiet ride, while luggage space is more limited than larger vans.
+            Alphard or Vellfire features wide, comfortable seating and a more luxurious cabin feel. It offers a smooth, quiet ride, while luggage space is more limited than larger vans.
           </p>
 
           <div class="stats-grid">
-
             <div class="stat-card">
               <div class="stat-top">
                 <div class="icon-badge">👥</div>
@@ -697,7 +599,6 @@
                 Airport transfers, hotel pickups, business travel, and comfortable city rides
               </div>
             </div>
-
           </div>
 
           <ul class="feature-list">
@@ -793,7 +694,6 @@
                 Airport transfers, ski trips, sports travel, and family group transport
               </div>
             </div>
-
           </div>
 
           <ul class="feature-list">
@@ -889,7 +789,6 @@
                 Day tours, sightseeing trips, corporate outings, and group transport
               </div>
             </div>
-
           </div>
 
           <ul class="feature-list">
@@ -950,43 +849,42 @@
           </p>
 
           <div class="stats-grid">
-              <div class="stat-card">
-                <div class="stat-top">
-                  <div class="icon-badge">👥</div>
-                  <div class="stat-title">Best for</div>
-                </div>
-                <div class="stat-value">15–22 passengers</div>
+            <div class="stat-card">
+              <div class="stat-top">
+                <div class="icon-badge">👥</div>
+                <div class="stat-title">Best for</div>
               </div>
-
-              <div class="stat-card">
-                <div class="stat-top">
-                  <div class="icon-badge">⏰</div>
-                  <div class="stat-title">Booking note</div>
-                </div>
-                <div class="stat-value">Advance booking required</div>
-              </div>
-
-              <div class="stat-card">
-                <div class="stat-top">
-                  <div class="icon-badge">🧳</div>
-                  <div class="stat-title">Luggage guide</div>
-                </div>
-                <div class="stat-value">
-                  Around 15 passengers with suitcases, or up to 22 passengers with minimal luggage.
-                </div>
-              </div>
-
-              <div class="stat-card">
-                <div class="stat-top">
-                  <div class="icon-badge">📍</div>
-                  <div class="stat-title">Popular use</div>
-                </div>
-                <div class="stat-value">
-                  Sightseeing charters, company trips, and medium-size group travel
-                </div>
-              </div>
-
+              <div class="stat-value">15–22 passengers</div>
             </div>
+
+            <div class="stat-card">
+              <div class="stat-top">
+                <div class="icon-badge">⏰</div>
+                <div class="stat-title">Booking note</div>
+              </div>
+              <div class="stat-value">Advance booking required</div>
+            </div>
+
+            <div class="stat-card">
+              <div class="stat-top">
+                <div class="icon-badge">🧳</div>
+                <div class="stat-title">Luggage guide</div>
+              </div>
+              <div class="stat-value">
+                Around 15 passengers with suitcases, or up to 22 passengers with minimal luggage.
+              </div>
+            </div>
+
+            <div class="stat-card">
+              <div class="stat-top">
+                <div class="icon-badge">📍</div>
+                <div class="stat-title">Popular use</div>
+              </div>
+              <div class="stat-value">
+                Sightseeing charters, company trips, and medium-size group travel
+              </div>
+            </div>
+          </div>
 
           <ul class="feature-list">
             <li>Comfortable mid-size option for private tours and day-trip charters in Japan</li>
@@ -1173,7 +1071,7 @@
   <section class="section section-dark">
     <div class="container">
       <div class="bottom-cta">
-        <div class="eyebrow">Need help choosing?</div>
+        <div class="page-eyebrow">Need help choosing?</div>
         <h2>Not sure which vehicle fits your group and luggage?</h2>
         <p>
           Tell us your passenger count, suitcase number, and route, and we can recommend the most suitable vehicle for your airport transfer, private transfer, or charter trip in Japan.
