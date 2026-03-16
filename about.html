@@ -31,63 +31,15 @@
 
   <link rel="icon" href="logo.png" type="image/png" />
   <link rel="stylesheet" href="global.css" />
+  <link rel="stylesheet" href="hero.css" />
 
   <style>
-    .about-hero {
-      position: relative;
-      min-height: 280px;
-      display: flex;
-      align-items: end;
+    .hero-about {
       background:
         linear-gradient(90deg, rgba(8,7,7,0.78) 0%, rgba(8,7,7,0.58) 34%, rgba(8,7,7,0.24) 62%, rgba(8,7,7,0.18) 100%),
         linear-gradient(180deg, rgba(8,7,7,0.16) 0%, rgba(8,7,7,0.32) 42%, rgba(8,7,7,0.72) 100%),
         radial-gradient(circle at 24% 42%, rgba(8,7,7,0.18) 0%, rgba(8,7,7,0.46) 48%, rgba(8,7,7,0.62) 100%),
         url('about-hero.jpg') center/cover no-repeat;
-      border-bottom: 1px solid var(--border);
-    }
-
-    .about-hero .container {
-      width: min(1240px, calc(100% - 48px));
-    }
-
-    .about-hero-content {
-      max-width: 760px;
-      padding: 90px 0 48px;
-      position: relative;
-      z-index: 1;
-    }
-
-    .eyebrow {
-      display: inline-block;
-      padding: 8px 14px;
-      border: 1px solid rgba(212,160,23,0.45);
-      background: var(--gold-soft);
-      color: #f3d98e;
-      border-radius: 999px;
-      font-size: 0.86rem;
-      margin-bottom: 18px;
-    }
-
-    .about-hero h1 {
-      margin: 0;
-      font-size: clamp(2rem, 4vw, 3.2rem);
-      line-height: 1.08;
-      letter-spacing: -0.04em;
-    }
-
-    .about-hero p {
-      color: #eee5d5;
-      font-size: 1rem;
-      max-width: 700px;
-      margin: 16px 0 0;
-      line-height: 1.7;
-    }
-
-    .hero-actions {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 14px;
-      margin-top: 24px;
     }
 
     .about-intro-layout {
@@ -332,24 +284,12 @@
         grid-template-columns: 1fr;
       }
 
-      .about-hero {
-        min-height: auto;
-      }
-
-      .about-hero-content {
-        padding: 84px 0 44px;
-      }
-
       .about-image-card {
         min-height: 420px;
       }
     }
 
     @media (max-width: 700px) {
-      .about-hero .container {
-        width: min(1240px, calc(100% - 28px));
-      }
-
       .about-copy-card,
       .value-card,
       .step-card,
@@ -376,9 +316,9 @@
 <body>
   <div id="site-header"></div>
 
-  <section class="about-hero">
-    <div class="container about-hero-content">
-      <div class="eyebrow">Why choose Pick-U Japan</div>
+  <section class="page-hero hero-about">
+    <div class="container page-hero-content">
+      <div class="page-eyebrow">Why choose Pick-U Japan</div>
       <h1>About Pick-U Japan</h1>
       <p>
         Private transfers designed for smooth travel across Japan — from airport pickups to city rides and custom charter trips.
@@ -557,7 +497,7 @@
   <section class="section" style="background:#1d1815;">
     <div class="container">
       <div class="about-cta">
-        <div class="eyebrow">Travel with Pick-U</div>
+        <div class="page-eyebrow">Travel with Pick-U</div>
         <h2>Need a private transfer in Japan?</h2>
         <p>
           Explore our services or send us your trip details for airport transfers, private rides,
