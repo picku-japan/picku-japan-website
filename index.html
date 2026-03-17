@@ -364,6 +364,199 @@
         grid-template-columns: 1fr;
       }
     }
+
+        .ai-planner-section {
+      background: linear-gradient(180deg, #15120f 0%, #1d1814 100%);
+      border-top: 1px solid rgba(255,255,255,0.04);
+      border-bottom: 1px solid rgba(255,255,255,0.04);
+    }
+
+    .ai-planner-wrap {
+      display: grid;
+      grid-template-columns: 1.05fr 1.2fr;
+      gap: 34px;
+      align-items: start;
+    }
+
+    .ai-planner-intro h2 {
+      margin: 0;
+      font-size: clamp(2rem, 3vw, 3rem);
+      line-height: 1.12;
+      letter-spacing: -0.03em;
+    }
+
+    .ai-planner-intro p {
+      margin-top: 18px;
+      color: #cfc6bb;
+      font-size: 1rem;
+      max-width: 540px;
+    }
+
+    .ai-planner-points {
+      display: grid;
+      gap: 14px;
+      margin-top: 26px;
+    }
+
+    .ai-planner-point {
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.06);
+      border-radius: 20px;
+      padding: 16px 18px;
+    }
+
+    .ai-planner-point strong {
+      display: block;
+      margin-bottom: 6px;
+      color: #fff;
+      font-size: 0.98rem;
+    }
+
+    .ai-planner-point span {
+      color: #b8afa5;
+      font-size: 0.95rem;
+      line-height: 1.55;
+    }
+
+    .ai-planner-card {
+      background: #221d19;
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 28px;
+      padding: 26px;
+      box-shadow: 0 20px 50px rgba(0,0,0,0.22);
+    }
+
+    .ai-planner-form {
+      display: grid;
+      gap: 18px;
+    }
+
+    .ai-field label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: 700;
+      font-size: 0.95rem;
+      color: #f5efe6;
+    }
+
+    .ai-field select,
+    .ai-field input {
+      width: 100%;
+      border: 1px solid rgba(255,255,255,0.10);
+      background: #181513;
+      color: #fff;
+      border-radius: 16px;
+      padding: 14px 15px;
+      font-size: 0.98rem;
+      outline: none;
+      transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .ai-field select:focus,
+    .ai-field input:focus {
+      border-color: rgba(212,160,23,0.65);
+      box-shadow: 0 0 0 3px rgba(212,160,23,0.12);
+    }
+
+    .ai-grid-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+
+    .ai-planner-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 4px;
+    }
+
+    .ai-result {
+      margin-top: 22px;
+      display: none;
+    }
+
+    .ai-result.show {
+      display: block;
+    }
+
+    .ai-result-card {
+      background: linear-gradient(180deg, rgba(212,160,23,0.10) 0%, rgba(255,255,255,0.03) 100%);
+      border: 1px solid rgba(212,160,23,0.20);
+      border-radius: 22px;
+      padding: 22px;
+    }
+
+    .ai-result-label {
+      display: inline-block;
+      font-size: 0.8rem;
+      border-radius: 999px;
+      padding: 7px 12px;
+      background: rgba(212,160,23,0.12);
+      border: 1px solid rgba(212,160,23,0.18);
+      color: #f3d98e;
+      margin-bottom: 14px;
+    }
+
+    .ai-result-card h3 {
+      margin: 0;
+      font-size: 1.4rem;
+      line-height: 1.25;
+    }
+
+    .ai-result-card p {
+      margin: 14px 0 0;
+      color: #ddd3c8;
+      line-height: 1.65;
+    }
+
+    .ai-result-list {
+      list-style: none;
+      padding: 0;
+      margin: 16px 0 0;
+      display: grid;
+      gap: 8px;
+    }
+
+    .ai-result-list li {
+      color: #f0e7db;
+      padding-left: 18px;
+      position: relative;
+      line-height: 1.55;
+    }
+
+    .ai-result-list li::before {
+      content: "•";
+      position: absolute;
+      left: 0;
+      top: 0;
+      color: var(--gold);
+      font-weight: 700;
+    }
+
+    .ai-result-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 20px;
+    }
+
+    .ai-mini-note {
+      margin-top: 14px;
+      color: #b8afa5;
+      font-size: 0.9rem;
+      line-height: 1.55;
+    }
+
+    @media (max-width: 980px) {
+      .ai-planner-wrap {
+        grid-template-columns: 1fr;
+      }
+
+      .ai-grid-2 {
+        grid-template-columns: 1fr;
+      }
+    }
   </style>
 </head>
 <body>
@@ -371,18 +564,21 @@
 
   <section class="hero" id="home">
     <div class="container hero-content">
-      <div class="eyebrow">Private transfer service in Japan</div>
-      <h1>Private Airport Transfers, City Rides & Charters in Japan</h1>
+      <div class="eyebrow">Private travel planning in Japan</div>
+      <h1>Private Transfers, Charters & Smart Trip Planning in Japan</h1>
       <p>
-        Reliable door-to-door transportation with professional drivers, comfortable vehicles,
-        and easy online booking for airports, cities, and sightseeing routes.
+        Plan airport transfers, private rides, and custom day trips with professional drivers,
+        comfortable vehicles, and a smarter way to find the best option for your journey.
       </p>
       <div class="hero-actions">
-        <a class="btn btn-primary" href="#services">Explore Services</a>
+        <a class="btn btn-primary" href="#ai-planner">Start AI Trip Planner</a>
+        <a class="btn btn-secondary" href="#services">Explore Services</a>
         <a class="btn btn-secondary" href="#popular">View Popular Routes</a>
       </div>
     </div>
   </section>
+
+  
 
   <section class="section" id="services" style="background:#181513;">
     <div class="container">
@@ -822,6 +1018,231 @@
     window.addEventListener('resize', renderReviews);
     renderReviews();
   </script>
+  <script>
+  const aiPlannerBtn = document.getElementById('aiPlannerBtn');
+  const aiPlannerReset = document.getElementById('aiPlannerReset');
+  const aiResult = document.getElementById('aiResult');
+  const aiResultTitle = document.getElementById('aiResultTitle');
+  const aiResultText = document.getElementById('aiResultText');
+  const aiResultList = document.getElementById('aiResultList');
+  const aiResultLinks = document.getElementById('aiResultLinks');
+  const aiResultNote = document.getElementById('aiResultNote');
+
+  function getPlannerValues() {
+    return {
+      destination: document.getElementById('aiDestination').value,
+      service: document.getElementById('aiService').value,
+      duration: document.getElementById('aiDuration').value,
+      style: document.getElementById('aiStyle').value,
+      group: document.getElementById('aiGroup').value,
+      luggage: document.getElementById('aiLuggage').value
+    };
+  }
+
+  function vehicleSuggestion(group, luggage) {
+    if (group === '10+') return 'Mini Bus / Bus';
+    if (group === '6-9') return 'Hiace Grand Cabin';
+    if (group === '3-5' && luggage === 'many') return 'Hiace Grand Cabin';
+    return 'Alphard / Vellfire';
+  }
+
+  function buildLinks(links) {
+    aiResultLinks.innerHTML = '';
+    links.forEach(link => {
+      const a = document.createElement('a');
+      a.href = link.href;
+      a.className = link.secondary ? 'btn btn-secondary' : 'btn btn-primary';
+      a.textContent = link.label;
+      if (link.targetBlank) a.target = '_blank';
+      aiResultLinks.appendChild(a);
+    });
+  }
+
+  function buildList(items) {
+    aiResultList.innerHTML = '';
+    items.forEach(item => {
+      const li = document.createElement('li');
+      li.textContent = item;
+      aiResultList.appendChild(li);
+    });
+  }
+
+  function getRecommendation(data) {
+    const vehicle = vehicleSuggestion(data.group, data.luggage);
+
+    if (!data.destination || !data.service || !data.duration) {
+      return {
+        title: 'Complete a few more trip details',
+        text: 'Please select your destination, service type, and duration so we can suggest the most suitable option.',
+        list: [
+          'Choose where you are going',
+          'Choose the type of service you need',
+          'Choose whether this is a one-way trip or a longer charter'
+        ],
+        links: [],
+        note: 'Once those details are selected, your recommendation will appear here.'
+      };
+    }
+
+    if (data.destination === 'tokyo' && data.service === 'airport') {
+      return {
+        title: 'Tokyo Airport Transfer',
+        text: 'A private airport transfer is the best fit for a smooth arrival or departure in Tokyo.',
+        list: [
+          'Best for direct hotel-to-airport or airport-to-hotel travel',
+          `Recommended vehicle: ${vehicle}`,
+          'Ideal if you want the fastest and simplest booking option'
+        ],
+        links: [
+          { label: 'View Airport Transfers', href: 'airport-transfers.html' },
+          { label: 'Book Narita Transfer', href: 'https://widgets.bokun.io/online-sales/11dad9b8-4629-4114-ab40-b6ce758d47ae/experience/1046669', targetBlank: true, secondary: true }
+        ],
+        note: 'If you are arriving at Haneda instead of Narita, you can also choose the Tokyo airport transfer page and select the correct route.'
+      };
+    }
+
+    if (data.destination === 'mtfuji' && (data.service === 'charter' || data.duration === '8h' || data.duration === '10h' || data.duration === 'fullday')) {
+      return {
+        title: 'Mt Fuji Private Charter / Day Tour',
+        text: 'A private charter is the most suitable option for visiting Mt Fuji comfortably with sightseeing stops along the way.',
+        list: [
+          'Best for scenic stops and flexible pacing',
+          `Recommended vehicle: ${vehicle}`,
+          'Suitable for families, photographers, and travelers who want a full private day'
+        ],
+        links: [
+          { label: 'View Charters & Tours', href: 'charters.html' },
+          { label: 'Contact for Custom Mt Fuji Plan', href: 'contact.html', secondary: true }
+        ],
+        note: 'Popular routes often include Lake Kawaguchi, Chureito Pagoda, Oshino Hakkai, and flexible photo stops depending on traffic and weather.'
+      };
+    }
+
+    if (data.destination === 'hakone' && (data.service === 'charter' || data.service === 'private')) {
+      return {
+        title: 'Hakone Private Transfer or Charter',
+        text: 'Hakone works best with either a direct private transfer or a charter if you want sightseeing during the day.',
+        list: [
+          'Choose private transfer for simple point-to-point travel',
+          'Choose charter if you want to stop for sightseeing',
+          `Recommended vehicle: ${vehicle}`
+        ],
+        links: [
+          { label: 'View Private Transfers', href: 'private-transfers.html' },
+          { label: 'View Charters & Tours', href: 'charters.html', secondary: true }
+        ],
+        note: 'Hakone travel time can vary, so a charter is often better if you want a more relaxed plan with stops.'
+      };
+    }
+
+    if (data.destination === 'yokohama' && (data.service === 'cruise' || data.service === 'private')) {
+      return {
+        title: 'Yokohama Cruise Port Transfer / Tour',
+        text: 'For cruise arrivals or departures, a dedicated private transfer or short charter is the most suitable option.',
+        list: [
+          'Useful for port pickup with luggage',
+          'Good option for cruise guests with limited time',
+          `Recommended vehicle: ${vehicle}`
+        ],
+        links: [
+          { label: 'View Private Transfers', href: 'private-transfers.html' },
+          { label: 'Ask for Cruise Port Arrangement', href: 'contact.html', secondary: true }
+        ],
+        note: 'If you have extra time before hotel check-in or airport drop-off, a short custom route can often be arranged in advance.'
+      };
+    }
+
+    if (data.destination === 'osaka' && data.service === 'airport') {
+      return {
+        title: 'Kansai Airport Transfer',
+        text: 'A Kansai airport transfer is the best fit for direct travel between the airport and Osaka, Kyoto, or nearby areas.',
+        list: [
+          'Simple and direct airport pickup or drop-off',
+          `Recommended vehicle: ${vehicle}`,
+          'Suitable for Osaka, Kyoto, and Nara routes'
+        ],
+        links: [
+          { label: 'View Airport Transfers', href: 'airport-transfers.html' },
+          { label: 'Book Kansai Airport Transfer', href: 'https://widgets.bokun.io/online-sales/11dad9b8-4629-4114-ab40-b6ce758d47ae/experience/1067188', targetBlank: true, secondary: true }
+        ],
+        note: 'If your group is large or you plan to stop in more than one place, a charter may be more suitable than a simple transfer.'
+      };
+    }
+
+    if (data.service === 'charter' || data.duration === '8h' || data.duration === '10h' || data.duration === 'fullday') {
+      return {
+        title: 'Private Charter / Day Tour',
+        text: 'Based on your selections, a private charter is the most flexible option for combining transfers, sightseeing, and custom stops.',
+        list: [
+          'Best for travelers who want more than a direct transfer',
+          'Suitable for multiple stops and flexible routing',
+          `Recommended vehicle: ${vehicle}`
+        ],
+        links: [
+          { label: 'View Charters & Tours', href: 'charters.html' },
+          { label: 'Ask for Custom Plan', href: 'contact.html', secondary: true }
+        ],
+        note: 'This option is especially useful if you want to combine airport pickup, sightseeing, shopping, or hotel drop-off in one itinerary.'
+      };
+    }
+
+    if (data.service === 'private' || data.duration === 'oneway') {
+      return {
+        title: 'Private Point-to-Point Transfer',
+        text: 'A private transfer is the most suitable option for direct travel between hotels, cities, ports, airports, or resorts.',
+        list: [
+          'Best for one-way travel without a longer sightseeing plan',
+          `Recommended vehicle: ${vehicle}`,
+          'Simple booking flow and efficient routing'
+        ],
+        links: [
+          { label: 'View Private Transfers', href: 'private-transfers.html' },
+          { label: 'Contact for Route Check', href: 'contact.html', secondary: true }
+        ],
+        note: 'If your route includes several stops or waiting time, a charter may be a better fit than a standard transfer.'
+      };
+    }
+
+    return {
+      title: 'Custom private travel recommendation',
+      text: 'Your trip looks slightly more customized, so the best next step is to check our service categories or contact us for a tailored plan.',
+      list: [
+        `Suggested vehicle direction: ${vehicle}`,
+        'You may need a custom route or service combination',
+        'A private charter may be more suitable than a standard transfer'
+      ],
+      links: [
+        { label: 'Explore Services', href: '#services' },
+        { label: 'Contact Us', href: 'contact.html', secondary: true }
+      ],
+      note: 'This is common for multi-stop routes, port travel, special luggage arrangements, and custom sightseeing requests.'
+    };
+  }
+
+  aiPlannerBtn.addEventListener('click', () => {
+    const data = getPlannerValues();
+    const result = getRecommendation(data);
+
+    aiResultTitle.textContent = result.title;
+    aiResultText.textContent = result.text;
+    buildList(result.list);
+    buildLinks(result.links);
+    aiResultNote.textContent = result.note || '';
+    aiResult.classList.add('show');
+    aiResult.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+  });
+
+  aiPlannerReset.addEventListener('click', () => {
+    setTimeout(() => {
+      aiResult.classList.remove('show');
+      aiResultTitle.textContent = 'Recommended service';
+      aiResultText.textContent = 'Your result will appear here.';
+      aiResultList.innerHTML = '';
+      aiResultLinks.innerHTML = '';
+      aiResultNote.textContent = '';
+    }, 0);
+  });
+</script>
 <script src="includes.js"></script>
 </body>
 </html>
