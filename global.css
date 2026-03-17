@@ -258,3 +258,83 @@ img {
     padding-top: 92px;
   }
 }
+
+/* =========================
+   Header AI button
+========================= */
+
+.ai-link {
+  color: #f3d98e;
+  font-weight: 700;
+}
+
+/* =========================
+   Mobile menu button
+========================= */
+
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.menu-toggle span {
+  width: 22px;
+  height: 2px;
+  background: #fff;
+  display: block;
+}
+
+/* =========================
+   Mobile layout
+========================= */
+
+@media (max-width: 900px) {
+
+  .menu-toggle {
+    display: flex;
+  }
+
+  .nav-right {
+    position: absolute;
+    top: 72px;
+    left: 16px;
+    right: 16px;
+
+    background: #1e1916;
+    border: 1px solid rgba(255,255,255,0.08);
+
+    border-radius: 20px;
+
+    padding: 24px;
+
+    display: none;
+
+    flex-direction: column;
+    gap: 20px;
+
+    box-shadow: 0 20px 50px rgba(0,0,0,0.4);
+  }
+
+  .nav-right.open {
+    display: flex;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .nav-links a {
+    font-size: 1.05rem;
+  }
+
+  .lang-switch {
+    border-top: 1px solid rgba(255,255,255,0.08);
+    padding-top: 16px;
+  }
+
+}
