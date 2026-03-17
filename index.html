@@ -579,118 +579,116 @@
   </section>
 
     <section class="section ai-planner-section" id="ai-planner">
-    <div class="container">
-      <div class="ai-planner-wrap">
-        <div class="ai-planner-intro">
-          <div class="eyebrow">AI Trip Planner</div>
-          <h2>Find the right transfer or tour in seconds</h2>
-          <p>
-            Tell us where you're going, how long you have, and your group size.
-            We'll suggest the best private transfer or charter option for your trip.
-          </p>
-          <div style="margin-top:22px; color:#b8afa5; font-size:0.92rem; line-height:1.6;">
-            Not sure what to choose? This planner helps you quickly find the most suitable service before booking.
+  <div class="container">
+    <div class="ai-planner-wrap">
+      
+      <div class="ai-planner-intro">
+        <div class="eyebrow">AI Trip Planner</div>
+        <h2>Find the right transfer or tour in seconds</h2>
+        <p>
+          Tell us where you're going, how long you have, and your group size.
+          We’ll suggest the most suitable route, service, and vehicle for your trip.
+        </p>
+      </div>
+
+      <div class="ai-planner-card">
+        <form class="ai-planner-form" id="aiPlannerForm">
+          <div class="ai-grid-2">
+            <div class="ai-field">
+              <label for="aiDestination">Where are you going?</label>
+              <select id="aiDestination" name="destination">
+                <option value="">Select destination</option>
+                <option value="tokyo">Tokyo</option>
+                <option value="mtfuji">Mt Fuji</option>
+                <option value="hakone">Hakone</option>
+                <option value="yokohama">Yokohama / Cruise Port</option>
+                <option value="osaka">Osaka / Kyoto / Kansai</option>
+                <option value="custom">Other / Custom</option>
+              </select>
+            </div>
+
+            <div class="ai-field">
+              <label for="aiService">What do you need?</label>
+              <select id="aiService" name="service">
+                <option value="">Select service type</option>
+                <option value="airport">Airport Transfer</option>
+                <option value="private">Private Transfer</option>
+                <option value="charter">Charter / Day Tour</option>
+                <option value="cruise">Cruise Port Transfer / Tour</option>
+              </select>
+            </div>
           </div>
-        </div>
-        </div>
 
-        <div class="ai-planner-card">
-          <form class="ai-planner-form" id="aiPlannerForm">
-            <div class="ai-grid-2">
-              <div class="ai-field">
-                <label for="aiDestination">Where are you going?</label>
-                <select id="aiDestination" name="destination">
-                  <option value="">Select destination</option>
-                  <option value="tokyo">Tokyo</option>
-                  <option value="mtfuji">Mt Fuji</option>
-                  <option value="hakone">Hakone</option>
-                  <option value="yokohama">Yokohama / Cruise Port</option>
-                  <option value="osaka">Osaka / Kyoto / Kansai</option>
-                  <option value="custom">Other / Custom</option>
-                </select>
-              </div>
-
-              <div class="ai-field">
-                <label for="aiService">What do you need?</label>
-                <select id="aiService" name="service">
-                  <option value="">Select service type</option>
-                  <option value="airport">Airport Transfer</option>
-                  <option value="private">Private Transfer</option>
-                  <option value="charter">Charter / Day Tour</option>
-                  <option value="cruise">Cruise Port Transfer / Tour</option>
-                </select>
-              </div>
+          <div class="ai-grid-2">
+            <div class="ai-field">
+              <label for="aiDuration">How much time do you have?</label>
+              <select id="aiDuration" name="duration">
+                <option value="">Select duration</option>
+                <option value="oneway">One-way transfer</option>
+                <option value="5h">5 hours</option>
+                <option value="8h">8 hours</option>
+                <option value="10h">10 hours</option>
+                <option value="fullday">Full day</option>
+              </select>
             </div>
 
-            <div class="ai-grid-2">
-              <div class="ai-field">
-                <label for="aiDuration">How much time do you have?</label>
-                <select id="aiDuration" name="duration">
-                  <option value="">Select duration</option>
-                  <option value="oneway">One-way transfer</option>
-                  <option value="5h">5 hours</option>
-                  <option value="8h">8 hours</option>
-                  <option value="10h">10 hours</option>
-                  <option value="fullday">Full day</option>
-                </select>
-              </div>
+            <div class="ai-field">
+              <label for="aiStyle">What kind of trip is it?</label>
+              <select id="aiStyle" name="style">
+                <option value="">Select travel style</option>
+                <option value="sightseeing">Must-see sightseeing</option>
+                <option value="family">Family friendly</option>
+                <option value="shopping">Shopping</option>
+                <option value="food">Food & local culture</option>
+                <option value="flexible">Flexible itinerary</option>
+              </select>
+            </div>
+          </div>
 
-              <div class="ai-field">
-                <label for="aiStyle">What kind of trip is it?</label>
-                <select id="aiStyle" name="style">
-                  <option value="">Select travel style</option>
-                  <option value="sightseeing">Must-see sightseeing</option>
-                  <option value="family">Family friendly</option>
-                  <option value="shopping">Shopping</option>
-                  <option value="food">Food & local culture</option>
-                  <option value="flexible">Flexible itinerary</option>
-                </select>
-              </div>
+          <div class="ai-grid-2">
+            <div class="ai-field">
+              <label for="aiGroup">How many passengers?</label>
+              <select id="aiGroup" name="group">
+                <option value="">Select group size</option>
+                <option value="1-2">1–2 passengers</option>
+                <option value="3-5">3–5 passengers</option>
+                <option value="6-9">6–9 passengers</option>
+                <option value="10+">10+ passengers</option>
+              </select>
             </div>
 
-            <div class="ai-grid-2">
-              <div class="ai-field">
-                <label for="aiGroup">How many passengers?</label>
-                <select id="aiGroup" name="group">
-                  <option value="">Select group size</option>
-                  <option value="1-2">1–2 passengers</option>
-                  <option value="3-5">3–5 passengers</option>
-                  <option value="6-9">6–9 passengers</option>
-                  <option value="10+">10+ passengers</option>
-                </select>
-              </div>
-
-              <div class="ai-field">
-                <label for="aiLuggage">How much luggage?</label>
-                <select id="aiLuggage" name="luggage">
-                  <option value="">Select luggage amount</option>
-                  <option value="light">Light luggage</option>
-                  <option value="standard">Standard luggage</option>
-                  <option value="many">Multiple large suitcases</option>
-                </select>
-              </div>
+            <div class="ai-field">
+              <label for="aiLuggage">How much luggage?</label>
+              <select id="aiLuggage" name="luggage">
+                <option value="">Select luggage amount</option>
+                <option value="light">Light luggage</option>
+                <option value="standard">Standard luggage</option>
+                <option value="many">Multiple large suitcases</option>
+              </select>
             </div>
+          </div>
 
-            <div class="ai-planner-actions">
-              <button type="button" class="btn btn-primary" id="aiPlannerBtn">Get My Recommendation</button>
-              <button type="reset" class="btn btn-secondary" id="aiPlannerReset">Reset</button>
-            </div>
-          </form>
+          <div class="ai-planner-actions">
+            <button type="button" class="btn btn-primary" id="aiPlannerBtn">Get My Recommendation</button>
+            <button type="reset" class="btn btn-secondary" id="aiPlannerReset">Reset</button>
+          </div>
+        </form>
 
-          <div class="ai-result" id="aiResult">
-            <div class="ai-result-card">
-              <div class="ai-result-label">Recommended for your trip</div>
-              <h3 id="aiResultTitle">Recommended service</h3>
-              <p id="aiResultText">Your result will appear here.</p>
-              <ul class="ai-result-list" id="aiResultList"></ul>
-              <div class="ai-result-links" id="aiResultLinks"></div>
-              <div class="ai-mini-note" id="aiResultNote"></div>
-            </div>
+        <div class="ai-result" id="aiResult">
+          <div class="ai-result-card">
+            <div class="ai-result-label">Your AI trip suggestion</div>
+            <h3 id="aiResultTitle">Recommended service</h3>
+            <p id="aiResultText">Your result will appear here.</p>
+            <ul class="ai-result-list" id="aiResultList"></ul>
+            <div class="ai-result-links" id="aiResultLinks"></div>
+            <div class="ai-mini-note" id="aiResultNote"></div>
           </div>
         </div>
       </div>
+
     </div>
-  </section>
+  </div>
+</section>
 
   <section class="section" id="services" style="background:#181513;">
     <div class="container">
