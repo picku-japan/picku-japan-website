@@ -25,6 +25,13 @@ async function loadIncludes() {
       nav.classList.toggle("open");
       toggle.classList.toggle("active");
     });
+
+    document.querySelectorAll(".nav-links a").forEach(link => {
+      link.addEventListener("click", () => {
+        nav.classList.remove("open");
+        toggle.classList.remove("active");
+      });
+    });
   }
 
 }
