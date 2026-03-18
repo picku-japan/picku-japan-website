@@ -1,4 +1,4 @@
-  <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
@@ -117,7 +117,7 @@
       margin-top: 8px;
       color: var(--gold);
     }
-    
+
     .cards {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
@@ -125,17 +125,14 @@
     }
 
     .card {
+      display: block;
+      text-decoration: none;
+      color: inherit;
       overflow: hidden;
       border-radius: 32px;
       background: var(--panel);
       border: 1px solid var(--border);
       box-shadow: 0 20px 50px rgba(0,0,0,0.24);
-    }
-
-    .card {
-      display: block;
-      text-decoration: none;
-      color: inherit;
     }
 
     .card-image {
@@ -194,36 +191,6 @@
       border: 1px solid var(--border);
       border-radius: 28px;
       overflow: hidden;
-    }
-
-    .vehicle-card img {
-      width: 100%;
-      height: 210px;
-      object-fit: cover;
-      transform: scale(1.12);
-      transform-origin: center;
-    }
-
-    .vehicle-body {
-      padding: 22px;
-    }
-
-    .vehicle-body h3 {
-      margin: 0 0 10px;
-      font-size: 1.24rem;
-    }
-
-    .vehicle-meta {
-      color: var(--muted);
-      font-size: 0.95rem;
-      margin-bottom: 12px;
-    }
-
-    .vehicle-card {
-      background: var(--panel);
-      border: 1px solid var(--border);
-      border-radius: 28px;
-      overflow: hidden;
       transition: transform 0.18s ease, box-shadow 0.18s ease;
     }
 
@@ -245,256 +212,19 @@
       transform: scale(1.16);
     }
 
-    <style>
-  /* ===== FAQ Section Upgrade ===== */
-  .faq-section-upgraded {
-    background:
-      radial-gradient(circle at top left, rgba(212,160,23,0.10), transparent 28%),
-      linear-gradient(180deg, #1b1714 0%, #221d19 100%);
-    position: relative;
-    overflow: hidden;
-  }
-
-  .faq-section-upgraded::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background:
-      linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px),
-      linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px);
-    background-size: 26px 26px;
-    opacity: 0.08;
-    pointer-events: none;
-  }
-
-  .faq-wrap {
-    position: relative;
-    z-index: 1;
-  }
-
-  .faq-top {
-    max-width: 820px;
-    margin: 0 auto 34px;
-    text-align: center;
-  }
-
-  .faq-top .eyebrow {
-    margin-bottom: 16px;
-  }
-
-  .faq-top h2 {
-    margin: 0;
-    font-size: clamp(2rem, 3.2vw, 3.2rem);
-    line-height: 1.12;
-    letter-spacing: -0.03em;
-  }
-
-  .faq-top p {
-    margin: 16px auto 0;
-    color: #c8beb2;
-    max-width: 700px;
-    font-size: 1rem;
-    line-height: 1.75;
-  }
-
-  .faq-tabs {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 12px;
-    margin: 0 auto 30px;
-    max-width: 1080px;
-  }
-
-  .faq-tab {
-    appearance: none;
-    border: 1px solid rgba(255,255,255,0.10);
-    background: rgba(255,255,255,0.03);
-    color: #ddd4ca;
-    border-radius: 999px;
-    padding: 12px 18px;
-    font-size: 0.96rem;
-    font-weight: 700;
-    cursor: pointer;
-    transition: all 0.22s ease;
-  }
-
-  .faq-tab:hover {
-    transform: translateY(-1px);
-    border-color: rgba(212,160,23,0.35);
-    color: #fff;
-    background: rgba(212,160,23,0.08);
-  }
-
-  .faq-tab.active {
-    background: linear-gradient(180deg, #d4a017 0%, #b98910 100%);
-    color: #16120f;
-    border-color: rgba(212,160,23,0.95);
-    box-shadow: 0 10px 24px rgba(212,160,23,0.18);
-  }
-
-  .faq-panels {
-    max-width: 980px;
-    margin: 0 auto;
-  }
-
-  .faq-panel {
-    display: none;
-  }
-
-  .faq-panel.active {
-    display: block;
-    animation: faqFade 0.25s ease;
-  }
-
-  @keyframes faqFade {
-    from {
-      opacity: 0;
-      transform: translateY(6px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-
-  .faq-accordion {
-    display: grid;
-    gap: 14px;
-  }
-
-  .faq-card {
-    border: 1px solid rgba(255,255,255,0.08);
-    border-radius: 24px;
-    background: rgba(255,255,255,0.03);
-    box-shadow: 0 14px 36px rgba(0,0,0,0.16);
-    overflow: hidden;
-    transition: border-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
-  }
-
-  .faq-card:hover {
-    border-color: rgba(212,160,23,0.24);
-    transform: translateY(-2px);
-    box-shadow: 0 18px 40px rgba(0,0,0,0.22);
-  }
-
-  .faq-question {
-    width: 100%;
-    background: transparent;
-    border: 0;
-    color: #f7f1e7;
-    padding: 22px 26px;
-    text-align: left;
-    font-size: 1.05rem;
-    font-weight: 700;
-    line-height: 1.45;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 18px;
-    cursor: pointer;
-  }
-
-  .faq-question-text {
-    flex: 1;
-  }
-
-  .faq-icon {
-    width: 34px;
-    height: 34px;
-    flex: 0 0 34px;
-    border-radius: 50%;
-    border: 1px solid rgba(255,255,255,0.12);
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    color: #d7cdbf;
-    font-size: 1.25rem;
-    line-height: 1;
-    transition: transform 0.24s ease, background 0.24s ease, color 0.24s ease, border-color 0.24s ease;
-  }
-
-  .faq-card.open .faq-icon {
-    transform: rotate(45deg);
-    background: rgba(212,160,23,0.12);
-    color: #f2d67a;
-    border-color: rgba(212,160,23,0.32);
-  }
-
-  .faq-answer {
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.28s ease;
-  }
-
-  .faq-answer-inner {
-    padding: 0 26px 24px;
-    color: #cfc5ba;
-    line-height: 1.8;
-    font-size: 0.98rem;
-  }
-
-  .faq-answer-inner p {
-    margin: 0 0 12px;
-  }
-
-  .faq-answer-inner p:last-child {
-    margin-bottom: 0;
-  }
-
-  .faq-answer-inner ul {
-    margin: 10px 0 0;
-    padding-left: 20px;
-  }
-
-  .faq-answer-inner li {
-    margin-bottom: 8px;
-    color: #d9d0c4;
-  }
-
-  .faq-note-box {
-    max-width: 980px;
-    margin: 26px auto 0;
-    border: 1px solid rgba(212,160,23,0.16);
-    background: rgba(212,160,23,0.07);
-    color: #e7dccd;
-    border-radius: 22px;
-    padding: 18px 20px;
-    line-height: 1.7;
-    font-size: 0.95rem;
-  }
-
-  .faq-note-box strong {
-    color: #f2d67a;
-  }
-
-  @media (max-width: 820px) {
-    .faq-tabs {
-      justify-content: flex-start;
+    .vehicle-body {
+      padding: 22px;
     }
 
-    .faq-question {
-      padding: 20px 18px;
-      font-size: 1rem;
+    .vehicle-body h3 {
+      margin: 0 0 10px;
+      font-size: 1.24rem;
     }
 
-    .faq-answer-inner {
-      padding: 0 18px 20px;
-    }
-    
-    .faq-item {
-      padding: 18px 0;
-      border-bottom: 1px solid var(--border);
-    }
-
-    .faq-item strong {
-      display: block;
-      margin-bottom: 8px;
-    }
-
-    .faq-item p {
-      margin: 0;
+    .vehicle-meta {
       color: var(--muted);
+      font-size: 0.95rem;
+      margin-bottom: 12px;
     }
 
     .review-card {
@@ -566,43 +296,7 @@
       border-radius: 28px;
     }
 
-    @media (max-width: 1100px) {
-      .reviews-page {
-        grid-template-columns: repeat(2, 1fr);
-      }
-    }
-
-    @media (max-width: 980px) {
-      .cards {
-        grid-template-columns: 1fr;
-      }
-
-      .hero {
-        min-height: auto;
-      }
-
-      .card-image {
-        height: 330px;
-      }
-
-      .hero-content {
-        max-width: 100%;
-        padding: 72px 0;
-      }
-
-      .why-choose-top-img,
-      .why-choose-bottom-img {
-        height: 280px;
-      }
-    }
-
-    @media (max-width: 700px) {
-      .reviews-page {
-        grid-template-columns: 1fr;
-      }
-    }
-
-        .ai-planner-section {
+    .ai-planner-section {
       background: linear-gradient(180deg, #15120f 0%, #1d1814 100%);
       border-top: 1px solid rgba(255,255,255,0.04);
       border-bottom: 1px solid rgba(255,255,255,0.04);
@@ -628,32 +322,6 @@
       font-size: 1rem;
       max-width: 420px;
       line-height: 1.7;
-    }
-
-    .ai-planner-points {
-      display: grid;
-      gap: 14px;
-      margin-top: 26px;
-    }
-
-    .ai-planner-point {
-      background: rgba(255,255,255,0.03);
-      border: 1px solid rgba(255,255,255,0.06);
-      border-radius: 20px;
-      padding: 16px 18px;
-    }
-
-    .ai-planner-point strong {
-      display: block;
-      margin-bottom: 6px;
-      color: #fff;
-      font-size: 0.98rem;
-    }
-
-    .ai-planner-point span {
-      color: #b8afa5;
-      font-size: 0.95rem;
-      line-height: 1.55;
     }
 
     .ai-planner-card {
@@ -786,12 +454,283 @@
       line-height: 1.55;
     }
 
+    /* FAQ Section Upgrade */
+    .faq-section-upgraded {
+      background:
+        radial-gradient(circle at top left, rgba(212,160,23,0.10), transparent 28%),
+        linear-gradient(180deg, #1b1714 0%, #221d19 100%);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .faq-section-upgraded::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px),
+        linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px);
+      background-size: 26px 26px;
+      opacity: 0.08;
+      pointer-events: none;
+    }
+
+    .faq-wrap {
+      position: relative;
+      z-index: 1;
+    }
+
+    .faq-top {
+      max-width: 820px;
+      margin: 0 auto 34px;
+      text-align: center;
+    }
+
+    .faq-top .eyebrow {
+      margin-bottom: 16px;
+    }
+
+    .faq-top h2 {
+      margin: 0;
+      font-size: clamp(2rem, 3.2vw, 3.2rem);
+      line-height: 1.12;
+      letter-spacing: -0.03em;
+    }
+
+    .faq-top p {
+      margin: 16px auto 0;
+      color: #c8beb2;
+      max-width: 700px;
+      font-size: 1rem;
+      line-height: 1.75;
+    }
+
+    .faq-tabs {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 12px;
+      margin: 0 auto 30px;
+      max-width: 1080px;
+    }
+
+    .faq-tab {
+      appearance: none;
+      border: 1px solid rgba(255,255,255,0.10);
+      background: rgba(255,255,255,0.03);
+      color: #ddd4ca;
+      border-radius: 999px;
+      padding: 12px 18px;
+      font-size: 0.96rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.22s ease;
+    }
+
+    .faq-tab:hover {
+      transform: translateY(-1px);
+      border-color: rgba(212,160,23,0.35);
+      color: #fff;
+      background: rgba(212,160,23,0.08);
+    }
+
+    .faq-tab.active {
+      background: linear-gradient(180deg, #d4a017 0%, #b98910 100%);
+      color: #16120f;
+      border-color: rgba(212,160,23,0.95);
+      box-shadow: 0 10px 24px rgba(212,160,23,0.18);
+    }
+
+    .faq-panels {
+      max-width: 980px;
+      margin: 0 auto;
+    }
+
+    .faq-panel {
+      display: none;
+    }
+
+    .faq-panel.active {
+      display: block;
+      animation: faqFade 0.25s ease;
+    }
+
+    @keyframes faqFade {
+      from {
+        opacity: 0;
+        transform: translateY(6px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .faq-accordion {
+      display: grid;
+      gap: 14px;
+    }
+
+    .faq-card {
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 24px;
+      background: rgba(255,255,255,0.03);
+      box-shadow: 0 14px 36px rgba(0,0,0,0.16);
+      overflow: hidden;
+      transition: border-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .faq-card:hover {
+      border-color: rgba(212,160,23,0.24);
+      transform: translateY(-2px);
+      box-shadow: 0 18px 40px rgba(0,0,0,0.22);
+    }
+
+    .faq-question {
+      width: 100%;
+      background: transparent;
+      border: 0;
+      color: #f7f1e7;
+      padding: 22px 26px;
+      text-align: left;
+      font-size: 1.05rem;
+      font-weight: 700;
+      line-height: 1.45;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+      cursor: pointer;
+    }
+
+    .faq-question-text {
+      flex: 1;
+    }
+
+    .faq-icon {
+      width: 34px;
+      height: 34px;
+      flex: 0 0 34px;
+      border-radius: 50%;
+      border: 1px solid rgba(255,255,255,0.12);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      color: #d7cdbf;
+      font-size: 1.25rem;
+      line-height: 1;
+      transition: transform 0.24s ease, background 0.24s ease, color 0.24s ease, border-color 0.24s ease;
+    }
+
+    .faq-card.open .faq-icon {
+      transform: rotate(45deg);
+      background: rgba(212,160,23,0.12);
+      color: #f2d67a;
+      border-color: rgba(212,160,23,0.32);
+    }
+
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.28s ease;
+    }
+
+    .faq-answer-inner {
+      padding: 0 26px 24px;
+      color: #cfc5ba;
+      line-height: 1.8;
+      font-size: 0.98rem;
+    }
+
+    .faq-answer-inner p {
+      margin: 0 0 12px;
+    }
+
+    .faq-answer-inner p:last-child {
+      margin-bottom: 0;
+    }
+
+    .faq-answer-inner ul {
+      margin: 10px 0 0;
+      padding-left: 20px;
+    }
+
+    .faq-answer-inner li {
+      margin-bottom: 8px;
+      color: #d9d0c4;
+    }
+
+    .faq-note-box {
+      max-width: 980px;
+      margin: 26px auto 0;
+      border: 1px solid rgba(212,160,23,0.16);
+      background: rgba(212,160,23,0.07);
+      color: #e7dccd;
+      border-radius: 22px;
+      padding: 18px 20px;
+      line-height: 1.7;
+      font-size: 0.95rem;
+    }
+
+    .faq-note-box strong {
+      color: #f2d67a;
+    }
+
+    @media (max-width: 1100px) {
+      .reviews-page {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
     @media (max-width: 980px) {
+      .cards {
+        grid-template-columns: 1fr;
+      }
+
+      .hero {
+        min-height: auto;
+      }
+
+      .card-image {
+        height: 330px;
+      }
+
+      .hero-content {
+        max-width: 100%;
+        padding: 72px 0;
+      }
+
+      .why-choose-top-img,
+      .why-choose-bottom-img {
+        height: 280px;
+      }
+
       .ai-planner-wrap {
         grid-template-columns: 1fr;
       }
 
       .ai-grid-2 {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 820px) {
+      .faq-tabs {
+        justify-content: flex-start;
+      }
+
+      .faq-question {
+        padding: 20px 18px;
+        font-size: 1rem;
+      }
+
+      .faq-answer-inner {
+        padding: 0 18px 20px;
+      }
+    }
+
+    @media (max-width: 700px) {
+      .reviews-page {
         grid-template-columns: 1fr;
       }
     }
@@ -816,117 +755,115 @@
     </div>
   </section>
 
-    <section class="section ai-planner-section" id="ai-planner">
-  <div class="container">
-    <div class="ai-planner-wrap">
-      
-      <div class="ai-planner-intro">
-        <div class="eyebrow">AI Trip Planner</div>
-        <h2>Find the right transfer or tour in seconds</h2>
-        <p>
-          Tell us where you're going, how long you have, and your group size.
-          We’ll suggest the most suitable route, service, and vehicle for your trip.
-        </p>
-      </div>
+  <section class="section ai-planner-section" id="ai-planner">
+    <div class="container">
+      <div class="ai-planner-wrap">
+        <div class="ai-planner-intro">
+          <div class="eyebrow">AI Trip Planner</div>
+          <h2>Find the right transfer or tour in seconds</h2>
+          <p>
+            Tell us where you're going, how long you have, and your group size.
+            We’ll suggest the most suitable route, service, and vehicle for your trip.
+          </p>
+        </div>
 
-      <div class="ai-planner-card">
-        <form class="ai-planner-form" id="aiPlannerForm">
-          <div class="ai-grid-2">
-            <div class="ai-field">
-              <label for="aiDestination">Where are you going?</label>
-              <select id="aiDestination" name="destination">
-                <option value="">Select destination</option>
-                <option value="tokyo">Tokyo</option>
-                <option value="mtfuji">Mt Fuji</option>
-                <option value="hakone">Hakone</option>
-                <option value="yokohama">Yokohama / Cruise Port</option>
-                <option value="osaka">Osaka / Kyoto / Kansai</option>
-                <option value="custom">Other / Custom</option>
-              </select>
+        <div class="ai-planner-card">
+          <form class="ai-planner-form" id="aiPlannerForm">
+            <div class="ai-grid-2">
+              <div class="ai-field">
+                <label for="aiDestination">Where are you going?</label>
+                <select id="aiDestination" name="destination">
+                  <option value="">Select destination</option>
+                  <option value="tokyo">Tokyo</option>
+                  <option value="mtfuji">Mt Fuji</option>
+                  <option value="hakone">Hakone</option>
+                  <option value="yokohama">Yokohama / Cruise Port</option>
+                  <option value="osaka">Osaka / Kyoto / Kansai</option>
+                  <option value="custom">Other / Custom</option>
+                </select>
+              </div>
+
+              <div class="ai-field">
+                <label for="aiService">What do you need?</label>
+                <select id="aiService" name="service">
+                  <option value="">Select service type</option>
+                  <option value="airport">Airport Transfer</option>
+                  <option value="private">Private Transfer</option>
+                  <option value="charter">Charter / Day Tour</option>
+                  <option value="cruise">Cruise Port Transfer / Tour</option>
+                </select>
+              </div>
             </div>
 
-            <div class="ai-field">
-              <label for="aiService">What do you need?</label>
-              <select id="aiService" name="service">
-                <option value="">Select service type</option>
-                <option value="airport">Airport Transfer</option>
-                <option value="private">Private Transfer</option>
-                <option value="charter">Charter / Day Tour</option>
-                <option value="cruise">Cruise Port Transfer / Tour</option>
-              </select>
-            </div>
-          </div>
+            <div class="ai-grid-2">
+              <div class="ai-field">
+                <label for="aiDuration">How much time do you have?</label>
+                <select id="aiDuration" name="duration">
+                  <option value="">Select duration</option>
+                  <option value="oneway">One-way transfer</option>
+                  <option value="5h">5 hours</option>
+                  <option value="8h">8 hours</option>
+                  <option value="10h">10 hours</option>
+                  <option value="fullday">Full day</option>
+                </select>
+              </div>
 
-          <div class="ai-grid-2">
-            <div class="ai-field">
-              <label for="aiDuration">How much time do you have?</label>
-              <select id="aiDuration" name="duration">
-                <option value="">Select duration</option>
-                <option value="oneway">One-way transfer</option>
-                <option value="5h">5 hours</option>
-                <option value="8h">8 hours</option>
-                <option value="10h">10 hours</option>
-                <option value="fullday">Full day</option>
-              </select>
-            </div>
-
-            <div class="ai-field">
-              <label for="aiStyle">What kind of trip is it?</label>
-              <select id="aiStyle" name="style">
-                <option value="">Select travel style</option>
-                <option value="sightseeing">Must-see sightseeing</option>
-                <option value="family">Family friendly</option>
-                <option value="shopping">Shopping</option>
-                <option value="food">Food & local culture</option>
-                <option value="flexible">Flexible itinerary</option>
-              </select>
-            </div>
-          </div>
-
-          <div class="ai-grid-2">
-            <div class="ai-field">
-              <label for="aiGroup">How many passengers?</label>
-              <select id="aiGroup" name="group">
-                <option value="">Select group size</option>
-                <option value="1-2">1–3 passengers</option>
-                <option value="3-5">4–5 passengers</option>
-                <option value="6-9">6–9 passengers</option>
-                <option value="10+">10+ passengers</option>
-              </select>
+              <div class="ai-field">
+                <label for="aiStyle">What kind of trip is it?</label>
+                <select id="aiStyle" name="style">
+                  <option value="">Select travel style</option>
+                  <option value="sightseeing">Must-see sightseeing</option>
+                  <option value="family">Family friendly</option>
+                  <option value="shopping">Shopping</option>
+                  <option value="food">Food & local culture</option>
+                  <option value="flexible">Flexible itinerary</option>
+                </select>
+              </div>
             </div>
 
-            <div class="ai-field">
-              <label for="aiLuggage">How much luggage?</label>
-              <select id="aiLuggage" name="luggage">
-                <option value="">Select luggage amount</option>
-                <option value="light">Light luggage</option>
-                <option value="standard">Standard luggage</option>
-                <option value="many">Multiple large suitcases</option>
-              </select>
+            <div class="ai-grid-2">
+              <div class="ai-field">
+                <label for="aiGroup">How many passengers?</label>
+                <select id="aiGroup" name="group">
+                  <option value="">Select group size</option>
+                  <option value="1-2">1–3 passengers</option>
+                  <option value="3-5">4–5 passengers</option>
+                  <option value="6-9">6–9 passengers</option>
+                  <option value="10+">10+ passengers</option>
+                </select>
+              </div>
+
+              <div class="ai-field">
+                <label for="aiLuggage">How much luggage?</label>
+                <select id="aiLuggage" name="luggage">
+                  <option value="">Select luggage amount</option>
+                  <option value="light">Light luggage</option>
+                  <option value="standard">Standard luggage</option>
+                  <option value="many">Multiple large suitcases</option>
+                </select>
+              </div>
             </div>
-          </div>
 
-          <div class="ai-planner-actions">
-            <button type="button" class="btn btn-primary" id="aiPlannerBtn">Get My Recommendation</button>
-            <button type="reset" class="btn btn-secondary" id="aiPlannerReset">Reset</button>
-          </div>
-        </form>
+            <div class="ai-planner-actions">
+              <button type="button" class="btn btn-primary" id="aiPlannerBtn">Get My Recommendation</button>
+              <button type="reset" class="btn btn-secondary" id="aiPlannerReset">Reset</button>
+            </div>
+          </form>
 
-        <div class="ai-result" id="aiResult">
-          <div class="ai-result-card">
-            <div class="ai-result-label">Your AI trip suggestion</div>
-            <h3 id="aiResultTitle">Recommended service</h3>
-            <p id="aiResultText">Your result will appear here.</p>
-            <ul class="ai-result-list" id="aiResultList"></ul>
-            <div class="ai-result-links" id="aiResultLinks"></div>
-            <div class="ai-mini-note" id="aiResultNote"></div>
+          <div class="ai-result" id="aiResult">
+            <div class="ai-result-card">
+              <div class="ai-result-label">Your AI trip suggestion</div>
+              <h3 id="aiResultTitle">Recommended service</h3>
+              <p id="aiResultText">Your result will appear here.</p>
+              <ul class="ai-result-list" id="aiResultList"></ul>
+              <div class="ai-result-links" id="aiResultLinks"></div>
+              <div class="ai-mini-note" id="aiResultNote"></div>
+            </div>
           </div>
         </div>
       </div>
-
     </div>
-  </div>
-</section>
+  </section>
 
   <section class="section" id="services" style="background:#181513;">
     <div class="container">
@@ -939,43 +876,31 @@
 
       <div class="cards">
         <a href="airport-transfers.html" class="card">
-
           <div class="card-image">
             <img src="airport-transfers.png" alt="Airport Transfers" />
             <div class="card-title-overlay">Airport Transfers</div>
           </div>
-
           <div class="card-body">
             <p>
-              Private airport transfers between major Japan airports, city hotels, resorts, 
+              Private airport transfers between major Japan airports, city hotels, resorts,
               and popular destinations with reliable door-to-door service.
             </p>
-  
-            <span class="btn btn-secondary">
-              View Airport Transfers
-            </span>
+            <span class="btn btn-secondary">View Airport Transfers</span>
           </div>
-
         </a>
-  
-        <a href="private-transfers.html" class="card">
 
+        <a href="private-transfers.html" class="card">
           <div class="card-image">
             <img src="private-transfers-card.jpg" alt="Private Transfers" />
             <div class="card-title-overlay">Private Transfers</div>
           </div>
-
           <div class="card-body">
             <p>
               Comfortable one-way transfers between cities, hotels, cruise ports,
               ski resorts, and popular destinations.
             </p>
-    
-            <span class="btn btn-secondary">
-              View Private Transfers
-            </span>
+            <span class="btn btn-secondary">View Private Transfers</span>
           </div>
-
         </a>
 
         <a href="charters.html" class="card">
@@ -983,106 +908,64 @@
             <img src="charters-card.jpg" alt="Charters and Day Tours" />
             <div class="card-title-overlay">Charters & Day Tours</div>
           </div>
-
           <div class="card-body">
             <p>
-              Private charter service for popular sightseeing spots, hidden gems, 
+              Private charter service for popular sightseeing spots, hidden gems,
               family trips, and custom-made day tours across Japan.
             </p>
-
-            <span class="btn btn-secondary">
-              View Charters & Tours
-            </span>
+            <span class="btn btn-secondary">View Charters & Tours</span>
           </div>
-
         </a>
       </div>
     </div>
   </section>
 
   <section class="section" id="popular" style="background:#221d19;">
-  <div class="container">
+    <div class="container">
+      <div class="section-header">
+        <h2>Popular Airport Transfer Routes</h2>
+        <p>Book private airport transfers from Japan’s major international airports.</p>
+      </div>
 
-    <div class="section-header">
-      <h2>Popular Airport Transfer Routes</h2>
-      <p>Book private airport transfers from Japan’s major international airports.</p>
+      <div class="grid-3">
+        <a href="https://widgets.bokun.io/online-sales/11dad9b8-4629-4114-ab40-b6ce758d47ae/experience/1046669" class="route-card" target="_blank">
+          <div class="panel-box">
+            <h3>Narita Airport Transfers</h3>
+            <ul class="route-list">
+              <li>Narita Airport → Tokyo City</li>
+              <li>Narita Airport → Yokohama</li>
+              <li>Narita Airport → Hakone</li>
+            </ul>
+            <div class="route-link">View Narita Airport Transfer →</div>
+          </div>
+        </a>
+
+        <a href="https://widgets.bokun.io/online-sales/11dad9b8-4629-4114-ab40-b6ce758d47ae/experience/1065606" class="route-card" target="_blank">
+          <div class="panel-box">
+            <h3>Haneda Airport Transfers</h3>
+            <ul class="route-list">
+              <li>Haneda Airport → Tokyo</li>
+              <li>Haneda Airport → Yokohama</li>
+              <li>Haneda Airport → Hakone</li>
+            </ul>
+            <div class="route-link">View Haneda Airport Transfer →</div>
+          </div>
+        </a>
+
+        <a href="https://widgets.bokun.io/online-sales/11dad9b8-4629-4114-ab40-b6ce758d47ae/experience/1067188" class="route-card" target="_blank">
+          <div class="panel-box">
+            <h3>Kansai Airport Transfers</h3>
+            <ul class="route-list">
+              <li>Kansai Airport → Kyoto</li>
+              <li>Kansai Airport → Osaka</li>
+              <li>Kansai Airport → Nara</li>
+            </ul>
+            <div class="route-link">View Kansai Airport Transfer →</div>
+          </div>
+        </a>
+      </div>
     </div>
-
-    <div class="grid-3">
-
-      <!-- Narita -->
-      <a href="https://widgets.bokun.io/online-sales/11dad9b8-4629-4114-ab40-b6ce758d47ae/experience/1046669"
-         class="route-card"
-         target="_blank">
-
-        <div class="panel-box">
-
-          <h3>Narita Airport Transfers</h3>
-
-          <ul class="route-list">
-            <li>Narita Airport → Tokyo City</li>
-            <li>Narita Airport → Yokohama</li>
-            <li>Narita Airport → Hakone</li>
-          </ul>
-
-          <div class="route-link">
-            View Narita Airport Transfer →
-          </div>
-
-        </div>
-
-      </a>
-
-      <!-- Haneda -->
-      <a href="https://widgets.bokun.io/online-sales/11dad9b8-4629-4114-ab40-b6ce758d47ae/experience/1065606"
-         class="route-card"
-         target="_blank">
-
-        <div class="panel-box">
-
-          <h3>Haneda Airport Transfers</h3>
-
-          <ul class="route-list">
-            <li>Haneda Airport → Tokyo</li>
-            <li>Haneda Airport → Yokohama</li>
-            <li>Haneda Airport → Hakone</li>
-          </ul>
-
-          <div class="route-link">
-            View Haneda Airport Transfer →
-          </div>
-
-        </div>
-
-      </a>
-
-      <!-- Kansai -->
-      <a href="https://widgets.bokun.io/online-sales/11dad9b8-4629-4114-ab40-b6ce758d47ae/experience/1067188"
-         class="route-card"
-         target="_blank">
-
-        <div class="panel-box">
-
-          <h3>Kansai Airport Transfers</h3>
-
-          <ul class="route-list">
-            <li>Kansai Airport → Kyoto</li>
-            <li>Kansai Airport → Osaka</li>
-            <li>Kansai Airport → Nara</li>
-          </ul>
-
-          <div class="route-link">
-            View Kansai Airport Transfer →
-          </div>
-
-        </div>
-
-      </a>
-
-    </div>
-
-  </div>
-</section>
+  </section>
 
   <section class="section" id="why-choose" style="background:#f3efe9; color:#141414;">
     <div class="container">
@@ -1121,44 +1004,44 @@
   </section>
 
   <section class="section" id="vehicles" style="background:#201914;">
-  <div class="container">
-    <div class="section-header">
-      <h2>Our Vehicles</h2>
-      <p>
-        Choose the vehicle that best fits your group size, luggage needs, and travel style.
-      </p>
+    <div class="container">
+      <div class="section-header">
+        <h2>Our Vehicles</h2>
+        <p>
+          Choose the vehicle that best fits your group size, luggage needs, and travel style.
+        </p>
+      </div>
+
+      <div class="grid-3">
+        <a href="vehicles.html#alphard" class="vehicle-card" style="text-decoration:none; color:inherit; display:block;">
+          <img src="alphard.png" alt="Toyota Alphard or Vellfire" />
+          <div class="vehicle-body">
+            <h3>Alphard / Vellfire</h3>
+            <div class="vehicle-meta">Best for 1–5 passengers</div>
+            <p>Ideal for airport transfers, couples, families, and standard luggage.</p>
+          </div>
+        </a>
+
+        <a href="vehicles.html#hiace-9" class="vehicle-card" style="text-decoration:none; color:inherit; display:block;">
+          <img src="hiace.png" alt="Toyota Hiace" />
+          <div class="vehicle-body">
+            <h3>Hiace Grand Cabin</h3>
+            <div class="vehicle-meta">Best for 6–9 passengers</div>
+            <p>Spacious option for larger groups, family travel, and multiple suitcases.</p>
+          </div>
+        </a>
+
+        <a href="vehicles.html#coaster-28" class="vehicle-card" style="text-decoration:none; color:inherit; display:block;">
+          <img src="minibus.png" alt="Mini bus or bus" />
+          <div class="vehicle-body">
+            <h3>Mini Bus / Bus</h3>
+            <div class="vehicle-meta">Best for larger groups</div>
+            <p>Suitable for group transfers, company travel, events, and high-capacity transportation.</p>
+          </div>
+        </a>
+      </div>
     </div>
-
-    <div class="grid-3">
-      <a href="vehicles.html#alphard" class="vehicle-card" style="text-decoration:none; color:inherit; display:block;">
-        <img src="alphard.png" alt="Toyota Alphard or Vellfire" />
-        <div class="vehicle-body">
-          <h3>Alphard / Vellfire</h3>
-          <div class="vehicle-meta">Best for 1–5 passengers</div>
-          <p>Ideal for airport transfers, couples, families, and standard luggage.</p>
-        </div>
-      </a>
-
-      <a href="vehicles.html#hiace-9" class="vehicle-card" style="text-decoration:none; color:inherit; display:block;">
-        <img src="hiace.png" alt="Toyota Hiace" />
-        <div class="vehicle-body">
-          <h3>Hiace Grand Cabin</h3>
-          <div class="vehicle-meta">Best for 6–9 passengers</div>
-          <p>Spacious option for larger groups, family travel, and multiple suitcases.</p>
-        </div>
-      </a>
-
-      <a href="vehicles.html#coaster-28" class="vehicle-card" style="text-decoration:none; color:inherit; display:block;">
-        <img src="minibus.png" alt="Mini bus or bus" />
-        <div class="vehicle-body">
-          <h3>Mini Bus / Bus</h3>
-          <div class="vehicle-meta">Best for larger groups</div>
-          <p>Suitable for group transfers, company travel, events, and high-capacity transportation.</p>
-        </div>
-      </a>
-    </div>
-  </div>
-</section>
+  </section>
 
   <section class="section" id="reviews" style="background:#efefef; color:#111;">
     <div class="container">
@@ -1174,717 +1057,473 @@
   </section>
 
   <section class="section faq-section-upgraded" id="faq">
-  <div class="container faq-wrap">
-    <div class="faq-top">
-      <div class="eyebrow">Pick-U FAQ</div>
-      <h2>Frequently Asked Questions</h2>
-      <p>
-        Clear answers about booking, airport pickup, luggage, payments, charter service,
-        and travel policies in Japan — designed to help you book faster and travel with confidence.
-      </p>
-    </div>
+    <div class="container faq-wrap">
+      <div class="faq-top">
+        <div class="eyebrow">Pick-U FAQ</div>
+        <h2>Frequently Asked Questions</h2>
+        <p>
+          Clear answers about booking, airport pickup, luggage, payments, charter service,
+          and travel policies in Japan — designed to help you book faster and travel with confidence.
+        </p>
+      </div>
 
-    <div class="faq-tabs" role="tablist" aria-label="FAQ Categories">
-      <button class="faq-tab active" type="button" role="tab" aria-selected="true" data-faq-tab="booking">Booking</button>
-      <button class="faq-tab" type="button" role="tab" aria-selected="false" data-faq-tab="airport">Airport Pickup</button>
-      <button class="faq-tab" type="button" role="tab" aria-selected="false" data-faq-tab="changes">Changes</button>
-      <button class="faq-tab" type="button" role="tab" aria-selected="false" data-faq-tab="payment">Payment</button>
-      <button class="faq-tab" type="button" role="tab" aria-selected="false" data-faq-tab="vehicle">Vehicle & Luggage</button>
-      <button class="faq-tab" type="button" role="tab" aria-selected="false" data-faq-tab="charter">Charter</button>
-      <button class="faq-tab" type="button" role="tab" aria-selected="false" data-faq-tab="policy">Service Policy</button>
-    </div>
+      <div class="faq-tabs" role="tablist" aria-label="FAQ Categories">
+        <button class="faq-tab active" type="button" role="tab" aria-selected="true" data-faq-tab="booking">Booking</button>
+        <button class="faq-tab" type="button" role="tab" aria-selected="false" data-faq-tab="airport">Airport Pickup</button>
+        <button class="faq-tab" type="button" role="tab" aria-selected="false" data-faq-tab="changes">Changes</button>
+        <button class="faq-tab" type="button" role="tab" aria-selected="false" data-faq-tab="payment">Payment</button>
+        <button class="faq-tab" type="button" role="tab" aria-selected="false" data-faq-tab="vehicle">Vehicle & Luggage</button>
+        <button class="faq-tab" type="button" role="tab" aria-selected="false" data-faq-tab="charter">Charter</button>
+        <button class="faq-tab" type="button" role="tab" aria-selected="false" data-faq-tab="policy">Service Policy</button>
+      </div>
 
-    <div class="faq-panels">
-      <!-- Booking -->
-      <div class="faq-panel active" data-faq-panel="booking">
-        <div class="faq-accordion">
-          <div class="faq-card open">
-            <button class="faq-question" type="button" aria-expanded="true">
-              <span class="faq-question-text">How far in advance should I book my transfer?</span>
-              <span class="faq-icon">+</span>
-            </button>
-            <div class="faq-answer" style="max-height: 300px;">
-              <div class="faq-answer-inner">
-                <p>
-                  We recommend booking your transfer at least <strong>48 hours in advance</strong> to help secure vehicle availability.
-                </p>
-                <p>
-                  For last-minute bookings, we may not be able to arrange a vehicle if required information is missing or if inventory is already limited.
-                </p>
+      <div class="faq-panels">
+        <div class="faq-panel active" data-faq-panel="booking">
+          <div class="faq-accordion">
+            <div class="faq-card open">
+              <button class="faq-question" type="button" aria-expanded="true">
+                <span class="faq-question-text">How far in advance should I book my transfer?</span>
+                <span class="faq-icon">+</span>
+              </button>
+              <div class="faq-answer" style="max-height: 300px;">
+                <div class="faq-answer-inner">
+                  <p>We recommend booking your transfer at least <strong>48 hours in advance</strong> to help secure vehicle availability.</p>
+                  <p>For last-minute bookings, we may not be able to arrange a vehicle if required information is missing or if inventory is already limited.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="faq-card">
+              <button class="faq-question" type="button" aria-expanded="false">
+                <span class="faq-question-text">How will I receive my booking confirmation?</span>
+                <span class="faq-icon">+</span>
+              </button>
+              <div class="faq-answer">
+                <div class="faq-answer-inner">
+                  <p>Once your booking is confirmed, you will receive a <strong>confirmation email with your voucher and trip details</strong>.</p>
+                  <p>A trip reminder email will be sent <strong>3 days before your trip</strong>, and your driver will contact you via <strong>WhatsApp</strong> before pickup.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="faq-card">
+              <button class="faq-question" type="button" aria-expanded="false">
+                <span class="faq-question-text">Can I book a transfer for the same day?</span>
+                <span class="faq-icon">+</span>
+              </button>
+              <div class="faq-answer">
+                <div class="faq-answer-inner">
+                  <p>Same-day bookings may be possible depending on vehicle availability.</p>
+                  <p>Please contact us first. We will check our schedule and confirm whether we can arrange the transfer. An <strong>urgent handling fee</strong> may apply.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="faq-card">
+              <button class="faq-question" type="button" aria-expanded="false">
+                <span class="faq-question-text">Can I book a round-trip transfer?</span>
+                <span class="faq-icon">+</span>
+              </button>
+              <div class="faq-answer">
+                <div class="faq-answer-inner">
+                  <p>Yes. Many customers choose to book <strong>round-trip airport transfers</strong> for convenience.</p>
+                  <p>Round-trip bookings may also include <strong>special discounted pricing</strong> compared with booking two separate one-way transfers.</p>
+                </div>
               </div>
             </div>
           </div>
+        </div>
 
-          <div class="faq-card">
-            <button class="faq-question" type="button" aria-expanded="false">
-              <span class="faq-question-text">How will I receive my booking confirmation?</span>
-              <span class="faq-icon">+</span>
-            </button>
-            <div class="faq-answer">
-              <div class="faq-answer-inner">
-                <p>
-                  Once your booking is confirmed, you will receive a <strong>confirmation email with your voucher and trip details</strong>.
-                </p>
-                <p>
-                  A trip reminder email will be sent <strong>3 days before your trip</strong>, and your driver will contact you via <strong>WhatsApp</strong> before pickup.
-                </p>
+        <div class="faq-panel" data-faq-panel="airport">
+          <div class="faq-accordion">
+            <div class="faq-card open">
+              <button class="faq-question" type="button" aria-expanded="true">
+                <span class="faq-question-text">Where will I meet my driver at the airport?</span>
+                <span class="faq-icon">+</span>
+              </button>
+              <div class="faq-answer" style="max-height: 420px;">
+                <div class="faq-answer-inner">
+                  <p>The meeting point depends on the service option you booked.</p>
+                  <p><strong>Standard Pickup:</strong> The driver will wait at the designated pickup area outside the terminal. A map will be sent with your trip reminder email.</p>
+                  <p><strong>Meet-and-Greet Service:</strong> The driver will wait inside the arrival hall holding a name sign.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="faq-card">
+              <button class="faq-question" type="button" aria-expanded="false">
+                <span class="faq-question-text">Do you provide meet-and-greet service?</span>
+                <span class="faq-icon">+</span>
+              </button>
+              <div class="faq-answer">
+                <div class="faq-answer-inner">
+                  <p>Yes. Meet-and-greet service is available as an <strong>optional add-on</strong>.</p>
+                  <p>With this service, the driver will wait inside the <strong>arrival hall with your name sign</strong>, making the pickup process easier after landing.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="faq-card">
+              <button class="faq-question" type="button" aria-expanded="false">
+                <span class="faq-question-text">What happens if my flight is delayed?</span>
+                <span class="faq-icon">+</span>
+              </button>
+              <div class="faq-answer">
+                <div class="faq-answer-inner">
+                  <p>Please inform us if your flight is delayed or canceled. For arrival pickups into Japan, the driver will monitor your flight and adjust the pickup time based on the <strong>actual landing time</strong>.</p>
+                  <p>The driver will wait <strong>up to 90 minutes after landing</strong> free of charge. Overtime waiting charges may apply after the free waiting period.</p>
+                  <p>If the delay exceeds <strong>4 hours</strong>, we may not be able to provide the service due to driver scheduling. In that case, a <strong>full refund minus a 5% processing fee</strong> may be provided.</p>
+                  <p>Please note that we only track flights that are <strong>arriving in Japan</strong>.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="faq-card">
+              <button class="faq-question" type="button" aria-expanded="false">
+                <span class="faq-question-text">How long will the driver wait at the airport?</span>
+                <span class="faq-icon">+</span>
+              </button>
+              <div class="faq-answer">
+                <div class="faq-answer-inner">
+                  <p>Waiting time depends on the pickup arrangement.</p>
+                  <p><strong>Default airport pickup with flight tracking:</strong> Free waiting time is <strong>90 minutes after actual landing</strong>.</p>
+                  <p><strong>Pickup time manually selected in advance through customer service:</strong> Free waiting time is <strong>30 minutes</strong>, and flight tracking is not included.</p>
+                  <p>Additional waiting time may incur an overtime charge.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="faq-card">
+              <button class="faq-question" type="button" aria-expanded="false">
+                <span class="faq-question-text">What should I do if I cannot find my driver?</span>
+                <span class="faq-icon">+</span>
+              </button>
+              <div class="faq-answer">
+                <div class="faq-answer-inner">
+                  <p>Your driver will contact you via <strong>WhatsApp</strong>, so please check your messages first.</p>
+                  <p>You should also review the meeting instructions in your confirmation email and trip reminder.</p>
+                  <p>If you still cannot locate the driver, please contact us immediately and our support team will assist you as quickly as possible.</p>
+                </div>
               </div>
             </div>
           </div>
+        </div>
 
-          <div class="faq-card">
-            <button class="faq-question" type="button" aria-expanded="false">
-              <span class="faq-question-text">Can I book a transfer for the same day?</span>
-              <span class="faq-icon">+</span>
-            </button>
-            <div class="faq-answer">
-              <div class="faq-answer-inner">
-                <p>
-                  Same-day bookings may be possible depending on vehicle availability.
-                </p>
-                <p>
-                  Please contact us first. We will check our schedule and confirm whether we can arrange the transfer. An <strong>urgent handling fee</strong> may apply.
-                </p>
+        <div class="faq-panel" data-faq-panel="changes">
+          <div class="faq-accordion">
+            <div class="faq-card open">
+              <button class="faq-question" type="button" aria-expanded="true">
+                <span class="faq-question-text">Can I change my pickup time?</span>
+                <span class="faq-icon">+</span>
+              </button>
+              <div class="faq-answer" style="max-height: 260px;">
+                <div class="faq-answer-inner">
+                  <p>Yes. Pickup time changes are possible if requested <strong>at least 2 days before your trip</strong>.</p>
+                  <p>Changes requested one day before travel may still be possible, but they depend on the driver’s schedule.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="faq-card">
+              <button class="faq-question" type="button" aria-expanded="false">
+                <span class="faq-question-text">Can I change the pickup or drop-off location?</span>
+                <span class="faq-icon">+</span>
+              </button>
+              <div class="faq-answer">
+                <div class="faq-answer-inner">
+                  <p>Changes to the pickup or drop-off location may be possible if requested <strong>at least 2 days before your trip</strong>.</p>
+                  <p>Additional charges may apply if the updated location is outside the original service area or requires a different route.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="faq-card">
+              <button class="faq-question" type="button" aria-expanded="false">
+                <span class="faq-question-text">Can I update my flight number after booking?</span>
+                <span class="faq-icon">+</span>
+              </button>
+              <div class="faq-answer">
+                <div class="faq-answer-inner">
+                  <p>Yes. Please send us your updated flight number <strong>at least 2 days before your trip</strong> so we can adjust the pickup arrangement if needed.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="faq-card">
+              <button class="faq-question" type="button" aria-expanded="false">
+                <span class="faq-question-text">What happens if my group size changes?</span>
+                <span class="faq-icon">+</span>
+              </button>
+              <div class="faq-answer">
+                <div class="faq-answer-inner">
+                  <p>If the number of passengers or luggage increases, the originally booked vehicle may no longer be suitable.</p>
+                  <p>In that case, we may need to arrange a <strong>larger vehicle or an additional vehicle</strong>, and extra charges may apply.</p>
+                </div>
               </div>
             </div>
           </div>
+        </div>
 
-          <div class="faq-card">
-            <button class="faq-question" type="button" aria-expanded="false">
-              <span class="faq-question-text">Can I book a round-trip transfer?</span>
-              <span class="faq-icon">+</span>
-            </button>
-            <div class="faq-answer">
-              <div class="faq-answer-inner">
-                <p>
-                  Yes. Many customers choose to book <strong>round-trip airport transfers</strong> for convenience.
-                </p>
-                <p>
-                  Round-trip bookings may also include <strong>special discounted pricing</strong> compared with booking two separate one-way transfers.
-                </p>
+        <div class="faq-panel" data-faq-panel="payment">
+          <div class="faq-accordion">
+            <div class="faq-card open">
+              <button class="faq-question" type="button" aria-expanded="true">
+                <span class="faq-question-text">When do I need to pay for my transfer?</span>
+                <span class="faq-icon">+</span>
+              </button>
+              <div class="faq-answer" style="max-height: 220px;">
+                <div class="faq-answer-inner">
+                  <p>All bookings require <strong>full payment in advance</strong> in order to secure the vehicle and driver.</p>
+                  <p>Once payment is completed, your reservation will be confirmed.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="faq-card">
+              <button class="faq-question" type="button" aria-expanded="false">
+                <span class="faq-question-text">Can I pay additional fees on the day?</span>
+                <span class="faq-icon">+</span>
+              </button>
+              <div class="faq-answer">
+                <div class="faq-answer-inner">
+                  <p>Yes. Certain additional fees may be paid <strong>directly to the driver in cash on the day</strong>.</p>
+                  <ul>
+                    <li>Meet-and-greet service</li>
+                    <li>Night surcharge</li>
+                    <li>Overtime waiting charges</li>
+                  </ul>
+                  <p>These charges will be explained in advance whenever applicable.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="faq-card">
+              <button class="faq-question" type="button" aria-expanded="false">
+                <span class="faq-question-text">Will I receive an invoice or receipt?</span>
+                <span class="faq-icon">+</span>
+              </button>
+              <div class="faq-answer">
+                <div class="faq-answer-inner">
+                  <p>Yes. After payment is completed, you will receive an <strong>invoice and booking voucher by email</strong>.</p>
+                  <p>If you need a specific invoice format, please let us know in advance.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-panel" data-faq-panel="vehicle">
+          <div class="faq-accordion">
+            <div class="faq-card open">
+              <button class="faq-question" type="button" aria-expanded="true">
+                <span class="faq-question-text">How many passengers and luggage can each vehicle carry?</span>
+                <span class="faq-icon">+</span>
+              </button>
+              <div class="faq-answer" style="max-height: 340px;">
+                <div class="faq-answer-inner">
+                  <p>Each vehicle type has a maximum passenger and luggage capacity.</p>
+                  <p><strong>Alphard (up to 6 passengers):</strong> Recommended for up to <strong>4 passengers with 4 large suitcases</strong>.</p>
+                  <p><strong>Hiace (up to 9 passengers):</strong> Recommended for larger groups or extra luggage.</p>
+                  <p>For comfort and safety, luggage capacity must always be respected.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="faq-card">
+              <button class="faq-question" type="button" aria-expanded="false">
+                <span class="faq-question-text">Can 6 passengers with 6 suitcases fit in one Alphard?</span>
+                <span class="faq-icon">+</span>
+              </button>
+              <div class="faq-answer">
+                <div class="faq-answer-inner">
+                  <p>No. One Alphard cannot safely accommodate <strong>6 passengers with 6 large suitcases</strong>.</p>
+                  <p>In this case, we recommend either booking a <strong>Hiace van</strong> or reserving <strong>two Alphard vehicles</strong>.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="faq-card">
+              <button class="faq-question" type="button" aria-expanded="false">
+                <span class="faq-question-text">What happens if my luggage exceeds the vehicle capacity?</span>
+                <span class="faq-icon">+</span>
+              </button>
+              <div class="faq-answer">
+                <div class="faq-answer-inner">
+                  <p>If your luggage exceeds the vehicle capacity on the day of service, the driver may not be able to load all items.</p>
+                  <p>In that case, extra luggage or passengers may need to use <strong>alternative transportation</strong>.</p>
+                  <p>To avoid this situation, please tell us in advance if you will travel with extra luggage or oversized items.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="faq-card">
+              <button class="faq-question" type="button" aria-expanded="false">
+                <span class="faq-question-text">Can I bring special items such as surfboards or strollers?</span>
+                <span class="faq-icon">+</span>
+              </button>
+              <div class="faq-answer">
+                <div class="faq-answer-inner">
+                  <p>Yes, but please inform us in advance.</p>
+                  <p>Certain large items such as <strong>surfboards, golf bags, strollers, wheelchairs, or oversized luggage</strong> may require a larger vehicle.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-panel" data-faq-panel="charter">
+          <div class="faq-accordion">
+            <div class="faq-card open">
+              <button class="faq-question" type="button" aria-expanded="true">
+                <span class="faq-question-text">What is included in a charter service?</span>
+                <span class="faq-icon">+</span>
+              </button>
+              <div class="faq-answer" style="max-height: 280px;">
+                <div class="faq-answer-inner">
+                  <p>A charter service includes:</p>
+                  <ul>
+                    <li>Private vehicle and driver</li>
+                    <li>Flexible itinerary within the reserved time</li>
+                    <li>Multiple stops if required</li>
+                  </ul>
+                  <p>Parking and highway tolls may be included depending on the tour area.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="faq-card">
+              <button class="faq-question" type="button" aria-expanded="false">
+                <span class="faq-question-text">Can the driver wait while we visit attractions?</span>
+                <span class="faq-icon">+</span>
+              </button>
+              <div class="faq-answer">
+                <div class="faq-answer-inner">
+                  <p>Yes. During a charter service, the driver can wait while you visit attractions, restaurants, or shopping areas.</p>
+                  <p>The service is based on the <strong>hourly booking duration</strong>.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="faq-card">
+              <button class="faq-question" type="button" aria-expanded="false">
+                <span class="faq-question-text">Can we add extra stops during the trip?</span>
+                <span class="faq-icon">+</span>
+              </button>
+              <div class="faq-answer">
+                <div class="faq-answer-inner">
+                  <p>Yes. Additional stops can usually be arranged as long as they remain within the reserved time and service route.</p>
+                  <p>For longer detours, additional time or extra charges may apply.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="faq-card">
+              <button class="faq-question" type="button" aria-expanded="false">
+                <span class="faq-question-text">What happens if we exceed the reserved charter time?</span>
+                <span class="faq-icon">+</span>
+              </button>
+              <div class="faq-answer">
+                <div class="faq-answer-inner">
+                  <p>If the service exceeds the reserved duration, <strong>overtime charges</strong> will apply.</p>
+                  <p>Overtime is subject to the driver’s schedule and may not always be available on the day.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-panel" data-faq-panel="policy">
+          <div class="faq-accordion">
+            <div class="faq-card open">
+              <button class="faq-question" type="button" aria-expanded="true">
+                <span class="faq-question-text">Can we eat food inside the vehicle?</span>
+                <span class="faq-icon">+</span>
+              </button>
+              <div class="faq-answer" style="max-height: 220px;">
+                <div class="faq-answer-inner">
+                  <p>For cleanliness and comfort, <strong>eating inside the vehicle is generally not permitted</strong>.</p>
+                  <p>Drinks with secure lids are usually acceptable.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="faq-card">
+              <button class="faq-question" type="button" aria-expanded="false">
+                <span class="faq-question-text">Are child seats available?</span>
+                <span class="faq-icon">+</span>
+              </button>
+              <div class="faq-answer">
+                <div class="faq-answer-inner">
+                  <p>Yes. Child seats are available upon request.</p>
+                  <p>For a one-way transfer, <strong>one booster seat is provided free of charge</strong>. For full-day charter bookings, please let us know the child’s age in advance if an additional child seat is required.</p>
+                  <p>Additional charges may apply depending on the seat type and quantity.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="faq-card">
+              <button class="faq-question" type="button" aria-expanded="false">
+                <span class="faq-question-text">Do drivers speak English?</span>
+                <span class="faq-icon">+</span>
+              </button>
+              <div class="faq-answer">
+                <div class="faq-answer-inner">
+                  <p>Basic English communication is available, and translation app support can also be used when needed.</p>
+                  <p>If you need further travel assistance, please contact our customer support team.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="faq-card">
+              <button class="faq-question" type="button" aria-expanded="false">
+                <span class="faq-question-text">Is there any extra charge?</span>
+                <span class="faq-icon">+</span>
+              </button>
+              <div class="faq-answer">
+                <div class="faq-answer-inner">
+                  <p>Yes. Extra charges may apply depending on the booking conditions.</p>
+                  <ul>
+                    <li>Transfers between <strong>22:00 and 06:00</strong> require a <strong>¥3,000 night surcharge</strong></li>
+                    <li>We normally do not operate between <strong>02:00 and 05:00</strong>, except by prior arrangement</li>
+                    <li>Transfers outside the designated area or beyond the free waiting time</li>
+                    <li>Extra stops for one-way transfers must be requested in advance and priced by location</li>
+                    <li>Yokohama port pickups require an additional pickup fee</li>
+                  </ul>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </div>
 
-      <!-- Airport Pickup -->
-      <div class="faq-panel" data-faq-panel="airport">
-        <div class="faq-accordion">
-          <div class="faq-card open">
-            <button class="faq-question" type="button" aria-expanded="true">
-              <span class="faq-question-text">Where will I meet my driver at the airport?</span>
-              <span class="faq-icon">+</span>
-            </button>
-            <div class="faq-answer" style="max-height: 420px;">
-              <div class="faq-answer-inner">
-                <p>The meeting point depends on the service option you booked.</p>
-                <p>
-                  <strong>Standard Pickup:</strong> The driver will wait at the designated pickup area outside the terminal. A map will be sent with your trip reminder email.
-                </p>
-                <p>
-                  <strong>Meet-and-Greet Service:</strong> The driver will wait inside the arrival hall holding a name sign.
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <div class="faq-card">
-            <button class="faq-question" type="button" aria-expanded="false">
-              <span class="faq-question-text">Do you provide meet-and-greet service?</span>
-              <span class="faq-icon">+</span>
-            </button>
-            <div class="faq-answer">
-              <div class="faq-answer-inner">
-                <p>
-                  Yes. Meet-and-greet service is available as an <strong>optional add-on</strong>.
-                </p>
-                <p>
-                  With this service, the driver will wait inside the <strong>arrival hall with your name sign</strong>, making the pickup process easier after landing.
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <div class="faq-card">
-            <button class="faq-question" type="button" aria-expanded="false">
-              <span class="faq-question-text">What happens if my flight is delayed?</span>
-              <span class="faq-icon">+</span>
-            </button>
-            <div class="faq-answer">
-              <div class="faq-answer-inner">
-                <p>
-                  Please inform us if your flight is delayed or canceled. For arrival pickups into Japan, the driver will monitor your flight and adjust the pickup time based on the <strong>actual landing time</strong>.
-                </p>
-                <p>
-                  The driver will wait <strong>up to 90 minutes after landing</strong> free of charge. Overtime waiting charges may apply after the free waiting period.
-                </p>
-                <p>
-                  If the delay exceeds <strong>4 hours</strong>, we may not be able to provide the service due to driver scheduling. In that case, a <strong>full refund minus a 5% processing fee</strong> may be provided.
-                </p>
-                <p>
-                  Please note that we only track flights that are <strong>arriving in Japan</strong>.
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <div class="faq-card">
-            <button class="faq-question" type="button" aria-expanded="false">
-              <span class="faq-question-text">How long will the driver wait at the airport?</span>
-              <span class="faq-icon">+</span>
-            </button>
-            <div class="faq-answer">
-              <div class="faq-answer-inner">
-                <p>Waiting time depends on the pickup arrangement.</p>
-                <p>
-                  <strong>Default airport pickup with flight tracking:</strong> Free waiting time is <strong>90 minutes after actual landing</strong>.
-                </p>
-                <p>
-                  <strong>Pickup time manually selected in advance through customer service:</strong> Free waiting time is <strong>30 minutes</strong>, and flight tracking is not included.
-                </p>
-                <p>
-                  Additional waiting time may incur an overtime charge.
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <div class="faq-card">
-            <button class="faq-question" type="button" aria-expanded="false">
-              <span class="faq-question-text">What should I do if I cannot find my driver?</span>
-              <span class="faq-icon">+</span>
-            </button>
-            <div class="faq-answer">
-              <div class="faq-answer-inner">
-                <p>
-                  Your driver will contact you via <strong>WhatsApp</strong>, so please check your messages first.
-                </p>
-                <p>
-                  You should also review the meeting instructions in your confirmation email and trip reminder.
-                </p>
-                <p>
-                  If you still cannot locate the driver, please contact us immediately and our support team will assist you as quickly as possible.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Changes -->
-      <div class="faq-panel" data-faq-panel="changes">
-        <div class="faq-accordion">
-          <div class="faq-card open">
-            <button class="faq-question" type="button" aria-expanded="true">
-              <span class="faq-question-text">Can I change my pickup time?</span>
-              <span class="faq-icon">+</span>
-            </button>
-            <div class="faq-answer" style="max-height: 260px;">
-              <div class="faq-answer-inner">
-                <p>
-                  Yes. Pickup time changes are possible if requested <strong>at least 2 days before your trip</strong>.
-                </p>
-                <p>
-                  Changes requested one day before travel may still be possible, but they depend on the driver’s schedule.
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <div class="faq-card">
-            <button class="faq-question" type="button" aria-expanded="false">
-              <span class="faq-question-text">Can I change the pickup or drop-off location?</span>
-              <span class="faq-icon">+</span>
-            </button>
-            <div class="faq-answer">
-              <div class="faq-answer-inner">
-                <p>
-                  Changes to the pickup or drop-off location may be possible if requested <strong>at least 2 days before your trip</strong>.
-                </p>
-                <p>
-                  Additional charges may apply if the updated location is outside the original service area or requires a different route.
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <div class="faq-card">
-            <button class="faq-question" type="button" aria-expanded="false">
-              <span class="faq-question-text">Can I update my flight number after booking?</span>
-              <span class="faq-icon">+</span>
-            </button>
-            <div class="faq-answer">
-              <div class="faq-answer-inner">
-                <p>
-                  Yes. Please send us your updated flight number <strong>at least 2 days before your trip</strong> so we can adjust the pickup arrangement if needed.
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <div class="faq-card">
-            <button class="faq-question" type="button" aria-expanded="false">
-              <span class="faq-question-text">What happens if my group size changes?</span>
-              <span class="faq-icon">+</span>
-            </button>
-            <div class="faq-answer">
-              <div class="faq-answer-inner">
-                <p>
-                  If the number of passengers or luggage increases, the originally booked vehicle may no longer be suitable.
-                </p>
-                <p>
-                  In that case, we may need to arrange a <strong>larger vehicle or an additional vehicle</strong>, and extra charges may apply.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Payment -->
-      <div class="faq-panel" data-faq-panel="payment">
-        <div class="faq-accordion">
-          <div class="faq-card open">
-            <button class="faq-question" type="button" aria-expanded="true">
-              <span class="faq-question-text">When do I need to pay for my transfer?</span>
-              <span class="faq-icon">+</span>
-            </button>
-            <div class="faq-answer" style="max-height: 220px;">
-              <div class="faq-answer-inner">
-                <p>
-                  All bookings require <strong>full payment in advance</strong> in order to secure the vehicle and driver.
-                </p>
-                <p>
-                  Once payment is completed, your reservation will be confirmed.
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <div class="faq-card">
-            <button class="faq-question" type="button" aria-expanded="false">
-              <span class="faq-question-text">Can I pay additional fees on the day?</span>
-              <span class="faq-icon">+</span>
-            </button>
-            <div class="faq-answer">
-              <div class="faq-answer-inner">
-                <p>
-                  Yes. Certain additional fees may be paid <strong>directly to the driver in cash on the day</strong>.
-                </p>
-                <ul>
-                  <li>Meet-and-greet service</li>
-                  <li>Night surcharge</li>
-                  <li>Overtime waiting charges</li>
-                </ul>
-                <p>
-                  These charges will be explained in advance whenever applicable.
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <div class="faq-card">
-            <button class="faq-question" type="button" aria-expanded="false">
-              <span class="faq-question-text">Will I receive an invoice or receipt?</span>
-              <span class="faq-icon">+</span>
-            </button>
-            <div class="faq-answer">
-              <div class="faq-answer-inner">
-                <p>
-                  Yes. After payment is completed, you will receive an <strong>invoice and booking voucher by email</strong>.
-                </p>
-                <p>
-                  If you need a specific invoice format, please let us know in advance.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Vehicle -->
-      <div class="faq-panel" data-faq-panel="vehicle">
-        <div class="faq-accordion">
-          <div class="faq-card open">
-            <button class="faq-question" type="button" aria-expanded="true">
-              <span class="faq-question-text">How many passengers and luggage can each vehicle carry?</span>
-              <span class="faq-icon">+</span>
-            </button>
-            <div class="faq-answer" style="max-height: 340px;">
-              <div class="faq-answer-inner">
-                <p>Each vehicle type has a maximum passenger and luggage capacity.</p>
-                <p>
-                  <strong>Alphard (up to 6 passengers):</strong> Recommended for up to <strong>4 passengers with 4 large suitcases</strong>.
-                </p>
-                <p>
-                  <strong>Hiace (up to 9 passengers):</strong> Recommended for larger groups or extra luggage.
-                </p>
-                <p>
-                  For comfort and safety, luggage capacity must always be respected.
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <div class="faq-card">
-            <button class="faq-question" type="button" aria-expanded="false">
-              <span class="faq-question-text">Can 6 passengers with 6 suitcases fit in one Alphard?</span>
-              <span class="faq-icon">+</span>
-            </button>
-            <div class="faq-answer">
-              <div class="faq-answer-inner">
-                <p>
-                  No. One Alphard cannot safely accommodate <strong>6 passengers with 6 large suitcases</strong>.
-                </p>
-                <p>
-                  In this case, we recommend either booking a <strong>Hiace van</strong> or reserving <strong>two Alphard vehicles</strong>.
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <div class="faq-card">
-            <button class="faq-question" type="button" aria-expanded="false">
-              <span class="faq-question-text">What happens if my luggage exceeds the vehicle capacity?</span>
-              <span class="faq-icon">+</span>
-            </button>
-            <div class="faq-answer">
-              <div class="faq-answer-inner">
-                <p>
-                  If your luggage exceeds the vehicle capacity on the day of service, the driver may not be able to load all items.
-                </p>
-                <p>
-                  In that case, extra luggage or passengers may need to use <strong>alternative transportation</strong>.
-                </p>
-                <p>
-                  To avoid this situation, please tell us in advance if you will travel with extra luggage or oversized items.
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <div class="faq-card">
-            <button class="faq-question" type="button" aria-expanded="false">
-              <span class="faq-question-text">Can I bring special items such as surfboards or strollers?</span>
-              <span class="faq-icon">+</span>
-            </button>
-            <div class="faq-answer">
-              <div class="faq-answer-inner">
-                <p>
-                  Yes, but please inform us in advance.
-                </p>
-                <p>
-                  Certain large items such as <strong>surfboards, golf bags, strollers, wheelchairs, or oversized luggage</strong> may require a larger vehicle.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Charter -->
-      <div class="faq-panel" data-faq-panel="charter">
-        <div class="faq-accordion">
-          <div class="faq-card open">
-            <button class="faq-question" type="button" aria-expanded="true">
-              <span class="faq-question-text">What is included in a charter service?</span>
-              <span class="faq-icon">+</span>
-            </button>
-            <div class="faq-answer" style="max-height: 280px;">
-              <div class="faq-answer-inner">
-                <p>A charter service includes:</p>
-                <ul>
-                  <li>Private vehicle and driver</li>
-                  <li>Flexible itinerary within the reserved time</li>
-                  <li>Multiple stops if required</li>
-                </ul>
-                <p>
-                  Parking and highway tolls may be included depending on the tour area.
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <div class="faq-card">
-            <button class="faq-question" type="button" aria-expanded="false">
-              <span class="faq-question-text">Can the driver wait while we visit attractions?</span>
-              <span class="faq-icon">+</span>
-            </button>
-            <div class="faq-answer">
-              <div class="faq-answer-inner">
-                <p>
-                  Yes. During a charter service, the driver can wait while you visit attractions, restaurants, or shopping areas.
-                </p>
-                <p>
-                  The service is based on the <strong>hourly booking duration</strong>.
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <div class="faq-card">
-            <button class="faq-question" type="button" aria-expanded="false">
-              <span class="faq-question-text">Can we add extra stops during the trip?</span>
-              <span class="faq-icon">+</span>
-            </button>
-            <div class="faq-answer">
-              <div class="faq-answer-inner">
-                <p>
-                  Yes. Additional stops can usually be arranged as long as they remain within the reserved time and service route.
-                </p>
-                <p>
-                  For longer detours, additional time or extra charges may apply.
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <div class="faq-card">
-            <button class="faq-question" type="button" aria-expanded="false">
-              <span class="faq-question-text">What happens if we exceed the reserved charter time?</span>
-              <span class="faq-icon">+</span>
-            </button>
-            <div class="faq-answer">
-              <div class="faq-answer-inner">
-                <p>
-                  If the service exceeds the reserved duration, <strong>overtime charges</strong> will apply.
-                </p>
-                <p>
-                  Overtime is subject to the driver’s schedule and may not always be available on the day.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Policy -->
-      <div class="faq-panel" data-faq-panel="policy">
-        <div class="faq-accordion">
-          <div class="faq-card open">
-            <button class="faq-question" type="button" aria-expanded="true">
-              <span class="faq-question-text">Can we eat food inside the vehicle?</span>
-              <span class="faq-icon">+</span>
-            </button>
-            <div class="faq-answer" style="max-height: 220px;">
-              <div class="faq-answer-inner">
-                <p>
-                  For cleanliness and comfort, <strong>eating inside the vehicle is generally not permitted</strong>.
-                </p>
-                <p>
-                  Drinks with secure lids are usually acceptable.
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <div class="faq-card">
-            <button class="faq-question" type="button" aria-expanded="false">
-              <span class="faq-question-text">Are child seats available?</span>
-              <span class="faq-icon">+</span>
-            </button>
-            <div class="faq-answer">
-              <div class="faq-answer-inner">
-                <p>
-                  Yes. Child seats are available upon request.
-                </p>
-                <p>
-                  For a one-way transfer, <strong>one booster seat is provided free of charge</strong>. For full-day charter bookings, please let us know the child’s age in advance if an additional child seat is required.
-                </p>
-                <p>
-                  Additional charges may apply depending on the seat type and quantity.
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <div class="faq-card">
-            <button class="faq-question" type="button" aria-expanded="false">
-              <span class="faq-question-text">Do drivers speak English?</span>
-              <span class="faq-icon">+</span>
-            </button>
-            <div class="faq-answer">
-              <div class="faq-answer-inner">
-                <p>
-                  Basic English communication is available, and translation app support can also be used when needed.
-                </p>
-                <p>
-                  If you need further travel assistance, please contact our customer support team.
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <div class="faq-card">
-            <button class="faq-question" type="button" aria-expanded="false">
-              <span class="faq-question-text">Is there any extra charge?</span>
-              <span class="faq-icon">+</span>
-            </button>
-            <div class="faq-answer">
-              <div class="faq-answer-inner">
-                <p>
-                  Yes. Extra charges may apply depending on the booking conditions.
-                </p>
-                <ul>
-                  <li>Transfers between <strong>22:00 and 06:00</strong> require a <strong>¥3,000 night surcharge</strong></li>
-                  <li>We normally do not operate between <strong>02:00 and 05:00</strong>, except by prior arrangement</li>
-                  <li>Transfers outside the designated area or beyond the free waiting time</li>
-                  <li>Extra stops for one-way transfers must be requested in advance and priced by location</li>
-                  <li>Yokohama port pickups require an additional pickup fee</li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
+      <div class="faq-note-box">
+        <strong>Need a custom arrangement?</strong> If your trip includes multiple stops, oversized luggage, cruise pickup,
+        or a route not listed on our website, please contact us in advance so we can recommend the most suitable service.
       </div>
     </div>
-
-    <div class="faq-note-box">
-      <strong>Need a custom arrangement?</strong> If your trip includes multiple stops, oversized luggage, cruise pickup,
-      or a route not listed on our website, please contact us in advance so we can recommend the most suitable service.
-    </div>
-  </div>
-</section>
+  </section>
 
   <div id="site-footer"></div>
 
   <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "How far in advance should I book my transfer?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "We recommend booking your transfer at least 48 hours in advance to help secure vehicle availability. For last-minute bookings, we may not be able to arrange a vehicle if required information is missing or if inventory is already limited."
-      }
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Pick-U",
+    "legalName": "Arinashi Co. Ltd.",
+    "email": "info@arinasi.com",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "3-1-6 Motoazabu, Minato-ku",
+      "addressLocality": "Tokyo",
+      "postalCode": "106-0046",
+      "addressCountry": "JP"
     },
-    {
-      "@type": "Question",
-      "name": "How will I receive my booking confirmation?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Once your booking is confirmed, you will receive a confirmation email with your voucher and trip details. A trip reminder email will be sent 3 days before your trip, and your driver will contact you via WhatsApp before pickup."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Where will I meet my driver at the airport?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "The meeting point depends on the service option you booked. For standard pickup, the driver will wait at the designated pickup area outside the terminal and a map will be sent with your trip reminder email. For meet-and-greet service, the driver will wait inside the arrival hall holding a name sign."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Do you provide meet-and-greet service?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Yes. Meet-and-greet service is available as an optional add-on. With this service, the driver will wait inside the arrival hall with your name sign."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "What happens if my flight is delayed?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Please inform us if your flight is delayed or canceled. For arrival pickups into Japan, the driver will monitor your flight and adjust the pickup time based on the actual landing time. The driver will wait up to 90 minutes after landing free of charge. Overtime waiting charges may apply after the free waiting period. If the delay exceeds 4 hours, we may not be able to provide the service due to driver scheduling. In that case, a full refund minus a 5 percent processing fee may be provided. We only track flights arriving in Japan."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "How long will the driver wait at the airport?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "For default airport pickup with flight tracking, free waiting time is 90 minutes after actual landing. For pickup times manually selected in advance through customer service, free waiting time is 30 minutes and flight tracking is not included. Additional waiting time may incur an overtime charge."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Can I change my pickup time?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Yes. Pickup time changes are possible if requested at least 2 days before your trip. Changes requested one day before travel may still be possible, but they depend on the driver’s schedule."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Can I update my flight number after booking?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Yes. Please send us your updated flight number at least 2 days before your trip so we can adjust the pickup arrangement if needed."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "When do I need to pay for my transfer?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "All bookings require full payment in advance in order to secure the vehicle and driver. Once payment is completed, your reservation will be confirmed."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Can I pay additional fees on the day?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Yes. Certain additional fees may be paid directly to the driver in cash on the day, such as meet-and-greet service, night surcharge, and overtime waiting charges."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "How many passengers and luggage can each vehicle carry?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Each vehicle type has a maximum passenger and luggage capacity. Alphard, up to 6 passengers, is recommended for up to 4 passengers with 4 large suitcases. Hiace, up to 9 passengers, is recommended for larger groups or extra luggage. For comfort and safety, luggage capacity must always be respected."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Can 6 passengers with 6 suitcases fit in one Alphard?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "No. One Alphard cannot safely accommodate 6 passengers with 6 large suitcases. In this case, we recommend either booking a Hiace van or reserving two Alphard vehicles."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "What is included in a charter service?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "A charter service includes a private vehicle and driver, a flexible itinerary within the reserved time, and multiple stops if required. Parking and highway tolls may be included depending on the tour area."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Can we eat food inside the vehicle?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "For cleanliness and comfort, eating inside the vehicle is generally not permitted. Drinks with secure lids are usually acceptable."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Are child seats available?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Yes. Child seats are available upon request. For a one-way transfer, one booster seat is provided free of charge. For full-day charter bookings, please let us know the child’s age in advance if an additional child seat is required. Additional charges may apply depending on the seat type and quantity."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Is there any extra charge?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Yes. Extra charges may apply depending on the booking conditions. Transfers between 22:00 and 06:00 require a night surcharge. We normally do not operate between 02:00 and 05:00 except by prior arrangement. Extra charges may also apply for transfers outside the designated area, beyond the free waiting time, extra stops for one-way transfers, and Yokohama port pickups."
-      }
-    }
-  ]
-}
-</script>
+    "sameAs": [
+      "https://www.pick-u-japan.com/"
+    ]
+  }
+  </script>
 
   <script type="application/ld+json">
   {
@@ -1893,34 +1532,130 @@
     "mainEntity": [
       {
         "@type": "Question",
-        "name": "How do I meet the driver at the airport?",
+        "name": "How far in advance should I book my transfer?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Your driver will meet you at the designated arrival area with pickup instructions provided in advance."
+          "text": "We recommend booking your transfer at least 48 hours in advance to help secure vehicle availability. For last-minute bookings, we may not be able to arrange a vehicle if required information is missing or if inventory is already limited."
         }
       },
       {
         "@type": "Question",
-        "name": "What if my flight is delayed?",
+        "name": "How will I receive my booking confirmation?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Flight arrival times can be monitored and pickup timing adjusted accordingly."
+          "text": "Once your booking is confirmed, you will receive a confirmation email with your voucher and trip details. A trip reminder email will be sent 3 days before your trip, and your driver will contact you via WhatsApp before pickup."
         }
       },
       {
         "@type": "Question",
-        "name": "Can I request a custom route or stop?",
+        "name": "Where will I meet my driver at the airport?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Yes. For charters and selected transfer services, custom requests can be arranged in advance."
+          "text": "The meeting point depends on the service option you booked. For standard pickup, the driver will wait at the designated pickup area outside the terminal and a map will be sent with your trip reminder email. For meet-and-greet service, the driver will wait inside the arrival hall holding a name sign."
         }
       },
       {
         "@type": "Question",
-        "name": "How do I know which vehicle to choose?",
+        "name": "Do you provide meet-and-greet service?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Vehicle choice depends on passenger count, luggage size, and route. We can recommend the best fit."
+          "text": "Yes. Meet-and-greet service is available as an optional add-on. With this service, the driver will wait inside the arrival hall with your name sign."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What happens if my flight is delayed?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Please inform us if your flight is delayed or canceled. For arrival pickups into Japan, the driver will monitor your flight and adjust the pickup time based on the actual landing time. The driver will wait up to 90 minutes after landing free of charge. Overtime waiting charges may apply after the free waiting period. If the delay exceeds 4 hours, we may not be able to provide the service due to driver scheduling. In that case, a full refund minus a 5 percent processing fee may be provided. We only track flights arriving in Japan."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How long will the driver wait at the airport?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "For default airport pickup with flight tracking, free waiting time is 90 minutes after actual landing. For pickup times manually selected in advance through customer service, free waiting time is 30 minutes and flight tracking is not included. Additional waiting time may incur an overtime charge."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I change my pickup time?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. Pickup time changes are possible if requested at least 2 days before your trip. Changes requested one day before travel may still be possible, but they depend on the driver’s schedule."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I update my flight number after booking?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. Please send us your updated flight number at least 2 days before your trip so we can adjust the pickup arrangement if needed."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "When do I need to pay for my transfer?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "All bookings require full payment in advance in order to secure the vehicle and driver. Once payment is completed, your reservation will be confirmed."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I pay additional fees on the day?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. Certain additional fees may be paid directly to the driver in cash on the day, such as meet-and-greet service, night surcharge, and overtime waiting charges."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How many passengers and luggage can each vehicle carry?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Each vehicle type has a maximum passenger and luggage capacity. Alphard, up to 6 passengers, is recommended for up to 4 passengers with 4 large suitcases. Hiace, up to 9 passengers, is recommended for larger groups or extra luggage. For comfort and safety, luggage capacity must always be respected."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can 6 passengers with 6 suitcases fit in one Alphard?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. One Alphard cannot safely accommodate 6 passengers with 6 large suitcases. In this case, we recommend either booking a Hiace van or reserving two Alphard vehicles."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is included in a charter service?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A charter service includes a private vehicle and driver, a flexible itinerary within the reserved time, and multiple stops if required. Parking and highway tolls may be included depending on the tour area."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can we eat food inside the vehicle?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "For cleanliness and comfort, eating inside the vehicle is generally not permitted. Drinks with secure lids are usually acceptable."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Are child seats available?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. Child seats are available upon request. For a one-way transfer, one booster seat is provided free of charge. For full-day charter bookings, please let us know the child’s age in advance if an additional child seat is required. Additional charges may apply depending on the seat type and quantity."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is there any extra charge?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. Extra charges may apply depending on the booking conditions. Transfers between 22:00 and 06:00 require a night surcharge. We normally do not operate between 02:00 and 05:00 except by prior arrangement. Extra charges may also apply for transfers outside the designated area, beyond the free waiting time, extra stops for one-way transfers, and Yokohama port pickups."
         }
       }
     ]
@@ -2030,308 +1765,309 @@
     window.addEventListener('resize', renderReviews);
     renderReviews();
   </script>
+
   <script>
-  const aiPlannerBtn = document.getElementById('aiPlannerBtn');
-  const aiPlannerReset = document.getElementById('aiPlannerReset');
-  const aiResult = document.getElementById('aiResult');
-  const aiResultTitle = document.getElementById('aiResultTitle');
-  const aiResultText = document.getElementById('aiResultText');
-  const aiResultList = document.getElementById('aiResultList');
-  const aiResultLinks = document.getElementById('aiResultLinks');
-  const aiResultNote = document.getElementById('aiResultNote');
+    const aiPlannerBtn = document.getElementById('aiPlannerBtn');
+    const aiPlannerReset = document.getElementById('aiPlannerReset');
+    const aiResult = document.getElementById('aiResult');
+    const aiResultTitle = document.getElementById('aiResultTitle');
+    const aiResultText = document.getElementById('aiResultText');
+    const aiResultList = document.getElementById('aiResultList');
+    const aiResultLinks = document.getElementById('aiResultLinks');
+    const aiResultNote = document.getElementById('aiResultNote');
 
-  if (
-    aiPlannerBtn &&
-    aiPlannerReset &&
-    aiResult &&
-    aiResultTitle &&
-    aiResultText &&
-    aiResultList &&
-    aiResultLinks &&
-    aiResultNote
-  ) {
-    function getPlannerValues() {
-      return {
-        destination: document.getElementById('aiDestination').value,
-        service: document.getElementById('aiService').value,
-        duration: document.getElementById('aiDuration').value,
-        style: document.getElementById('aiStyle').value,
-        group: document.getElementById('aiGroup').value,
-        luggage: document.getElementById('aiLuggage').value
-      };
-    }
-
-    function vehicleSuggestion(group, luggage) {
-      if (group === '10+') return 'Mini Bus / Bus';
-      if (group === '6-9') return 'Hiace Grand Cabin';
-      if (group === '4-5' && luggage === 'many') return 'Hiace Grand Cabin';
-      return 'Alphard / Vellfire';
-    }
-
-    function buildLinks(links) {
-      aiResultLinks.innerHTML = '';
-      links.forEach(link => {
-        const a = document.createElement('a');
-        a.href = link.href;
-        a.className = link.secondary ? 'btn btn-secondary' : 'btn btn-primary';
-        a.textContent = link.label;
-        if (link.targetBlank) a.target = '_blank';
-        aiResultLinks.appendChild(a);
-      });
-    }
-
-    function buildList(items) {
-      aiResultList.innerHTML = '';
-      items.forEach(item => {
-        const li = document.createElement('li');
-        li.textContent = item;
-        aiResultList.appendChild(li);
-      });
-    }
-
-    function getRecommendation(data) {
-      const vehicle = vehicleSuggestion(data.group, data.luggage);
-
-      if (!data.destination || !data.service || !data.duration) {
+    if (
+      aiPlannerBtn &&
+      aiPlannerReset &&
+      aiResult &&
+      aiResultTitle &&
+      aiResultText &&
+      aiResultList &&
+      aiResultLinks &&
+      aiResultNote
+    ) {
+      function getPlannerValues() {
         return {
-          title: 'Complete a few more trip details',
-          text: 'Please select your destination, service type, and duration so we can suggest the most suitable option.',
-          list: [
-            'Choose where you are going',
-            'Choose the type of service you need',
-            'Choose whether this is a one-way trip or a longer charter'
-          ],
-          links: [],
-          note: 'Once those details are selected, your recommendation will appear here.'
+          destination: document.getElementById('aiDestination').value,
+          service: document.getElementById('aiService').value,
+          duration: document.getElementById('aiDuration').value,
+          style: document.getElementById('aiStyle').value,
+          group: document.getElementById('aiGroup').value,
+          luggage: document.getElementById('aiLuggage').value
         };
       }
 
-      if (data.destination === 'tokyo' && data.service === 'airport') {
-        return {
-          title: 'Tokyo Airport Transfer',
-          text: 'A private airport transfer is the best fit for a smooth arrival or departure in Tokyo.',
-          list: [
-            'Best for direct hotel-to-airport or airport-to-hotel travel',
-            `Recommended vehicle: ${vehicle}`,
-            'Ideal if you want the fastest and simplest booking option'
-          ],
-          links: [
-            { label: 'View Airport Transfers', href: 'airport-transfers.html' },
-            { label: 'Book Narita Transfer', href: 'https://widgets.bokun.io/online-sales/11dad9b8-4629-4114-ab40-b6ce758d47ae/experience/1046669', targetBlank: true, secondary: true }
-          ],
-          note: 'If you are arriving at Haneda instead of Narita, you can also choose the Tokyo airport transfer page and select the correct route.'
-        };
+      function vehicleSuggestion(group, luggage) {
+        if (group === '10+') return 'Mini Bus / Bus';
+        if (group === '6-9') return 'Hiace Grand Cabin';
+        if (group === '3-5' && luggage === 'many') return 'Hiace Grand Cabin';
+        return 'Alphard / Vellfire';
       }
 
-      if (data.destination === 'mtfuji' && (data.service === 'charter' || data.duration === '8h' || data.duration === '10h' || data.duration === 'fullday')) {
-        return {
-          title: 'Mt Fuji Private Charter / Day Tour',
-          text: 'A private charter is the most suitable option for visiting Mt Fuji comfortably with sightseeing stops along the way.',
-          list: [
-            'Best for scenic stops and flexible pacing',
-            `Recommended vehicle: ${vehicle}`,
-            'Suitable for families, photographers, and travelers who want a full private day'
-          ],
-          links: [
-            { label: 'View Charters & Tours', href: 'charters.html' },
-            { label: 'Contact for Custom Mt Fuji Plan', href: 'contact.html', secondary: true }
-          ],
-          note: 'Popular routes often include Lake Kawaguchi, Chureito Pagoda, Oshino Hakkai, and flexible photo stops depending on traffic and weather.'
-        };
-      }
-
-      if (data.destination === 'hakone' && (data.service === 'charter' || data.service === 'private')) {
-        return {
-          title: 'Hakone Private Transfer or Charter',
-          text: 'Hakone works best with either a direct private transfer or a charter if you want sightseeing during the day.',
-          list: [
-            'Choose private transfer for simple point-to-point travel',
-            'Choose charter if you want to stop for sightseeing',
-            `Recommended vehicle: ${vehicle}`
-          ],
-          links: [
-            { label: 'View Private Transfers', href: 'private-transfers.html' },
-            { label: 'View Charters & Tours', href: 'charters.html', secondary: true }
-          ],
-          note: 'Hakone travel time can vary, so a charter is often better if you want a more relaxed plan with stops.'
-        };
-      }
-
-      if (data.destination === 'yokohama' && (data.service === 'cruise' || data.service === 'private')) {
-        return {
-          title: 'Yokohama Cruise Port Transfer / Tour',
-          text: 'For cruise arrivals or departures, a dedicated private transfer or short charter is the most suitable option.',
-          list: [
-            'Useful for port pickup with luggage',
-            'Good option for cruise guests with limited time',
-            `Recommended vehicle: ${vehicle}`
-          ],
-          links: [
-            { label: 'View Private Transfers', href: 'private-transfers.html' },
-            { label: 'Ask for Cruise Port Arrangement', href: 'contact.html', secondary: true }
-          ],
-          note: 'If you have extra time before hotel check-in or airport drop-off, a short custom route can often be arranged in advance.'
-        };
-      }
-
-      if (data.destination === 'osaka' && data.service === 'airport') {
-        return {
-          title: 'Kansai Airport Transfer',
-          text: 'A Kansai airport transfer is the best fit for direct travel between the airport and Osaka, Kyoto, or nearby areas.',
-          list: [
-            'Simple and direct airport pickup or drop-off',
-            `Recommended vehicle: ${vehicle}`,
-            'Suitable for Osaka, Kyoto, and Nara routes'
-          ],
-          links: [
-            { label: 'View Airport Transfers', href: 'airport-transfers.html' },
-            { label: 'Book Kansai Airport Transfer', href: 'https://widgets.bokun.io/online-sales/11dad9b8-4629-4114-ab40-b6ce758d47ae/experience/1067188', targetBlank: true, secondary: true }
-          ],
-          note: 'If your group is large or you plan to stop in more than one place, a charter may be more suitable than a simple transfer.'
-        };
-      }
-
-      if (data.service === 'charter' || data.duration === '8h' || data.duration === '10h' || data.duration === 'fullday') {
-        return {
-          title: 'Private Charter / Day Tour',
-          text: 'Based on your selections, a private charter is the most flexible option for combining transfers, sightseeing, and custom stops.',
-          list: [
-            'Best for travelers who want more than a direct transfer',
-            'Suitable for multiple stops and flexible routing',
-            `Recommended vehicle: ${vehicle}`
-          ],
-          links: [
-            { label: 'View Charters & Tours', href: 'charters.html' },
-            { label: 'Ask for Custom Plan', href: 'contact.html', secondary: true }
-          ],
-          note: 'This option is especially useful if you want to combine airport pickup, sightseeing, shopping, or hotel drop-off in one itinerary.'
-        };
-      }
-
-      if (data.service === 'private' || data.duration === 'oneway') {
-        return {
-          title: 'Private Point-to-Point Transfer',
-          text: 'A private transfer is the most suitable option for direct travel between hotels, cities, ports, airports, or resorts.',
-          list: [
-            'Best for one-way travel without a longer sightseeing plan',
-            `Recommended vehicle: ${vehicle}`,
-            'Simple booking flow and efficient routing'
-          ],
-          links: [
-            { label: 'View Private Transfers', href: 'private-transfers.html' },
-            { label: 'Contact for Route Check', href: 'contact.html', secondary: true }
-          ],
-          note: 'If your route includes several stops or waiting time, a charter may be a better fit than a standard transfer.'
-        };
-      }
-
-      return {
-        title: 'Custom private travel recommendation',
-        text: 'Your trip looks slightly more customized, so the best next step is to check our service categories or contact us for a tailored plan.',
-        list: [
-          `Suggested vehicle direction: ${vehicle}`,
-          'You may need a custom route or service combination',
-          'A private charter may be more suitable than a standard transfer'
-        ],
-        links: [
-          { label: 'Explore Services', href: '#services' },
-          { label: 'Contact Us', href: 'contact.html', secondary: true }
-        ],
-        note: 'This is common for multi-stop routes, port travel, special luggage arrangements, and custom sightseeing requests.'
-      };
-    }
-
-    aiPlannerBtn.addEventListener('click', () => {
-      const data = getPlannerValues();
-      const result = getRecommendation(data);
-
-      aiResultTitle.textContent = result.title;
-      aiResultText.textContent = result.text;
-      buildList(result.list);
-      buildLinks(result.links);
-      aiResultNote.textContent = result.note || '';
-      aiResult.classList.add('show');
-      aiResult.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-    });
-
-    aiPlannerReset.addEventListener('click', () => {
-      setTimeout(() => {
-        aiResult.classList.remove('show');
-        aiResultTitle.textContent = 'Recommended service';
-        aiResultText.textContent = 'Your result will appear here.';
-        aiResultList.innerHTML = '';
+      function buildLinks(links) {
         aiResultLinks.innerHTML = '';
-        aiResultNote.textContent = '';
-      }, 0);
-    });
-  }
-</script>
-
-<script>
-  const faqTabs = document.querySelectorAll('.faq-tab');
-  const faqPanels = document.querySelectorAll('.faq-panel');
-
-  faqTabs.forEach(tab => {
-    tab.addEventListener('click', () => {
-      const target = tab.dataset.faqTab;
-
-      faqTabs.forEach(item => {
-        item.classList.remove('active');
-        item.setAttribute('aria-selected', 'false');
-      });
-
-      faqPanels.forEach(panel => {
-        panel.classList.remove('active');
-      });
-
-      tab.classList.add('active');
-      tab.setAttribute('aria-selected', 'true');
-
-      const activePanel = document.querySelector(`.faq-panel[data-faq-panel="${target}"]`);
-      if (activePanel) {
-        activePanel.classList.add('active');
+        links.forEach(link => {
+          const a = document.createElement('a');
+          a.href = link.href;
+          a.className = link.secondary ? 'btn btn-secondary' : 'btn btn-primary';
+          a.textContent = link.label;
+          if (link.targetBlank) a.target = '_blank';
+          aiResultLinks.appendChild(a);
+        });
       }
-    });
-  });
 
-  function setupAccordion(container) {
-    const cards = container.querySelectorAll('.faq-card');
+      function buildList(items) {
+        aiResultList.innerHTML = '';
+        items.forEach(item => {
+          const li = document.createElement('li');
+          li.textContent = item;
+          aiResultList.appendChild(li);
+        });
+      }
 
-    cards.forEach(card => {
-      const button = card.querySelector('.faq-question');
-      const answer = card.querySelector('.faq-answer');
+      function getRecommendation(data) {
+        const vehicle = vehicleSuggestion(data.group, data.luggage);
 
-      if (!button || !answer) return;
+        if (!data.destination || !data.service || !data.duration) {
+          return {
+            title: 'Complete a few more trip details',
+            text: 'Please select your destination, service type, and duration so we can suggest the most suitable option.',
+            list: [
+              'Choose where you are going',
+              'Choose the type of service you need',
+              'Choose whether this is a one-way trip or a longer charter'
+            ],
+            links: [],
+            note: 'Once those details are selected, your recommendation will appear here.'
+          };
+        }
 
-      button.addEventListener('click', () => {
-        const isOpen = card.classList.contains('open');
+        if (data.destination === 'tokyo' && data.service === 'airport') {
+          return {
+            title: 'Tokyo Airport Transfer',
+            text: 'A private airport transfer is the best fit for a smooth arrival or departure in Tokyo.',
+            list: [
+              'Best for direct hotel-to-airport or airport-to-hotel travel',
+              `Recommended vehicle: ${vehicle}`,
+              'Ideal if you want the fastest and simplest booking option'
+            ],
+            links: [
+              { label: 'View Airport Transfers', href: 'airport-transfers.html' },
+              { label: 'Book Narita Transfer', href: 'https://widgets.bokun.io/online-sales/11dad9b8-4629-4114-ab40-b6ce758d47ae/experience/1046669', targetBlank: true, secondary: true }
+            ],
+            note: 'If you are arriving at Haneda instead of Narita, you can also choose the Tokyo airport transfer page and select the correct route.'
+          };
+        }
 
-        cards.forEach(otherCard => {
-          otherCard.classList.remove('open');
-          const otherBtn = otherCard.querySelector('.faq-question');
-          const otherAnswer = otherCard.querySelector('.faq-answer');
-          if (otherBtn) otherBtn.setAttribute('aria-expanded', 'false');
-          if (otherAnswer) otherAnswer.style.maxHeight = null;
+        if (data.destination === 'mtfuji' && (data.service === 'charter' || data.duration === '8h' || data.duration === '10h' || data.duration === 'fullday')) {
+          return {
+            title: 'Mt Fuji Private Charter / Day Tour',
+            text: 'A private charter is the most suitable option for visiting Mt Fuji comfortably with sightseeing stops along the way.',
+            list: [
+              'Best for scenic stops and flexible pacing',
+              `Recommended vehicle: ${vehicle}`,
+              'Suitable for families, photographers, and travelers who want a full private day'
+            ],
+            links: [
+              { label: 'View Charters & Tours', href: 'charters.html' },
+              { label: 'Contact for Custom Mt Fuji Plan', href: 'contact.html', secondary: true }
+            ],
+            note: 'Popular routes often include Lake Kawaguchi, Chureito Pagoda, Oshino Hakkai, and flexible photo stops depending on traffic and weather.'
+          };
+        }
+
+        if (data.destination === 'hakone' && (data.service === 'charter' || data.service === 'private')) {
+          return {
+            title: 'Hakone Private Transfer or Charter',
+            text: 'Hakone works best with either a direct private transfer or a charter if you want sightseeing during the day.',
+            list: [
+              'Choose private transfer for simple point-to-point travel',
+              'Choose charter if you want to stop for sightseeing',
+              `Recommended vehicle: ${vehicle}`
+            ],
+            links: [
+              { label: 'View Private Transfers', href: 'private-transfers.html' },
+              { label: 'View Charters & Tours', href: 'charters.html', secondary: true }
+            ],
+            note: 'Hakone travel time can vary, so a charter is often better if you want a more relaxed plan with stops.'
+          };
+        }
+
+        if (data.destination === 'yokohama' && (data.service === 'cruise' || data.service === 'private')) {
+          return {
+            title: 'Yokohama Cruise Port Transfer / Tour',
+            text: 'For cruise arrivals or departures, a dedicated private transfer or short charter is the most suitable option.',
+            list: [
+              'Useful for port pickup with luggage',
+              'Good option for cruise guests with limited time',
+              `Recommended vehicle: ${vehicle}`
+            ],
+            links: [
+              { label: 'View Private Transfers', href: 'private-transfers.html' },
+              { label: 'Ask for Cruise Port Arrangement', href: 'contact.html', secondary: true }
+            ],
+            note: 'If you have extra time before hotel check-in or airport drop-off, a short custom route can often be arranged in advance.'
+          };
+        }
+
+        if (data.destination === 'osaka' && data.service === 'airport') {
+          return {
+            title: 'Kansai Airport Transfer',
+            text: 'A Kansai airport transfer is the best fit for direct travel between the airport and Osaka, Kyoto, or nearby areas.',
+            list: [
+              'Simple and direct airport pickup or drop-off',
+              `Recommended vehicle: ${vehicle}`,
+              'Suitable for Osaka, Kyoto, and Nara routes'
+            ],
+            links: [
+              { label: 'View Airport Transfers', href: 'airport-transfers.html' },
+              { label: 'Book Kansai Airport Transfer', href: 'https://widgets.bokun.io/online-sales/11dad9b8-4629-4114-ab40-b6ce758d47ae/experience/1067188', targetBlank: true, secondary: true }
+            ],
+            note: 'If your group is large or you plan to stop in more than one place, a charter may be more suitable than a simple transfer.'
+          };
+        }
+
+        if (data.service === 'charter' || data.duration === '8h' || data.duration === '10h' || data.duration === 'fullday') {
+          return {
+            title: 'Private Charter / Day Tour',
+            text: 'Based on your selections, a private charter is the most flexible option for combining transfers, sightseeing, and custom stops.',
+            list: [
+              'Best for travelers who want more than a direct transfer',
+              'Suitable for multiple stops and flexible routing',
+              `Recommended vehicle: ${vehicle}`
+            ],
+            links: [
+              { label: 'View Charters & Tours', href: 'charters.html' },
+              { label: 'Ask for Custom Plan', href: 'contact.html', secondary: true }
+            ],
+            note: 'This option is especially useful if you want to combine airport pickup, sightseeing, shopping, or hotel drop-off in one itinerary.'
+          };
+        }
+
+        if (data.service === 'private' || data.duration === 'oneway') {
+          return {
+            title: 'Private Point-to-Point Transfer',
+            text: 'A private transfer is the most suitable option for direct travel between hotels, cities, ports, airports, or resorts.',
+            list: [
+              'Best for one-way travel without a longer sightseeing plan',
+              `Recommended vehicle: ${vehicle}`,
+              'Simple booking flow and efficient routing'
+            ],
+            links: [
+              { label: 'View Private Transfers', href: 'private-transfers.html' },
+              { label: 'Contact for Route Check', href: 'contact.html', secondary: true }
+            ],
+            note: 'If your route includes several stops or waiting time, a charter may be a better fit than a standard transfer.'
+          };
+        }
+
+        return {
+          title: 'Custom private travel recommendation',
+          text: 'Your trip looks slightly more customized, so the best next step is to check our service categories or contact us for a tailored plan.',
+          list: [
+            `Suggested vehicle direction: ${vehicle}`,
+            'You may need a custom route or service combination',
+            'A private charter may be more suitable than a standard transfer'
+          ],
+          links: [
+            { label: 'Explore Services', href: '#services' },
+            { label: 'Contact Us', href: 'contact.html', secondary: true }
+          ],
+          note: 'This is common for multi-stop routes, port travel, special luggage arrangements, and custom sightseeing requests.'
+        };
+      }
+
+      aiPlannerBtn.addEventListener('click', () => {
+        const data = getPlannerValues();
+        const result = getRecommendation(data);
+
+        aiResultTitle.textContent = result.title;
+        aiResultText.textContent = result.text;
+        buildList(result.list);
+        buildLinks(result.links);
+        aiResultNote.textContent = result.note || '';
+        aiResult.classList.add('show');
+        aiResult.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+      });
+
+      aiPlannerReset.addEventListener('click', () => {
+        setTimeout(() => {
+          aiResult.classList.remove('show');
+          aiResultTitle.textContent = 'Recommended service';
+          aiResultText.textContent = 'Your result will appear here.';
+          aiResultList.innerHTML = '';
+          aiResultLinks.innerHTML = '';
+          aiResultNote.textContent = '';
+        }, 0);
+      });
+    }
+  </script>
+
+  <script>
+    const faqTabs = document.querySelectorAll('.faq-tab');
+    const faqPanels = document.querySelectorAll('.faq-panel');
+
+    faqTabs.forEach(tab => {
+      tab.addEventListener('click', () => {
+        const target = tab.dataset.faqTab;
+
+        faqTabs.forEach(item => {
+          item.classList.remove('active');
+          item.setAttribute('aria-selected', 'false');
         });
 
-        if (!isOpen) {
-          card.classList.add('open');
-          button.setAttribute('aria-expanded', 'true');
-          answer.style.maxHeight = answer.scrollHeight + 'px';
+        faqPanels.forEach(panel => {
+          panel.classList.remove('active');
+        });
+
+        tab.classList.add('active');
+        tab.setAttribute('aria-selected', 'true');
+
+        const activePanel = document.querySelector(`.faq-panel[data-faq-panel="${target}"]`);
+        if (activePanel) {
+          activePanel.classList.add('active');
         }
       });
     });
-  }
 
-  document.querySelectorAll('.faq-accordion').forEach(setupAccordion);
+    function setupAccordion(container) {
+      const cards = container.querySelectorAll('.faq-card');
 
-  window.addEventListener('resize', () => {
-    document.querySelectorAll('.faq-card.open .faq-answer').forEach(answer => {
-      answer.style.maxHeight = answer.scrollHeight + 'px';
+      cards.forEach(card => {
+        const button = card.querySelector('.faq-question');
+        const answer = card.querySelector('.faq-answer');
+
+        if (!button || !answer) return;
+
+        button.addEventListener('click', () => {
+          const isOpen = card.classList.contains('open');
+
+          cards.forEach(otherCard => {
+            otherCard.classList.remove('open');
+            const otherBtn = otherCard.querySelector('.faq-question');
+            const otherAnswer = otherCard.querySelector('.faq-answer');
+            if (otherBtn) otherBtn.setAttribute('aria-expanded', 'false');
+            if (otherAnswer) otherAnswer.style.maxHeight = null;
+          });
+
+          if (!isOpen) {
+            card.classList.add('open');
+            button.setAttribute('aria-expanded', 'true');
+            answer.style.maxHeight = answer.scrollHeight + 'px';
+          }
+        });
+      });
+    }
+
+    document.querySelectorAll('.faq-accordion').forEach(setupAccordion);
+
+    window.addEventListener('resize', () => {
+      document.querySelectorAll('.faq-card.open .faq-answer').forEach(answer => {
+        answer.style.maxHeight = answer.scrollHeight + 'px';
+      });
     });
-  });
-</script>
-  
-<script src="includes.js"></script>
+  </script>
+
+  <script src="includes.js"></script>
 </body>
 </html>
