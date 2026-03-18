@@ -227,110 +227,57 @@
       margin-bottom: 12px;
     }
 
-    /* Reviews Section - Refined brand style */
+    /* Reviews Section - Clean white style */
     .reviews-section {
-      background:
-        radial-gradient(circle at top right, rgba(212,160,23,0.10), transparent 28%),
-        linear-gradient(180deg, #15120f 0%, #1d1814 100%);
-      border-top: 1px solid rgba(255,255,255,0.04);
-      border-bottom: 1px solid rgba(255,255,255,0.04);
+      background: #f5f3ef;
+      color: #141414;
     }
-
+    
     .reviews-shell {
       position: relative;
     }
-
-    .reviews-head {
-      display: grid;
-      grid-template-columns: 1fr auto;
-      gap: 24px;
-      align-items: end;
-      margin-bottom: 28px;
+    
+    .reviews-header {
+      text-align: center;
+      margin-bottom: 34px;
     }
 
-    .reviews-summary {
-      max-width: 760px;
-    }
-
-    .reviews-summary h2 {
+    .reviews-header h2 {
       margin: 0;
-      font-size: clamp(2rem, 3.1vw, 3.15rem);
+      font-size: clamp(2rem, 3vw, 3rem);
       line-height: 1.1;
       letter-spacing: -0.03em;
-      color: #fff;
-    }
-
-    .reviews-meta {
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      gap: 14px;
-      margin-top: 18px;
-    }
-
-    .reviews-score-chip {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      padding: 10px 16px;
-      border-radius: 999px;
-      background: rgba(255,255,255,0.05);
-      border: 1px solid rgba(255,255,255,0.08);
-      color: #fff;
-      font-weight: 700;
-    }
-
-    .reviews-score-chip strong {
-      font-size: 1.08rem;
-      color: #fff;
-    }
-
-    .reviews-score-chip span {
-      color: #f2d67a;
-      letter-spacing: 1px;
-      font-size: 0.95rem;
-    }
-
-    .reviews-platforms {
-      color: #cdbfae;
-      font-size: 0.95rem;
-      line-height: 1.6;
-    }
-
-    .reviews-summary p {
-      margin: 16px 0 0;
-      color: #cfc6bb;
-      max-width: 700px;
-      font-size: 1rem;
-      line-height: 1.75;
+      color: #111;
     }
 
     .reviews-toolbar {
       display: flex;
       justify-content: flex-end;
       gap: 10px;
+      margin-bottom: 18px;
     }
 
     .reviews-nav-btn {
-      width: 48px;
-      height: 48px;
-      border-radius: 16px;
-      border: 1px solid rgba(255,255,255,0.10);
-      background: rgba(255,255,255,0.04);
-      color: #f5efe6;
-      font-size: 1.5rem;
+      width: 42px;
+      height: 42px;
+      border-radius: 999px;
+      border: 1px solid rgba(0,0,0,0.10);
+      background: rgba(255,255,255,0.88);
+      color: #222;
+      font-size: 1.35rem;
       line-height: 1;
       cursor: pointer;
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      transition: transform 0.18s ease, border-color 0.18s ease, background 0.18s ease;
+      transition: transform 0.18s ease, box-shadow 0.18s ease, background 0.18s ease;
+      box-shadow: 0 8px 18px rgba(0,0,0,0.06);
     }
 
     .reviews-nav-btn:hover {
       transform: translateY(-2px);
-      border-color: rgba(212,160,23,0.34);
-      background: rgba(212,160,23,0.08);
+      background: #fff;
+      box-shadow: 0 12px 24px rgba(0,0,0,0.10);
     }
 
     .reviews-viewport {
@@ -347,114 +294,112 @@
     .reviews-page {
       min-width: 100%;
       display: grid;
-      gap: 24px;
       grid-template-columns: repeat(4, 1fr);
+      gap: 28px;
       align-items: stretch;
     }
 
     .review-card {
-      position: relative;
-      background: rgba(255,255,255,0.035);
-      border: 1px solid rgba(255,255,255,0.08);
-      border-radius: 28px;
-      padding: 26px;
-      color: #f5efe6;
-      box-shadow: 0 18px 40px rgba(0,0,0,0.18);
-      display: flex;
-      flex-direction: column;
+      background: transparent;
+      border: 0;
+      border-radius: 0;
+      padding: 0 12px;
+      text-align: center;
+      color: #161616;
       min-height: 100%;
-      overflow: hidden;
     }
 
-    .review-card::before {
-      content: "“";
-      position: absolute;
-      top: 18px;
-      right: 20px;
-      font-size: 4rem;
+    .review-quote {
+      font-size: 4.2rem;
       line-height: 1;
-      color: rgba(212,160,23,0.18);
-      font-family: Georgia, serif;
-      pointer-events: none;
-    }
-
-    .review-stars {
-      color: #f2d67a;
-      font-size: 0.95rem;
-      letter-spacing: 2px;
-      margin-bottom: 14px;
-    }
-
-    .review-platform-row {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 12px;
-      margin-bottom: 16px;
-    }
-
-    .review-platform-badge {
-      display: inline-flex;
-      align-items: center;
-      padding: 8px 12px;
-      border-radius: 999px;
-      background: rgba(212,160,23,0.10);
-      border: 1px solid rgba(212,160,23,0.20);
-      color: #f3d98e;
-      font-size: 0.82rem;
       font-weight: 700;
-      line-height: 1;
-    }
-
-    .review-route {
-      color: #bcae9d;
-      font-size: 0.82rem;
-      line-height: 1.4;
-      text-align: right;
+      color: #111;
+      margin-bottom: 26px;
+      font-family: Georgia, serif;
     }
 
     .review-title {
-      margin: 0 0 12px;
-      font-size: 1.1rem;
-      font-weight: 800;
-      color: #fff;
-      line-height: 1.4;
-      min-height: 3.1em;
+      margin: 0 0 26px;
+      font-size: 1.08rem;
+      line-height: 1.35;
+      font-weight: 700;
+      color: #111;
+      min-height: 2.8em;
+    }
+
+    .review-dots {
+      display: flex;
+      justify-content: center;
+      gap: 7px;
+      margin-bottom: 26px;
+    }
+
+    .review-dot {
+      width: 11px;
+      height: 11px;
+      border-radius: 50%;
+      border: 2px solid #00aa6c;
+      background: transparent;
     }
 
     .review-text {
-      margin: 0;
-      color: #d8cec2;
-      line-height: 1.78;
+      margin: 0 auto;
+      color: #7a7a7a;
+      line-height: 1.72;
       font-size: 0.96rem;
+      max-width: 360px;
+
       display: -webkit-box;
-      -webkit-line-clamp: 7;
+      -webkit-line-clamp: 5;
       -webkit-box-orient: vertical;
       overflow: hidden;
     }
 
-    .review-footer {
-      margin-top: auto;
-      padding-top: 18px;
-      border-top: 1px solid rgba(255,255,255,0.08);
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 12px;
+    .review-more {
+      display: inline-block;
+      margin-top: 10px;
+      color: #2f2f2f;
+      font-size: 0.92rem;
+      text-decoration: underline;
+      text-underline-offset: 3px;
     }
 
     .review-name {
-      margin: 0;
-      font-size: 0.98rem;
-      line-height: 1.3;
-      font-weight: 800;
-      color: #fff;
+      margin: 28px 0 0;
+      font-size: 1rem;
+      line-height: 1.45;
+      font-weight: 700;
+      color: #111;
     }
 
-    .review-verified {
-      color: #c8b99f;
-      font-size: 0.8rem;
-      white-space: nowrap;
+    .review-source {
+      margin-top: 8px;
+      color: #6d6d6d;
+      font-size: 0.9rem;
+    }
+
+    @media (max-width: 1100px) {
+      .reviews-page {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 700px) {
+      .reviews-page {
+        grid-template-columns: 1fr;
+      }
+
+      .reviews-toolbar {
+        justify-content: center;
+      }
+
+      .review-card {
+        padding: 0 4px;
+      }
+
+      .review-title {
+        min-height: auto;
+      }
     }
 
     .why-choose-top-img {
@@ -1244,29 +1189,15 @@
   <section class="section reviews-section" id="reviews">
     <div class="container">
       <div class="reviews-shell">
-        <div class="reviews-head">
-          <div class="reviews-summary">
-            <div class="eyebrow">Customer Reviews</div>
-            <h2>Trusted by travelers across Japan</h2>
-            <div class="reviews-meta">
-              <div class="reviews-score-chip">
-                <strong>4.9 / 5</strong>
-                <span>★★★★★</span>
-              </div>
-              <div class="reviews-platforms">Based on recent guest feedback from Viator, GetYourGuide, and Tripadvisor.</div>
-            </div>
-            <p>
-              Smooth pickup, clear communication, comfortable vehicles, and reliable support from arrival to destination.
-              See what travelers say about their Pick-U experience.
-            </p>
-          </div>
-
-          <div class="reviews-toolbar" aria-label="Review navigation">
-            <button type="button" class="reviews-nav-btn" id="reviewsPrev" aria-label="Previous reviews">‹</button>
-            <button type="button" class="reviews-nav-btn" id="reviewsNext" aria-label="Next reviews">›</button>
-          </div>
+        <div class="reviews-header">
+          <h2>What Our Customers Say</h2>
         </div>
-
+        
+        <div class="reviews-toolbar" aria-label="Review navigation">
+          <button type="button" class="reviews-nav-btn" id="reviewsPrev" aria-label="Previous reviews">‹</button>
+          <button type="button" class="reviews-nav-btn" id="reviewsNext" aria-label="Next reviews">›</button>
+        </div>
+        
         <div class="reviews-viewport">
           <div id="reviews-track"></div>
         </div>
@@ -1881,170 +1812,146 @@
   </script>
 
   <script>
-    const reviews = [
-      {
-        name: "Julie_A",
-        source: "Viator",
-        route: "Tokyo airport transfer",
-        title: "I was hesitant to book...",
-        text: "I was hesitant to book this after stories I had heard but I'm so glad I did. It was a legal taxi with the green license plate and the driver was outstanding. He met us in the airport and it could not have been easier to communicate on WhatsApp and find him. This saved us so much time and since we arrived at 10pm it was perfect. I was walking to Tokyo Tower by 11:30. Book this, don't hesitate!"
-      },
-      {
-        name: "Alicia_G",
-        source: "Viator",
-        route: "Tokyo airport transfer",
-        title: "100% Recommend",
-        text: "From the moment we walked out of customs, everything was seamless. We were picked up so quickly, which was exactly what we needed after a long flight. It completely took the stress out of trying to navigate the train system with luggage and tired travellers. Smooth, easy, and hassle-free from start to finish. Would 100% recommend — such a great way to start our time in Tokyo."
-      },
-      {
-        name: "matthewwR4050EY",
-        source: "Tripadvisor / Viator",
-        route: "Narita Airport 1-way or Roundtrip",
-        title: "Wonderful Experience",
-        text: "Amazing experience, highly recommend. Both our driver and staff were very helpful, as they were great with overall communication and support. Driver was very prompt and respectful. Will definitely use their services in the future."
-      },
-      {
-        name: "Hailey_P",
-        source: "Viator",
-        route: "Narita Airport 1-way or Roundtrip",
-        title: "Do yourself a favor & book this",
-        text: "I’m so happy that I booked this. Do yourself a favor and book it too. After coming off a 12 hour flight from Los Angeles, I knew we did not want to get off and immediately have to figure out public transportation to get to our hotel. This ride allowed us to relax, the seats even reclined, and after we reached the hotel, we were allowed to enjoy the rest of our first day fully. Xisiyuan was a great driver, helped us with our bags, and was very communicative through WhatsApp. He even showed up early to make sure he didn’t miss us."
-      },
-      {
-        name: "LadyTRM",
-        source: "Viator",
-        route: "Tokyo ⇆ Haneda Airport Roundtrip",
-        title: "Airport Transfer Roundtrip",
-        text: "I used this company for a round trip transfer from and to the airport. Both times the driver was early, communicated well with me, and was professional. I recommend this company."
-      },
-      {
-        name: "Christie Nekzad",
-        source: "GetYourGuide",
-        route: "Haneda Airport Meet & Greet",
-        title: "Excellent service",
-        text: "I really do appreciate it when the driver was able to pick us up on the time that I requested. They go out of their way to make it a smooth and worry free ride and they do value your time. The communication is excellent on where to pick us up and texted me when he arrived. I also sent a message before we left JFK New York and when we landed I saw their reply. Excellent service. Arigato!"
-      },
-      {
-        name: "Annette Ahuna",
-        source: "GetYourGuide",
-        route: "Haneda Airport Meet & Greet / Flight Tracking",
-        title: "Best decision for our first trip to Japan",
-        text: "We were coming in from Hawaii after about 8 hours. This was our first trip to Japan and we came in around 7:45 pm. I figured instead of trying to figure out the train system at that time, plus tired too, I booked this private transportation. It was the best decision. Our driver was wonderful in communicating with me. He was also patient and kind. Thank you for welcoming us to Japan and getting us to our hotel safely."
-      },
-      {
-        name: "Tanja Bölke",
-        source: "GetYourGuide",
-        route: "Narita Airport Meet & Greet",
-        title: "Very punctual and accommodating",
-        text: "The guide was very punctual thanks to communication via WhatsApp, very accommodating, and even carried the suitcases for the woman and the youngest child. For an additional fee, we were picked up right at the airport after customs with a name tag."
-      },
-      {
-        name: "Rachel L.",
-        source: "Viator",
-        route: "Airport transfer",
-        title: "Great service",
-        text: "Absolutely seamless experience. The driver was professional, communication was excellent, and everything was very smooth from pickup to arrival."
-      },
-      {
-        name: "Joel S.",
-        source: "Tripadvisor",
-        route: "Narita airport pickup",
-        title: "Top-notch service in Tokyo",
-        text: "The driver went above and beyond during pickup at Narita Airport. The ride was smooth, safe, and comfortable for the whole group."
-      },
-      {
-        name: "Nicole R.",
-        source: "Viator",
-        route: "Family transfer",
-        title: "Great for larger families",
-        text: "Such a good option if you have a few people in your traveling party. Easy to book, very efficient, and communication was great."
-      },
-      {
-        name: "Mario C.",
-        source: "Viator",
-        route: "Round trip Narita to Tokyo",
-        title: "Patient and reliable",
-        text: "The driver waited patiently despite delays at immigration and customs, and both the arrival and return transfer were smooth."
-      }
-    ];
+  const reviews = [
+    {
+      name: "Relax08772840903",
+      source: "Viator",
+      title: "Seamless pickup process",
+      text: "The driver connected with me on WhatsApp the day before pickup and made the whole process seamless on the day of pickup."
+    },
+    {
+      name: "Sergio M, Allen, Texas",
+      source: "GetYourGuide",
+      title: "Tokyo family trip",
+      text: "Sakurai was very nice and extremely helpful. We had a very nice ride to the hotel."
+    },
+    {
+      name: "Matthew W, Lehigh Acres, Florida",
+      source: "Tripadvisor / Viator",
+      title: "Wonderful Experience",
+      text: "Amazing experience, highly recommend. Both our driver and staff were very helpful, as they were great with overall communication and support. Driver was very prompt and respectful. Will definitely use their services in the future."
+    },
+    {
+      name: "DayTrip41505752831, Mackay, Australia",
+      source: "GetYourGuide",
+      title: "Amazing Service",
+      text: "The driver was very helpful. He even made sure we made it into our accommodation safely!"
+    },
+    {
+      name: "Julie_A",
+      source: "Viator",
+      title: "Super smooth arrival",
+      text: "It could not have been easier to communicate on WhatsApp and find the driver. This saved us so much time after a late arrival."
+    },
+    {
+      name: "Annette Ahuna",
+      source: "GetYourGuide",
+      title: "Best decision for our first trip",
+      text: "It was the best decision. Our driver was wonderful in communicating with me. He was patient and kind and got us to our hotel safely."
+    },
+    {
+      name: "LadyTRM",
+      source: "Viator",
+      title: "Reliable round-trip transfer",
+      text: "Both times the driver was early, communicated well with me, and was professional. I recommend this company."
+    },
+    {
+      name: "Nicole R.",
+      source: "Viator",
+      title: "Great for families",
+      text: "Such a good option if you have a few people in your traveling party. Easy to book, very efficient, and communication was great."
+    }
+  ];
 
-    const track = document.getElementById('reviews-track');
-    const prevBtn = document.getElementById('reviewsPrev');
-    const nextBtn = document.getElementById('reviewsNext');
-    let currentPage = 0;
+  const track = document.getElementById('reviews-track');
+  const prevBtn = document.getElementById('reviewsPrev');
+  const nextBtn = document.getElementById('reviewsNext');
+  let currentPage = 0;
 
-    function getReviewsPerPage() {
-      if (window.innerWidth < 700) return 1;
-      if (window.innerWidth < 1100) return 2;
-      return 4;
+  function getReviewsPerPage() {
+    if (window.innerWidth < 700) return 1;
+    if (window.innerWidth < 1100) return 2;
+    return 4;
+  }
+
+  function createDots() {
+    return `
+      <div class="review-dots" aria-hidden="true">
+        <span class="review-dot"></span>
+        <span class="review-dot"></span>
+        <span class="review-dot"></span>
+        <span class="review-dot"></span>
+        <span class="review-dot"></span>
+      </div>
+    `;
+  }
+
+  function createReviewCard(review) {
+    const card = document.createElement('div');
+    card.className = 'review-card';
+
+    const trimmed = review.text.length > 170;
+    const shortText = trimmed ? review.text.slice(0, 170).trim() + '…' : review.text;
+
+    card.innerHTML = `
+      <div class="review-quote">”</div>
+      <h3 class="review-title">${review.title}</h3>
+      ${createDots()}
+      <p class="review-text">${shortText}</p>
+      ${trimmed ? '<span class="review-more">See more</span>' : ''}
+      <div class="review-name">${review.name}</div>
+      <div class="review-source">${review.source}</div>
+    `;
+    return card;
+  }
+
+  function renderReviews() {
+    const perPage = getReviewsPerPage();
+    const pageCount = Math.ceil(reviews.length / perPage);
+    currentPage = Math.min(currentPage, Math.max(pageCount - 1, 0));
+    track.innerHTML = '';
+
+    for (let i = 0; i < pageCount; i++) {
+      const page = document.createElement('div');
+      page.className = 'reviews-page';
+
+      const pageReviews = reviews.slice(i * perPage, i * perPage + perPage);
+      pageReviews.forEach((review) => {
+        page.appendChild(createReviewCard(review));
+      });
+
+      track.appendChild(page);
     }
 
-    function createReviewCard(review) {
-      const card = document.createElement('div');
-      card.className = 'review-card';
-      card.innerHTML = `
-        <div class="review-stars">★★★★★</div>
-        <div class="review-platform-row">
-          <div class="review-platform-badge">${review.source}</div>
-          <div class="review-route">${review.route}</div>
-        </div>
-        <div class="review-title">${review.title}</div>
-        <p class="review-text">${review.text}</p>
-        <div class="review-footer">
-          <h3 class="review-name">${review.name}</h3>
-          <div class="review-verified">Verified guest review</div>
-        </div>
-      `;
-      return card;
-    }
+    updateReviews();
+  }
 
-    function renderReviews() {
-      const perPage = getReviewsPerPage();
-      const pageCount = Math.ceil(reviews.length / perPage);
-      currentPage = Math.min(currentPage, Math.max(pageCount - 1, 0));
-      track.innerHTML = '';
+  function updateReviews() {
+    track.style.transform = `translateX(-${currentPage * 100}%)`;
+  }
 
-      for (let i = 0; i < pageCount; i++) {
-        const page = document.createElement('div');
-        page.className = 'reviews-page';
+  function goToPrevReviews() {
+    const perPage = getReviewsPerPage();
+    const pageCount = Math.ceil(reviews.length / perPage);
+    currentPage = (currentPage - 1 + pageCount) % pageCount;
+    updateReviews();
+  }
 
-        const pageReviews = reviews.slice(i * perPage, i * perPage + perPage);
-        pageReviews.forEach((review) => {
-          page.appendChild(createReviewCard(review));
-        });
+  function goToNextReviews() {
+    const perPage = getReviewsPerPage();
+    const pageCount = Math.ceil(reviews.length / perPage);
+    currentPage = (currentPage + 1) % pageCount;
+    updateReviews();
+  }
 
-        track.appendChild(page);
-      }
+  if (prevBtn && nextBtn) {
+    prevBtn.addEventListener('click', goToPrevReviews);
+    nextBtn.addEventListener('click', goToNextReviews);
+  }
 
-      updateReviews();
-    }
-
-    function updateReviews() {
-      track.style.transform = `translateX(-${currentPage * 100}%)`;
-    }
-
-    function goToPrevReviews() {
-      const perPage = getReviewsPerPage();
-      const pageCount = Math.ceil(reviews.length / perPage);
-      currentPage = (currentPage - 1 + pageCount) % pageCount;
-      updateReviews();
-    }
-
-    function goToNextReviews() {
-      const perPage = getReviewsPerPage();
-      const pageCount = Math.ceil(reviews.length / perPage);
-      currentPage = (currentPage + 1) % pageCount;
-      updateReviews();
-    }
-
-    if (prevBtn && nextBtn) {
-      prevBtn.addEventListener('click', goToPrevReviews);
-      nextBtn.addEventListener('click', goToNextReviews);
-    }
-
-    window.addEventListener('resize', renderReviews);
-    renderReviews();
-  </script>
+  window.addEventListener('resize', renderReviews);
+  renderReviews();
+</script>
 
   <script>
     const aiPlannerBtn = document.getElementById('aiPlannerBtn');
