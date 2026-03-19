@@ -4,7 +4,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Airport Transfers in Japan | Pick-U Japan</title>
-  <meta name="description" content="Private airport transfers in Japan with door-to-door service, professional drivers, flight tracking, and easy booking." />
+  <meta name="description" content="Browse private airport transfer services in Japan by airport, including Narita, Haneda, Kansai, Chubu, and Fukuoka." />
+  <link rel="stylesheet" href="global.css">
   <style>
     :root {
       --bg: #111111;
@@ -20,6 +21,7 @@
 
     * { box-sizing: border-box; }
     html { scroll-behavior: smooth; }
+
     body {
       margin: 0;
       font-family: Arial, Helvetica, sans-serif;
@@ -36,86 +38,9 @@
       margin: 0 auto;
     }
 
-    /* wider container specifically for Bokun product list */
-    .widget-container {
-      width: min(1050px, calc(100% - 48px));
-      margin: 0 auto;
-    }
-
-    .topbar {
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      background: rgba(10,10,10,0.92);
-      backdrop-filter: blur(8px);
-      border-bottom: 1px solid var(--border);
-    }
-
-    .nav {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      min-height: 74px;
-      gap: 24px;
-    }
-
-    .brand {
-      display:flex;
-      align-items:center;
-      gap:12px;
-      font-size: 1.2rem;
-      font-weight: 700;
-      letter-spacing: 0.04em;
-      white-space: nowrap;
-    }
-
-    .brand-logo {
-      height: 34px;
-      width: auto;
-      object-fit: contain;
-    }
-
-    .brand-wordmark span { color: var(--gold); }
-
-    .nav-right {
-      display:flex;
-      align-items:center;
-      gap:18px;
-      flex-wrap:wrap;
-    }
-
-    .nav-links {
-      display: flex;
-      gap: 22px;
-      color: var(--muted);
-      font-size: 0.95rem;
-    }
-
-    .lang-switch {
-      display:flex;
-      gap:8px;
-      align-items:center;
-    }
-
-    .lang-switch a {
-      padding: 6px 10px;
-      border: 1px solid var(--border);
-      border-radius: 999px;
-      font-size: 0.82rem;
-      color: var(--muted);
-      background: rgba(255,255,255,0.03);
-    }
-
-    .lang-switch a.active {
-      color: #111;
-      background: var(--gold);
-      border-color: var(--gold);
-      font-weight: 700;
-    }
-
     .hero {
       position: relative;
-      min-height: 320px;
+      min-height: 340px;
       display: flex;
       align-items: end;
       background:
@@ -213,7 +138,7 @@
       gap: 24px;
     }
 
-    .grid-2 {
+    .airport-grid {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
       gap: 24px;
@@ -236,75 +161,65 @@
       color: var(--muted);
     }
 
-    .widget-wrap {
-      background: #f4f1ea;
-      color: #111;
-      border-radius: 28px;
+    .airport-card {
+      display: block;
+      background: linear-gradient(180deg, #1b1b1b 0%, #151515 100%);
+      border: 1px solid var(--border);
+      border-radius: 26px;
       padding: 28px;
-      box-shadow: 0 12px 40px rgba(0,0,0,0.2);
+      transition: 0.22s ease;
+      min-height: 210px;
+      position: relative;
+      overflow: hidden;
     }
 
-    .widget-inner {
-      max-width: 1360px;
-      margin: 0 auto;
+    .airport-card:hover {
+      transform: translateY(-4px);
+      border-color: rgba(212,160,23,0.42);
+      box-shadow: 0 18px 42px rgba(0,0,0,0.24);
     }
 
-    .bokunWidget {
-      max-width: 1360px;
-      margin: 0 auto;
+    .airport-card::after {
+      content: "";
+      position: absolute;
+      inset: auto -30px -30px auto;
+      width: 140px;
+      height: 140px;
+      background: radial-gradient(circle, rgba(212,160,23,0.14) 0%, rgba(212,160,23,0) 72%);
+      pointer-events: none;
     }
 
-    .widget-head {
+    .airport-label {
+      display: inline-block;
+      padding: 7px 12px;
+      border-radius: 999px;
+      background: rgba(212,160,23,0.12);
+      color: #f1d287;
+      border: 1px solid rgba(212,160,23,0.24);
+      font-size: 0.82rem;
       margin-bottom: 18px;
     }
 
-    .widget-head h3 {
+    .airport-card h3 {
+      font-size: 1.45rem;
+      margin: 0 0 10px;
+      line-height: 1.2;
+    }
+
+    .airport-card p {
       margin: 0;
-      font-size: 1.5rem;
+      color: var(--muted);
+      max-width: 420px;
     }
 
-    .widget-head p {
-      margin: 8px 0 0;
-      color: #555;
-    }
-
-    .airport-filter {
+    .airport-arrow {
+      margin-top: 18px;
       display: inline-flex;
       align-items: center;
-      justify-content: center;
-      padding: 10px 16px;
-      border-radius: 999px;
-      border: 1px solid rgba(0,0,0,0.12);
-      color: #333;
-      background: #fff;
-      font-size: 0.95rem;
-      transition: 0.2s ease;
-    }
-
-    .airport-filter:hover {
-      transform: translateY(-1px);
-      box-shadow: 0 6px 16px rgba(0,0,0,0.08);
-    }
-
-    .airport-filter.active {
-      background: #181818;
-      color: #fff;
-      border-color: #181818;
-    }
-
-    .bokunWidget > div,
-    .bokunWidget article,
-    .bokunWidget a[data-testid="activity-card"],
-    .bokunWidget [class*="card"] {
-      transition: transform 0.18s ease, box-shadow 0.18s ease !important;
-    }
-
-    .bokunWidget > div:hover,
-    .bokunWidget article:hover,
-    .bokunWidget a[data-testid="activity-card"]:hover,
-    .bokunWidget [class*="card"]:hover {
-      transform: translateY(-4px) !important;
-      box-shadow: 0 14px 30px rgba(0,0,0,0.16) !important;
+      gap: 8px;
+      color: #f7f4ee;
+      font-weight: 700;
+      font-size: 0.96rem;
     }
 
     .faq-item {
@@ -315,51 +230,20 @@
     .faq-item strong { display:block; margin-bottom:8px; }
     .faq-item p { margin:0; color: var(--muted); }
 
-    .footer {
-      border-top: 1px solid var(--border);
-      padding: 34px 0 48px;
-      color: var(--muted);
-      background: #0b0b0b;
-    }
-
-    .footer-grid {
-      display:grid;
-      grid-template-columns: 1.5fr 1fr 1fr;
-      gap:24px;
-    }
-
     @media (max-width: 980px) {
       .grid-3,
-      .grid-2,
-      .footer-grid {
+      .airport-grid {
         grid-template-columns: 1fr;
       }
 
-      .nav {
-        flex-direction: column;
-        align-items: flex-start;
-        padding: 14px 0;
-      }
-
-      .nav-right {
-        width:100%;
-        justify-content:space-between;
-      }
-
-      .nav-links {
-        flex-wrap: wrap;
-        gap: 12px 18px;
-      }
-
       .hero { min-height: auto; }
-      .brand-logo { height: 28px; }
+
       .hero-content {
         max-width: 100%;
         padding: 72px 0;
       }
     }
   </style>
-<link rel="stylesheet" href="global.css">
 </head>
 <body>
   <div id="site-header"></div>
@@ -367,12 +251,12 @@
   <section class="hero">
     <div class="container hero-content">
       <div class="eyebrow">Airport transfer category</div>
-      <h1>Airport Transfers in Japan</h1>
+      <h1>Airport Transfer</h1>
       <p>
-        Browse private airport transfer services for Narita, Haneda, Kansai, and other major airports with easy booking and reliable support.
+        Choose your airport first, then browse private transfer routes and vehicle options for your destination in Japan.
       </p>
       <div class="hero-actions">
-        <a class="btn btn-primary" href="#booking-list">Browse Airport Transfers</a>
+        <a class="btn btn-primary" href="#airport-list">Choose Airport</a>
         <a class="btn btn-secondary" href="index.html">Back to Homepage</a>
       </div>
     </div>
@@ -382,68 +266,73 @@
     <div class="container">
       <div class="section-header">
         <h2>Why choose airport transfers with Pick-U</h2>
-        <p>Airport transfers are often the first and last part of your trip. 
-          Our service focuses on reliable timing, smooth airport pickup, 
-          and clear communication to ensure a stress-free arrival or departure.</p>
+        <p>
+          Airport transfers are often the first and last part of your trip. Our service focuses on reliable timing,
+          smooth airport pickup, and clear communication for a stress-free arrival or departure.
+        </p>
       </div>
       <div class="grid-3">
         <div class="panel-box">
           <h3>Flight Tracking</h3>
-          <p>We monitor arriving flights into Japan so pickup timing can be adjusted if your flight is delayed.</p>
+          <p>We monitor flights so pickup timing can be adjusted if your arrival is delayed.</p>
         </div>
         <div class="panel-box">
           <h3>Pickup Guidance</h3>
-          <p>Optional name sign is available, and we can send you a pickup map before your trip for easier arrival.</p>
+          <p>Optional meet and greet service is available, and pickup instructions can be shared before arrival.</p>
         </div>
         <div class="panel-box">
           <h3>Comfortable Vehicles</h3>
-          <p>Choose the right vehicle for your group size, luggage needs, and transfer route.</p>
+          <p>Choose a suitable vehicle for your group size, luggage needs, and transfer route.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <section class="section" id="booking-list" style="background:#f3efe9; color:#111;">
-    <div class="widget-container">
-      <div class="widget-wrap">
-        <div class="widget-inner">
-        <div class="widget-head">
-          <h3>Available Airport Transfer Services</h3>
-          <p>Select your airport transfer route, compare vehicle options, and continue to secure online booking.</p>
-        </div>
-
-        <div class="trust-signals" style="display:flex; flex-wrap:wrap; gap:16px; margin:18px 0 22px; font-size:0.95rem; color:#333;">
-          <div>✔ Flight arrival tracking in Japan</div>
-          <div>✔ Free waiting time included</div>
-          <div>✔ Licensed commercial vehicles (Green plate)</div>
-          <div>✔ Fixed pricing with no hidden fees</div>
-        </div>
-
-        
-
-        <script type="text/javascript" src="https://widgets.bokun.io/assets/javascripts/apps/build/BokunWidgetsLoader.js?bookingChannelUUID=11dad9b8-4629-4114-ab40-b6ce758d47ae" async></script>
-        <div class="bokunWidget" data-src="https://widgets.bokun.io/online-sales/11dad9b8-4629-4114-ab40-b6ce758d47ae/product-list/87868"></div>
-        <noscript>Please enable javascript in your browser to book</noscript>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="section" style="background:#201914;">
+  <section class="section" id="airport-list" style="background:#111111;">
     <div class="container">
       <div class="section-header">
-        <h2>Popular airport transfer routes</h2>
-        <p>Some of the most requested airport pickup and drop-off routes.</p>
+        <h2>Select your airport</h2>
+        <p>
+          Start by choosing the airport. Each airport page will show the available transfer routes, vehicle options,
+          and service details.
+        </p>
       </div>
-      <div class="grid-2">
-        <div class="panel-box">
+
+      <div class="airport-grid">
+        <a class="airport-card" href="narita-airport-transfer.html">
+          <div class="airport-label">Tokyo area</div>
           <h3>Narita Airport</h3>
-          <p>Narita Airport → Tokyo City<br>Narita Airport → Yokohama<br>Narita Airport → Hakone</p>
-        </div>
-        <div class="panel-box">
+          <p>Transfers to Tokyo, Disney Resort, Yokohama, Hakone, Kawaguchiko, and more.</p>
+          <div class="airport-arrow">View routes →</div>
+        </a>
+
+        <a class="airport-card" href="haneda-airport-transfer.html">
+          <div class="airport-label">Tokyo area</div>
           <h3>Haneda Airport</h3>
-          <p>Haneda Airport → Tokyo<br>Haneda Airport → Yokohama<br>Haneda Airport → Hakone</p>
-        </div>
+          <p>Private transfers for central Tokyo, Yokohama, and nearby destinations.</p>
+          <div class="airport-arrow">View routes →</div>
+        </a>
+
+        <a class="airport-card" href="kansai-airport-transfer.html">
+          <div class="airport-label">Osaka / Kyoto area</div>
+          <h3>Kansai Airport</h3>
+          <p>Transfers to Osaka, Kyoto, Nara, Kobe, and other major Kansai destinations.</p>
+          <div class="airport-arrow">View routes →</div>
+        </a>
+
+        <a class="airport-card" href="chubu-airport-transfer.html">
+          <div class="airport-label">Nagoya area</div>
+          <h3>Chubu Airport</h3>
+          <p>Private airport rides between Centrair and Nagoya city or nearby areas.</p>
+          <div class="airport-arrow">View routes →</div>
+        </a>
+
+        <a class="airport-card" href="fukuoka-airport-transfer.html">
+          <div class="airport-label">Kyushu area</div>
+          <h3>Fukuoka Airport</h3>
+          <p>Transfers to Fukuoka city, Hakata, Tenjin, and selected nearby destinations.</p>
+          <div class="airport-arrow">View routes →</div>
+        </a>
       </div>
     </div>
   </section>
@@ -456,22 +345,22 @@
       </div>
       <div class="panel-box">
         <div class="faq-item">
-          <strong>What if my flight is delayed?</strong>
-          <p>Flight arrival times can be monitored and pickup timing adjusted accordingly.</p>
+          <strong>Do I choose the airport first?</strong>
+          <p>Yes. Start with the airport page, then choose the route that matches your destination.</p>
         </div>
         <div class="faq-item">
-          <strong>How do I meet the driver?</strong>
-          <p>Your driver will meet you based on the pickup instructions provided before arrival.</p>
+          <strong>Can I book both pickup and drop-off?</strong>
+          <p>Yes. Airport pages can include both arrival transfers and departure transfers.</p>
         </div>
         <div class="faq-item">
           <strong>Can I bring large luggage?</strong>
-          <p>Yes. Please choose the vehicle that best fits your passenger count and luggage size.</p>
+          <p>Yes. Please choose the vehicle that best matches your passenger count and luggage size.</p>
         </div>
       </div>
     </div>
   </section>
 
   <div id="site-footer"></div>
-<script src="includes.js"></script>
+  <script src="includes.js"></script>
 </body>
 </html>
