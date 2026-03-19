@@ -36,7 +36,6 @@
   <style>
     :root {
       --header-height: 74px;
-      --jump-nav-height: 62px;
     }
 
     html {
@@ -51,9 +50,7 @@
 
     /* 固定在 header 下方 */
     .jump-nav-wrap {
-      position: fixed;
-      left: 0;
-      right: 0;
+      position: sticky;
       top: var(--header-height);
       z-index: 90;
       backdrop-filter: blur(14px);
@@ -63,9 +60,6 @@
     }
 
     /* 讓後面內容不要被 fixed nav 蓋住 */
-    .jump-nav-spacer {
-      height: var(--jump-nav-height);
-    }
 
     .jump-nav {
       display: flex;
@@ -410,7 +404,7 @@
     #coaster,
     #bus-45,
     #faq {
-      scroll-margin-top: calc(var(--header-height) + var(--jump-nav-height) + 20px);
+      scroll-margin-top: 150px;
     }
 
     @media (max-width: 1180px) {
@@ -494,8 +488,6 @@
       </div>
     </div>
   </div>
-
-  <div class="jump-nav-spacer" id="jumpNavSpacer"></div>
 
   <section class="section section-dark" id="compare">
     <div class="container">
@@ -1218,38 +1210,30 @@
 
   <script src="includes.js"></script>
   <script>
-    function updateFixedJumpNav() {
-      const headerHost = document.getElementById("site-header");
-      const jumpNavWrap = document.getElementById("jumpNavWrap");
-      const jumpNavSpacer = document.getElementById("jumpNavSpacer");
+  function updateStickyJumpNav() {
+    const headerHost = document.getElementById("site-header");
 
-      if (!jumpNavWrap || !jumpNavSpacer) return;
+    const actualHeader =
+      headerHost?.querySelector("header") ||
+      headerHost?.querySelector(".site-header") ||
+      headerHost?.querySelector(".header") ||
+      headerHost?.firstElementChild;
 
-      const actualHeader =
-        headerHost?.querySelector("header") ||
-        headerHost?.querySelector(".site-header") ||
-        headerHost?.querySelector(".header") ||
-        headerHost?.firstElementChild;
+    const headerHeight = actualHeader
+      ? Math.round(actualHeader.getBoundingClientRect().height)
+      : 74;
 
-      const headerHeight = actualHeader
-        ? Math.round(actualHeader.getBoundingClientRect().height)
-        : 74;
+    document.documentElement.style.setProperty("--header-height", headerHeight + "px");
+  }
 
-      const jumpNavHeight = Math.round(jumpNavWrap.getBoundingClientRect().height) || 62;
+  window.addEventListener("load", () => {
+    updateStickyJumpNav();
+    setTimeout(updateStickyJumpNav, 100);
+    setTimeout(updateStickyJumpNav, 300);
+    setTimeout(updateStickyJumpNav, 600);
+  });
 
-      document.documentElement.style.setProperty("--header-height", headerHeight + "px");
-      document.documentElement.style.setProperty("--jump-nav-height", jumpNavHeight + "px");
-      jumpNavSpacer.style.height = jumpNavHeight + "px";
-    }
-
-    window.addEventListener("load", () => {
-      updateFixedJumpNav();
-      setTimeout(updateFixedJumpNav, 100);
-      setTimeout(updateFixedJumpNav, 300);
-      setTimeout(updateFixedJumpNav, 600);
-    });
-
-    window.addEventListener("resize", updateFixedJumpNav);
-  </script>
+  window.addEventListener("resize", updateStickyJumpNav);
+</script>
 </body>
 </html>
