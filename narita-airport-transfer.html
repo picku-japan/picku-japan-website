@@ -1,454 +1,508 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Narita Airport Transfer | Pick-U Japan</title>
+  <meta
+    name="description"
+    content="Private Narita Airport transfers to Tokyo, Disney Resort, Yokohama, Hakone, and other destinations with professional drivers and flexible vehicle options."
+  />
+  <link rel="stylesheet" href="global.css">
+  <style>
+    :root {
+      --bg: #111111;
+      --panel: #181818;
+      --text: #f7f4ee;
+      --muted: #c7c2b8;
+      --gold: #d4a017;
+      --gold-soft: rgba(212, 160, 23, 0.16);
+      --border: rgba(255,255,255,0.1);
+      --max: 1040px;
+      --radius: 24px;
+    }
 
-<title>Narita Airport Transfer | Pick-U Japan</title>
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
 
-<meta name="description" content="Private Narita Airport transfers between Narita Airport and Tokyo, Disney Resort, Yokohama, and Hakone with professional drivers and reliable pickup service.">
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
 
-<link rel="stylesheet" href="global.css">
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; display: block; }
 
-<style>
+    .container {
+      width: min(var(--max), calc(100% - 48px));
+      margin: 0 auto;
+    }
 
-:root {
---bg:#111111;
---panel:#181818;
---text:#f7f4ee;
---muted:#c7c2b8;
---gold:#d4a017;
---border:rgba(255,255,255,0.1);
---max:1040px;
-}
+    .widget-container {
+      width: min(1050px, calc(100% - 48px));
+      margin: 0 auto;
+    }
 
-*{box-sizing:border-box}
+    .hero {
+      position: relative;
+      min-height: 340px;
+      display: flex;
+      align-items: end;
+      background:
+        linear-gradient(rgba(0,0,0,0.40), rgba(0,0,0,0.62)),
+        url('airport-transfers.png') center/cover no-repeat;
+      border-bottom: 1px solid var(--border);
+    }
 
-body{
-margin:0;
-font-family:Arial,Helvetica,sans-serif;
-background:var(--bg);
-color:var(--text);
-line-height:1.6;
-}
+    .hero-content {
+      max-width: 860px;
+      padding: 64px 0 54px;
+    }
 
-a{color:inherit;text-decoration:none}
+    .eyebrow {
+      display: inline-block;
+      padding: 8px 14px;
+      border: 1px solid rgba(212,160,23,0.45);
+      background: var(--gold-soft);
+      color: #f3d98e;
+      border-radius: 999px;
+      font-size: 0.86rem;
+      margin-bottom: 18px;
+    }
 
-.container{
-width:min(var(--max),calc(100% - 48px));
-margin:auto;
-}
+    h1 {
+      margin: 0;
+      font-size: clamp(2rem, 4.2vw, 3.4rem);
+      line-height: 1.08;
+      letter-spacing: -0.04em;
+    }
 
-.section{
-padding:76px 0;
-}
+    .hero p {
+      color: #eee5d5;
+      font-size: 1.02rem;
+      max-width: 680px;
+      margin: 16px 0 0;
+    }
 
-.section-header{
-text-align:center;
-max-width:820px;
-margin:0 auto 40px;
-}
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-top: 24px;
+    }
 
-.section-header h2{
-font-size:2.4rem;
-margin:0;
-}
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 18px;
+      padding: 14px 22px;
+      font-weight: 700;
+      transition: 0.2s ease;
+      border: 1px solid transparent;
+      font-size: 1rem;
+    }
 
-.section-header p{
-color:var(--muted);
-margin-top:14px;
-}
+    .btn-primary {
+      background: var(--gold);
+      color: #111;
+    }
 
-/* hero */
+    .btn-secondary {
+      border-color: rgba(255,255,255,0.2);
+      background: rgba(255,255,255,0.06);
+      color: var(--text);
+      backdrop-filter: blur(4px);
+    }
 
-.hero{
-min-height:340px;
-display:flex;
-align-items:end;
-background:
-linear-gradient(rgba(0,0,0,.45),rgba(0,0,0,.65)),
-url("airport-transfers.png") center/cover;
-border-bottom:1px solid var(--border);
-}
+    .section { padding: 76px 0; }
 
-.hero-content{
-padding:64px 0 54px;
-}
+    .section-header {
+      max-width: 820px;
+      margin: 0 auto 40px;
+      text-align: center;
+    }
 
-.hero h1{
-font-size:3rem;
-margin:0;
-}
+    .section-header h2 {
+      margin: 0;
+      font-size: clamp(1.85rem, 3vw, 2.7rem);
+      line-height: 1.08;
+      letter-spacing: -0.04em;
+    }
 
-.hero p{
-max-width:640px;
-margin-top:16px;
-color:#e9e1d1;
-}
+    .section-header p {
+      margin: 16px auto 0;
+      color: var(--muted);
+      max-width: 820px;
+      font-size: 1.02rem;
+    }
 
-.hero-actions{
-margin-top:24px;
-display:flex;
-gap:14px;
-flex-wrap:wrap;
-}
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
 
-.btn{
-padding:14px 22px;
-border-radius:16px;
-font-weight:700;
-display:inline-flex;
-align-items:center;
-justify-content:center;
-}
+    .grid-2 {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+    }
 
-.btn-primary{
-background:var(--gold);
-color:#111;
-}
+    .panel-box {
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: 24px;
+      padding: 24px;
+    }
 
-.btn-secondary{
-border:1px solid rgba(255,255,255,0.2);
-background:rgba(255,255,255,0.05);
-}
+    .panel-box h3 {
+      margin: 0 0 10px;
+      font-size: 1.2rem;
+    }
 
-/* grids */
+    .panel-box p,
+    .panel-box li {
+      color: var(--muted);
+    }
 
-.grid-3{
-display:grid;
-grid-template-columns:repeat(3,1fr);
-gap:24px;
-}
+    .route-card {
+      display: block;
+      background: #f4efe7;
+      border: 1px solid rgba(0,0,0,0.08);
+      border-radius: 24px;
+      padding: 24px;
+      transition: 0.22s ease;
+      color: #111;
+    }
 
-.grid-2{
-display:grid;
-grid-template-columns:repeat(2,1fr);
-gap:24px;
-}
+    .route-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 18px 42px rgba(0,0,0,0.12);
+    }
 
-/* panels */
+    .route-card h3 {
+      margin: 0 0 10px;
+      font-size: 1.2rem;
+    }
 
-.panel-box{
-background:var(--panel);
-border:1px solid var(--border);
-border-radius:22px;
-padding:24px;
-}
+    .route-card p {
+      margin: 0;
+      color: #555;
+    }
 
-/* routes */
+    .widget-wrap {
+      background: #f4f1ea;
+      color: #111;
+      border-radius: 28px;
+      padding: 28px;
+      box-shadow: 0 12px 40px rgba(0,0,0,0.2);
+    }
 
-.route-card{
-background:#f4efe7;
-border-radius:22px;
-padding:24px;
-color:#111;
-border:1px solid rgba(0,0,0,0.08);
-}
+    .widget-inner {
+      max-width: 1360px;
+      margin: 0 auto;
+    }
 
-.route-card h3{
-margin:0 0 10px;
-}
+    .bokunWidget {
+      max-width: 1360px;
+      margin: 0 auto;
+    }
 
-/* widget */
+    .widget-head {
+      margin-bottom: 18px;
+    }
 
-.widget-wrap{
-background:#181818;
-border-radius:24px;
-padding:36px;
-border:1px solid var(--border);
-}
+    .widget-head h3 {
+      margin: 0;
+      font-size: 1.5rem;
+    }
 
-/* additional services */
+    .widget-head p {
+      margin: 8px 0 0;
+      color: #555;
+    }
 
-.service-card{
-display:grid;
-grid-template-columns:90px 1fr;
-gap:18px;
-align-items:center;
-background:#f4efe7;
-border-radius:20px;
-padding:20px;
-border:1px solid rgba(0,0,0,0.08);
-}
+    .trust-signals {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      margin: 18px 0 22px;
+      font-size: 0.95rem;
+      color: #333;
+    }
 
-.service-img{
-width:90px;
-height:90px;
-border-radius:14px;
-background:#ddd;
-overflow:hidden;
-}
+    .bokunWidget > div,
+    .bokunWidget article,
+    .bokunWidget a[data-testid="activity-card"],
+    .bokunWidget [class*="card"] {
+      transition: transform 0.18s ease, box-shadow 0.18s ease !important;
+    }
 
-.service-img img{
-width:100%;
-height:100%;
-object-fit:cover;
-}
+    .bokunWidget > div:hover,
+    .bokunWidget article:hover,
+    .bokunWidget a[data-testid="activity-card"]:hover,
+    .bokunWidget [class*="card"]:hover {
+      transform: translateY(-4px) !important;
+      box-shadow: 0 14px 30px rgba(0,0,0,0.16) !important;
+    }
 
-.service-text h3{
-margin:0 0 6px;
-color:#111;
-}
+    .service-card {
+      display: grid;
+      grid-template-columns: 108px 1fr;
+      gap: 18px;
+      align-items: center;
+      background: #f4efe7;
+      border-radius: 22px;
+      padding: 20px;
+      border: 1px solid rgba(0,0,0,0.08);
+    }
 
-.service-text p{
-margin:0;
-color:#555;
-}
+    .service-img {
+      width: 108px;
+      aspect-ratio: 1 / 1;
+      border-radius: 16px;
+      overflow: hidden;
+      background: #ddd8cf;
+      flex-shrink: 0;
+    }
 
-/* faq */
+    .service-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
 
-.faq-item{
-padding:18px 0;
-border-bottom:1px solid var(--border);
-}
+    .service-text h3 {
+      margin: 0 0 8px;
+      font-size: 1.08rem;
+      color: #111;
+    }
 
-.faq-item strong{
-display:block;
-margin-bottom:6px;
-}
+    .service-text p {
+      margin: 0;
+      color: #555;
+    }
 
-.faq-item p{
-margin:0;
-color:var(--muted);
-}
+    .faq-item {
+      padding: 18px 0;
+      border-bottom: 1px solid var(--border);
+    }
 
-@media(max-width:900px){
+    .faq-item strong { display:block; margin-bottom:8px; }
+    .faq-item p { margin:0; color: var(--muted); }
 
-.grid-3,
-.grid-2{
-grid-template-columns:1fr;
-}
+    @media (max-width: 980px) {
+      .grid-3,
+      .grid-2 {
+        grid-template-columns: 1fr;
+      }
 
-.service-card{
-grid-template-columns:70px 1fr;
-}
+      .hero { min-height: auto; }
 
-.service-img{
-width:70px;
-height:70px;
-}
+      .hero-content {
+        max-width: 100%;
+        padding: 72px 0;
+      }
 
-.hero h1{
-font-size:2.3rem;
-}
+      .service-card {
+        grid-template-columns: 82px 1fr;
+        gap: 14px;
+      }
 
-}
-
-</style>
+      .service-img {
+        width: 82px;
+      }
+    }
+  </style>
 </head>
-
 <body>
+  <div id="site-header"></div>
 
-<div id="site-header"></div>
+  <section class="hero">
+    <div class="container hero-content">
+      <div class="eyebrow">Tokyo area airport</div>
+      <h1>Narita Airport Transfer</h1>
+      <p>
+        Private transfers between Narita Airport and Tokyo, Disney Resort, Yokohama, Hakone, and other popular destinations.
+      </p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="#narita-routes">Browse Narita Routes</a>
+        <a class="btn btn-secondary" href="airport-transfers.html">Back to Airport Transfer</a>
+      </div>
+    </div>
+  </section>
 
-<!-- HERO -->
+  <section class="section" style="background:#181513;">
+    <div class="container">
+      <div class="section-header">
+        <h2>Why choose Pick-U for Narita transfers</h2>
+        <p>
+          Narita transfers often involve long travel times and luggage-heavy arrivals.
+          Pick-U focuses on dependable pickup, practical vehicle choices, and smooth communication.
+        </p>
+      </div>
+      <div class="grid-3">
+        <div class="panel-box">
+          <h3>Flight Tracking</h3>
+          <p>We track your flight arriving in Japan so pickup timing can be adjusted if your arrival is delayed.</p>
+        </div>
+        <div class="panel-box">
+          <h3>Meet & Greet Option</h3>
+          <p>Optional name sign pickup makes it easier to meet your driver at the arrival hall.</p>
+        </div>
+        <div class="panel-box">
+          <h3>Comfortable Vehicles</h3>
+          <p>Select the right vehicle for your group size, route, and luggage needs.</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
-<section class="hero">
-<div class="container hero-content">
+  <section class="section" id="narita-routes" style="background:#f3efe9; color:#111;">
+    <div class="container">
+      <div class="section-header">
+        <h2>Popular routes from Narita Airport</h2>
+        <p>
+          Start with the most common routes. Later you can make each route open its own dedicated page or widget section.
+        </p>
+      </div>
 
-<h1>Narita Airport Transfer</h1>
+      <div class="grid-2">
+        <a class="route-card" href="narita-to-tokyo-transfer.html">
+          <h3>Narita Airport → Tokyo City</h3>
+          <p>Private transfer options for central Tokyo hotels, apartments, and stations.</p>
+        </a>
 
-<p>
-Private transfers between Narita Airport and Tokyo, Disney Resort,
-Yokohama, Hakone and other popular destinations.
-</p>
+        <a class="route-card" href="narita-to-disney-transfer.html">
+          <h3>Narita Airport → Tokyo Disney Resort</h3>
+          <p>Direct private transfer to Disney hotels and nearby resort areas.</p>
+        </a>
 
-<div class="hero-actions">
-<a class="btn btn-primary" href="#routes">Browse routes</a>
-<a class="btn btn-secondary" href="airport-transfers.html">Back to airports</a>
-</div>
+        <a class="route-card" href="narita-to-yokohama-transfer.html">
+          <h3>Narita Airport → Yokohama</h3>
+          <p>Comfortable long-distance transfer service for Yokohama city and bay area stays.</p>
+        </a>
 
-</div>
-</section>
+        <a class="route-card" href="narita-to-hakone-transfer.html">
+          <h3>Narita Airport → Hakone</h3>
+          <p>Suitable for families, luggage-heavy trips, and direct hotel drop-off.</p>
+        </a>
+      </div>
+    </div>
+  </section>
 
-<!-- WHY CHOOSE -->
+  <section class="section" style="background:#111;">
+    <div class="widget-container">
+      <div class="widget-wrap">
+        <div class="widget-inner">
+          <div class="widget-head">
+            <h3>Available Narita transfer services</h3>
+            <p>
+              You can first keep one Narita product list widget here. Later, you can replace this with route-based widgets.
+            </p>
+          </div>
 
-<section class="section" style="background:#181818">
+          <div class="trust-signals">
+            <div>✔ Arrival pickup and departure transfer</div>
+            <div>✔ Flight tracking available</div>
+            <div>✔ Licensed commercial vehicles</div>
+            <div>✔ Fixed pricing with no hidden fees</div>
+          </div>
 
-<div class="container">
+          <script
+            type="text/javascript"
+            src="https://widgets.bokun.io/assets/javascripts/apps/build/BokunWidgetsLoader.js?bookingChannelUUID=11dad9b8-4629-4114-ab40-b6ce758d47ae"
+            async>
+          </script>
+          <div
+            class="bokunWidget"
+            data-src="https://widgets.bokun.io/online-sales/11dad9b8-4629-4114-ab40-b6ce758d47ae/product-list/87868">
+          </div>
+          <noscript>Please enable javascript in your browser to book</noscript>
+        </div>
+      </div>
+    </div>
+  </section>
 
-<div class="section-header">
-<h2>Why choose Pick-U for Narita transfers</h2>
-<p>Reliable airport pickup designed for international arrivals with luggage and long travel distances.</p>
-</div>
+  <section class="section" style="background:#f3efe9; color:#111;">
+    <div class="container">
+      <div class="section-header">
+        <h2>Additional services</h2>
+        <p>Additional services can be selected during booking.</p>
+      </div>
 
-<div class="grid-3">
+      <div class="grid-2">
+        <div class="service-card">
+          <div class="service-img">
+            <img src="child-seat.jpg" alt="Child seat service">
+          </div>
+          <div class="service-text">
+            <h3>Child Seat</h3>
+            <p>Infant seats, child seats, and booster seats can be arranged in advance for family travel.</p>
+          </div>
+        </div>
 
-<div class="panel-box">
-<h3>Flight Tracking</h3>
-<p>We track your flight arriving in Japan so pickup timing can be adjusted if your arrival is delayed.</p>
-</div>
+        <div class="service-card">
+          <div class="service-img">
+            <img src="meet-greet.jpg" alt="Meet and greet sign service">
+          </div>
+          <div class="service-text">
+            <h3>Meet &amp; Greet Sign</h3>
+            <p>Your driver can wait at the arrival hall with a name sign for easier airport pickup.</p>
+          </div>
+        </div>
 
-<div class="panel-box">
-<h3>Meet & Greet Option</h3>
-<p>Optional name-sign pickup makes it easier to meet your driver at the arrival hall.</p>
-</div>
+        <div class="service-card">
+          <div class="service-img">
+            <img src="waiting-time.jpg" alt="Extra waiting time service">
+          </div>
+          <div class="service-text">
+            <h3>Extra Waiting Time</h3>
+            <p>Extended waiting can be arranged depending on the service type and arrival situation.</p>
+          </div>
+        </div>
 
-<div class="panel-box">
-<h3>Comfortable Vehicles</h3>
-<p>Select the right vehicle for your group size and luggage requirements.</p>
-</div>
+        <div class="service-card">
+          <div class="service-img">
+            <img src="sports-luggage.jpg" alt="Oversized luggage service">
+          </div>
+          <div class="service-text">
+            <h3>Oversized Luggage</h3>
+            <p>Large sports gear such as surfboards, skis, golf bags, or extra-large luggage may require a larger vehicle.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-</div>
+  <section class="section" style="background:#23201d;">
+    <div class="container">
+      <div class="section-header">
+        <h2>Frequently Asked Questions</h2>
+        <p>Helpful answers before booking your Narita airport transfer.</p>
+      </div>
+      <div class="panel-box">
+        <div class="faq-item">
+          <strong>What if my flight is delayed?</strong>
+          <p>For eligible pickup services, we track your flight arriving in Japan so pickup timing can be adjusted accordingly.</p>
+        </div>
+        <div class="faq-item">
+          <strong>Can I book a departure transfer to Narita Airport?</strong>
+          <p>Yes. You can include both airport pickup and airport drop-off routes on this page.</p>
+        </div>
+        <div class="faq-item">
+          <strong>Can I bring surfboards or ski equipment?</strong>
+          <p>Yes, but please check luggage size and choose the appropriate vehicle category in advance.</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
-</div>
-</section>
-
-<!-- ROUTES -->
-
-<section class="section" id="routes" style="background:#f4efe7;color:#111">
-
-<div class="container">
-
-<div class="section-header">
-<h2>Popular routes from Narita Airport</h2>
-<p>Choose one of the most common destinations travellers book after arriving in Narita.</p>
-</div>
-
-<div class="grid-2">
-
-<div class="route-card">
-<h3>Narita → Tokyo</h3>
-<p>Direct private transfer to hotels, apartments, and stations across Tokyo.</p>
-</div>
-
-<div class="route-card">
-<h3>Narita → Disney Resort</h3>
-<p>Convenient transfer to Tokyo Disneyland and DisneySea hotels.</p>
-</div>
-
-<div class="route-card">
-<h3>Narita → Yokohama</h3>
-<p>Comfortable ride for travellers heading to Yokohama city and port area.</p>
-</div>
-
-<div class="route-card">
-<h3>Narita → Hakone</h3>
-<p>Direct long-distance transfer ideal for luggage-heavy travellers.</p>
-</div>
-
-</div>
-
-</div>
-</section>
-
-<!-- WIDGET -->
-
-<section class="section" style="background:#111">
-
-<div class="container">
-
-<div class="section-header">
-<h2>Available Narita transfer services</h2>
-<p>Select your route and vehicle to continue booking.</p>
-</div>
-
-<div class="widget-wrap">
-
-<script src="https://widgets.bokun.io/assets/javascripts/apps/build/BokunWidgetsLoader.js?bookingChannelUUID=11dad9b8-4629-4114-ab40-b6ce758d47ae" async></script>
-
-<div class="bokunWidget"
-data-src="https://widgets.bokun.io/online-sales/11dad9b8-4629-4114-ab40-b6ce758d47ae/product-list/87868">
-</div>
-
-</div>
-
-</div>
-</section>
-
-<!-- ADDITIONAL -->
-
-<section class="section" style="background:#f4efe7;color:#111">
-
-<div class="container">
-
-<div class="section-header">
-<h2>Additional services</h2>
-<p>Additional services can be selected during booking.</p>
-</div>
-
-<div class="grid-2">
-
-<div class="service-card">
-<div class="service-img">
-<img src="child-seat.jpg">
-</div>
-<div class="service-text">
-<h3>Child Seat</h3>
-<p>Infant, child, and booster seats can be arranged for families travelling with young children.</p>
-</div>
-</div>
-
-<div class="service-card">
-<div class="service-img">
-<img src="meet-greet.jpg">
-</div>
-<div class="service-text">
-<h3>Meet & Greet Sign</h3>
-<p>Your driver can wait at the arrival hall holding a name sign for easier pickup.</p>
-</div>
-</div>
-
-<div class="service-card">
-<div class="service-img">
-<img src="waiting-time.jpg">
-</div>
-<div class="service-text">
-<h3>Extra Waiting Time</h3>
-<p>Additional waiting time can be arranged depending on the transfer type.</p>
-</div>
-</div>
-
-<div class="service-card">
-<div class="service-img">
-<img src="sports-luggage.jpg">
-</div>
-<div class="service-text">
-<h3>Oversized Luggage</h3>
-<p>Large sports equipment such as surfboards, skis, and golf bags may require larger vehicles.</p>
-</div>
-</div>
-
-</div>
-
-</div>
-</section>
-
-<!-- FAQ -->
-
-<section class="section" style="background:#181818">
-
-<div class="container">
-
-<div class="section-header">
-<h2>Frequently asked questions</h2>
-</div>
-
-<div class="panel-box">
-
-<div class="faq-item">
-<strong>What if my flight is delayed?</strong>
-<p>We track your flight arriving in Japan so pickup timing can be adjusted accordingly.</p>
-</div>
-
-<div class="faq-item">
-<strong>Can I book a transfer from Tokyo to Narita Airport?</strong>
-<p>Yes. Both airport pickup and airport drop-off routes are available.</p>
-</div>
-
-<div class="faq-item">
-<strong>Can I bring large sports equipment?</strong>
-<p>Yes, but please select the appropriate vehicle for oversized luggage.</p>
-</div>
-
-</div>
-
-</div>
-</section>
-
-<div id="site-footer"></div>
-
-<script src="includes.js"></script>
-
+  <div id="site-footer"></div>
+  <script src="includes.js"></script>
 </body>
 </html>
