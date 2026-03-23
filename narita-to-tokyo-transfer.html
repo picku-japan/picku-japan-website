@@ -7,7 +7,7 @@
   <title>Narita Airport (NRT) ⇄ Tokyo City Private Transfer | Pick-U Japan</title>
   <meta
     name="description"
-    content="Book a private transfer between Narita Airport (NRT) and Tokyo City with Pick-U Japan. View full service details, booking options, FAQs, add-on services, and related transfer suggestions."
+    content="Book a private transfer between Narita Airport (NRT) and Tokyo City with Pick-U Japan. View full product details, booking options, add-on services, FAQs, and related Tokyo charter suggestions."
   />
   <meta name="robots" content="index, follow" />
   <link
@@ -22,7 +22,7 @@
   />
   <meta
     property="og:description"
-    content="Private transfer between Narita Airport and Tokyo City with full booking details, vehicle selection, airport pickup notes, and related services."
+    content="Private transfer between Narita Airport and Tokyo City with booking details, vehicle options, add-ons, FAQs, and related Tokyo charter services."
   />
   <meta
     property="og:image"
@@ -40,7 +40,7 @@
   />
   <meta
     name="twitter:description"
-    content="Private transfer between Narita Airport and Tokyo City with booking details, add-ons, FAQs, and related services."
+    content="Private transfer between Narita Airport and Tokyo City with add-ons, FAQs, and related Tokyo charter services."
   />
   <meta
     name="twitter:image"
@@ -56,11 +56,11 @@
   <style>
     .route-hero {
       position: relative;
-      min-height: 400px;
+      min-height: 420px;
       display: flex;
       align-items: end;
       background:
-        linear-gradient(rgba(0,0,0,0.34), rgba(0,0,0,0.68)),
+        linear-gradient(rgba(0,0,0,0.34), rgba(0,0,0,0.70)),
         url("airport-transfers.png") center/cover no-repeat;
       border-bottom: 1px solid var(--border);
       overflow: hidden;
@@ -71,39 +71,50 @@
       position: absolute;
       inset: 0;
       background:
-        radial-gradient(circle at 78% 25%, rgba(212,160,23,0.16), transparent 28%);
+        radial-gradient(circle at 76% 24%, rgba(212,160,23,0.16), transparent 28%);
       pointer-events: none;
     }
 
     .route-hero .hero-content {
       position: relative;
       z-index: 1;
-      max-width: 920px;
-      padding: 68px 0 54px;
+      max-width: 940px;
+      padding: 50px 0 76px;
     }
 
-    .breadcrumb {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      font-size: 14px;
-      color: rgba(247, 244, 238, 0.82);
+    .route-pill {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 8px 16px;
       margin-bottom: 18px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,0.18);
+      background: rgba(255,255,255,0.06);
+      color: #f3d98e;
+      font-size: 0.9rem;
+      font-weight: 600;
+      backdrop-filter: blur(6px);
     }
 
-    .breadcrumb a {
-      color: rgba(247, 244, 238, 0.82);
-    }
-
-    .breadcrumb span {
-      color: rgba(247, 244, 238, 0.5);
+    .route-hero h1 {
+      margin: 0;
+      max-width: 980px;
     }
 
     .hero-subtext {
       color: #eee5d5;
-      font-size: 1.02rem;
+      font-size: 1.04rem;
       max-width: 760px;
-      margin: 16px 0 0;
+      margin: 18px 0 0;
+      line-height: 1.75;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-top: 28px;
     }
 
     .page-section {
@@ -131,37 +142,49 @@
       color: var(--muted);
     }
 
-    .mini-nav-wrap {
-      background: #121212;
-      border-bottom: 1px solid rgba(255,255,255,0.06);
+    .subnav-wrap {
+      position: sticky;
+      top: 74px;
+      z-index: 40;
+      background: rgba(10,10,10,0.92);
+      backdrop-filter: blur(10px);
+      border-top: 1px solid rgba(255,255,255,0.05);
+      border-bottom: 1px solid rgba(255,255,255,0.08);
     }
 
-    .mini-nav {
-      width: min(var(--max), calc(100% - 48px));
+    .subnav {
+      width: min(var(--max), calc(100% - 32px));
       margin: 0 auto;
-      padding: 18px 0;
+      padding: 16px 0;
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
       gap: 12px;
     }
 
-    .mini-nav a {
+    .subnav a {
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      padding: 10px 14px;
+      padding: 10px 16px;
       border-radius: 999px;
       background: rgba(255,255,255,0.04);
       border: 1px solid rgba(255,255,255,0.08);
       color: var(--text);
-      font-size: 0.94rem;
+      font-size: 0.95rem;
       transition: 0.2s ease;
+      white-space: nowrap;
     }
 
-    .mini-nav a:hover {
+    .subnav a:hover {
       border-color: rgba(212,160,23,0.38);
       transform: translateY(-1px);
+    }
+
+    .subnav a.current {
+      background: rgba(212,160,23,0.14);
+      border-color: rgba(212,160,23,0.28);
+      color: #f3d98e;
     }
 
     .widget-section {
@@ -284,7 +307,7 @@
 
     .like-grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(4, 1fr);
       gap: 24px;
     }
 
@@ -318,14 +341,21 @@
 
     .like-card h3 {
       margin: 0 0 10px;
-      font-size: 1.2rem;
-      line-height: 1.35;
+      font-size: 1.14rem;
+      line-height: 1.4;
     }
 
     .like-card p {
       margin: 0;
       color: #666;
       line-height: 1.75;
+      font-size: 0.96rem;
+    }
+
+    @media (max-width: 1180px) {
+      .like-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
     }
 
     @media (max-width: 980px) {
@@ -346,11 +376,11 @@
 
     @media (max-width: 780px) {
       .route-hero {
-        min-height: 340px;
+        min-height: 360px;
       }
 
       .route-hero .hero-content {
-        padding: 56px 0 42px;
+        padding: 42px 0 58px;
       }
 
       .page-section {
@@ -370,6 +400,22 @@
       .btn {
         width: 100%;
       }
+
+      .subnav-wrap {
+        top: 74px;
+      }
+
+      .subnav {
+        justify-content: flex-start;
+        overflow-x: auto;
+        flex-wrap: nowrap;
+        padding: 14px 4px;
+        scrollbar-width: none;
+      }
+
+      .subnav::-webkit-scrollbar {
+        display: none;
+      }
     }
   </style>
 </head>
@@ -378,7 +424,10 @@
 
   <section class="hero route-hero">
     <div class="container hero-content">
+      <div class="route-pill">Narita Airport Transfer</div>
+
       <h1>Narita Airport (NRT) ⇄ Tokyo City Private Transfer</h1>
+
       <p class="hero-subtext">
         Book this private transfer with full product details, vehicle options, pickup notes,
         and booking steps directly on this page.
@@ -386,18 +435,17 @@
 
       <div class="hero-actions">
         <a class="btn btn-primary" href="#booking-widget">Book this service</a>
-        <a class="btn btn-secondary" href="narita-airport-transfer.html">Back to Narita routes</a>
         <a class="btn btn-secondary" href="airport-transfers.html">Other airport transfers</a>
       </div>
     </div>
   </section>
 
-  <section class="mini-nav-wrap">
-    <div class="mini-nav">
-      <a href="narita-airport-transfer.html">All Narita routes</a>
+  <section class="subnav-wrap">
+    <div class="subnav">
+      <a href="narita-airport-transfer.html">All Narita Transfers</a>
       <a href="narita-to-disney-transfer.html">Narita ⇄ Disney Resort</a>
+      <a href="tokyo-to-narita-transfer.html">Tokyo → Narita Airport</a>
       <a href="narita-to-yokohama-transfer.html">Narita ⇄ Yokohama</a>
-      <a href="narita-to-hakone-transfer.html">Narita ⇄ Hakone</a>
     </div>
   </section>
 
@@ -531,26 +579,32 @@
     <div class="container">
       <div class="section-header">
         <h2>You May Also Like</h2>
-        <p>Related services often booked together with Narita Airport to Tokyo transfers.</p>
+        <p>Explore private charter options frequently considered together with Tokyo airport transfers.</p>
       </div>
 
       <div class="like-grid">
-        <a class="like-card" href="tokyo-to-narita-transfer.html">
-          <div class="like-tag">Popular return route</div>
-          <h3>Tokyo City → Narita Airport Transfer</h3>
-          <p>Book your return airport drop-off in advance for a smoother departure day and fixed private transfer service.</p>
-        </a>
-
         <a class="like-card" href="tokyo-10-hour-charter.html">
-          <div class="like-tag">Best seller</div>
+          <div class="like-tag">Tokyo city charter</div>
           <h3>Tokyo 10-Hour Private Charter</h3>
-          <p>Ideal for sightseeing days, flexible city travel, shopping stops, family trips, and custom private itineraries.</p>
+          <p>Ideal for city sightseeing, shopping, family trips, flexible restaurant stops, and custom Tokyo itineraries.</p>
         </a>
 
-        <a class="like-card" href="haneda-airport-transfer.html">
-          <div class="like-tag">Other airport service</div>
-          <h3>Haneda Airport Transfer Services</h3>
-          <p>Compare Haneda pickup and drop-off routes if you are also planning other airport transfers within Tokyo.</p>
+        <a class="like-card" href="mt-fuji-10-hour-charter.html">
+          <div class="like-tag">Most popular day trip</div>
+          <h3>Mt. Fuji 10-Hour Private Charter</h3>
+          <p>A comfortable private day trip for Lake Kawaguchi, scenic viewpoints, shopping outlets, and family-friendly travel.</p>
+        </a>
+
+        <a class="like-card" href="hakone-10-hour-charter.html">
+          <div class="like-tag">Relaxing hot spring route</div>
+          <h3>Hakone 10-Hour Private Charter</h3>
+          <p>Perfect for travelers who want a flexible Hakone day trip with hot springs, lake views, and easy private transport.</p>
+        </a>
+
+        <a class="like-card" href="yokohama-port-charter.html">
+          <div class="like-tag">Cruise & port transfer</div>
+          <h3>Yokohama Port Private Charter</h3>
+          <p>Convenient for cruise terminal transfers, port-area sightseeing, or combining Yokohama stops with a private vehicle.</p>
         </a>
       </div>
     </div>
